@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "edenai",
+      "source": "https://api.edenai.run/v2/info/schema",
+      "integrity": "sha512-sekvH9CxbBG0eZhcF7b9Vqx0V3+eJYtsUe5iZisD8jjwczmC0ym0/Xn7hqedPoXfKcZ/s8xhu1iq7+7nOEfrbA==",
+      "installerVersion": "6.1.0"
+    }
+  ]
+}
