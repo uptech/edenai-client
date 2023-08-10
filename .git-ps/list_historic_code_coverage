@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+dot_git_ps_path=${0:a:h}
+
+source "$dot_git_ps_path/git_backed_test_coverage.zsh"
+
+get_and_print_coverage() {
+  commit_sha=$1
+  coverage=$(read_test_coverage "${commit_sha}")
+  retval=$?
+  if [ $retval -eq 0 ]; then
+    # success
+    echo "${commit_sha}: ${coverage}"
+  elif [ $retval -eq 1 ]; then
+    # ref doesn't exist
+    echo "${commit_sha}: ---"
+  else
+    # actual failure
+    echo "${commit_sha}: xxx"
+  fi
+}
+
+git fetch --all -p
+fetch_test_coverage_data "origin"
+if [ $? -ne 0 ]; then
+  echo "Failed to fetch test coverage data"
+  exit 1
+fi
+
+git rev-list HEAD...028b888dceb851cbeb05c093c4eb4c70c791e156 | xargs -L1 ${dot_git_ps_path}/show_commit_code_coverage $1

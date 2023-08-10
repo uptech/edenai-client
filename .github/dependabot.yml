@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Use custom labels on pull requests for Docker version updates
+    labels:
+      - "npm updates"
+    commit-message:
+      # Prefix all commit messages with "npm"
+      prefix: "npm"
+      include: "scope"

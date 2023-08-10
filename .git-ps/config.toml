@@ -1,0 +1,9 @@
+[request_review]
+verify_isolation = false
+
+[integrate]
+verify_isolation = true
+
+[list]
+add_extra_patch_info = true
+extra_patch_info_length = 15

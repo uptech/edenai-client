@@ -1,0 +1,88 @@
+{
+  "name": "@uptech/edenai-client",
+  "version": "1.0.0",
+  "description": "Eden AI Integration Module",
+  "author": "Uptech Studio",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:cov:bail": "jest --coverage --bail src/ && lcov --remove coverage/lcov.info 'src/models/*' -o coverage/lcov.info",
+    "prepare": "if [[ $NODE_ENV != \"production\" ]]; then husky install; fi",
+    "prepublish": "npm run build",
+    "pre-commit": "lint-staged",
+    "changelog": "git cl full > CHANGELOG.md",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "lint:dry": "eslint \"src/**/*.ts\""
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.19.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.1",
+    "jest-mock-extended": "^3.0.4",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@api/edenai": "file:.api/apis/edenai",
+    "@ungap/url-search-params": "^0.2.2",
+    "axios": "^1.4.0",
+    "js-base64": "^3.7.5",
+    "url-join": "^5.0.0"
+  },
+  "jest": {
+    "clearMocks": true,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s",
+      "!**/*.mock(|s).(t|j)s",
+      "!**/dto/**"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "clover",
+      "json",
+      "lcov",
+      [
+        "text",
+        {
+          "skipFull": true
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "jest --bail --passWithNoTests --findRelatedTests"
+    ],
+    "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --write"
+  }
+}
