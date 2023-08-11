@@ -1,0 +1,14 @@
+export { TextaiDetectionAiDetectionRequest } from "./TextaiDetectionAiDetectionRequest";
+export { TextchatChatRequest } from "./TextchatChatRequest";
+export { TextcodeGenerationCodeGenerationRequest } from "./TextcodeGenerationCodeGenerationRequest";
+export { TextcustomClassificationCustomClassificationRequest } from "./TextcustomClassificationCustomClassificationRequest";
+export { TextcustomNamedEntityRecognitionCustomNamedEntityRecognitionRequest } from "./TextcustomNamedEntityRecognitionCustomNamedEntityRecognitionRequest";
+export { TextembeddingsEmbeddingsRequest } from "./TextembeddingsEmbeddingsRequest";
+export { TextentitySentimentEntitySentimentRequest } from "./TextentitySentimentEntitySentimentRequest";
+export { TextgenerationGenerationRequest } from "./TextgenerationGenerationRequest";
+export { TextplagiaDetectionPlagiaDetectionRequest } from "./TextplagiaDetectionPlagiaDetectionRequest";
+export { TextpromptOptimizationPromptOptimizationRequest } from "./TextpromptOptimizationPromptOptimizationRequest";
+export { TextquestionAnswerQuestionAnswerRequest } from "./TextquestionAnswerQuestionAnswerRequest";
+export { TextsearchSearchRequest } from "./TextsearchSearchRequest";
+export { TextspellCheckSpellCheckRequest } from "./TextspellCheckSpellCheckRequest";
+export { TextsummarizeSummarizeRequest } from "./TextsummarizeSummarizeRequest";

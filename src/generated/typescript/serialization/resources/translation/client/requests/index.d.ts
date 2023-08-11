@@ -1,0 +1,2 @@
+export { TranslationautomaticTranslationAutomaticTranslationRequest } from "./TranslationautomaticTranslationAutomaticTranslationRequest";
+export { TranslationlanguageDetectionLanguageDetectionRequest } from "./TranslationlanguageDetectionLanguageDetectionRequest";
