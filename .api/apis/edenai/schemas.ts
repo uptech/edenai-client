@@ -101,7 +101,7 @@ const AudioSpeechToTextAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const AudioSpeechToTextAsyncRetrieve = {
   response: {
     '200': {
@@ -124,7 +124,14 @@ const AudioSpeechToTextAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -132,14 +139,17 @@ const AudioSpeechToTextAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const AudioSpeechToTextAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -177,12 +187,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -194,7 +213,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -210,7 +233,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             revai: {
@@ -224,12 +251,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -241,7 +277,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -257,7 +297,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             voxist: {
@@ -271,12 +315,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -288,7 +341,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -304,7 +361,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             symbl: {
@@ -318,12 +379,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -335,7 +405,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -351,7 +425,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             assembly: {
@@ -365,12 +443,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -382,7 +469,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -398,7 +489,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             speechmatics: {
@@ -412,12 +507,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -429,7 +533,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -445,7 +553,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             voci: {
@@ -459,12 +571,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -476,7 +597,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -492,7 +617,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             deepgram: {
@@ -506,12 +635,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -523,7 +661,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -539,7 +681,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             microsoft: {
@@ -553,12 +699,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -570,7 +725,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -586,7 +745,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             openai: {
@@ -600,12 +763,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -617,7 +789,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -633,7 +809,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             faker: {
@@ -647,12 +827,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -664,7 +853,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -680,7 +873,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             ibm: {
@@ -694,12 +891,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -711,7 +917,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -727,7 +937,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             oneai: {
@@ -741,12 +955,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -758,7 +981,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -774,7 +1001,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             google: {
@@ -788,12 +1019,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -805,7 +1045,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -821,7 +1065,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             neuralspace: {
@@ -835,12 +1083,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -852,7 +1109,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -868,7 +1129,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -882,12 +1147,21 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   title: 'SpeechDiarization',
                   type: 'object',
                   properties: {
-                    total_speakers: { title: 'Total Speakers', type: 'integer' },
+                    total_speakers: {
+                      title: 'Total Speakers',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
                       items: {
-                        required: ['segment', 'start_time', 'end_time', 'speaker', 'confidence'],
+                        required: [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence',
+                        ],
                         title: 'SpeechDiarizationEntry',
                         type: 'object',
                         properties: {
@@ -899,7 +1173,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                         },
                       },
                     },
-                    error_message: { default: null, title: 'Error Message', type: 'string' },
+                    error_message: {
+                      default: null,
+                      title: 'Error Message',
+                      type: 'string',
+                    },
                   },
                 },
                 original_response: {
@@ -915,7 +1193,11 @@ const AudioSpeechToTextAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -940,7 +1222,12 @@ const AudioSpeechToTextAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -980,7 +1267,7 @@ const AudioSpeechToTextAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const AudioTextToSpeechAsyncCreate = {
   body: {
     type: 'object',
@@ -1098,7 +1385,7 @@ const AudioTextToSpeechAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const AudioTextToSpeechAsyncRetrieve = {
   response: {
     '200': {
@@ -1121,7 +1408,14 @@ const AudioTextToSpeechAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -1129,14 +1423,17 @@ const AudioTextToSpeechAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const AudioTextToSpeechAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -1164,13 +1461,22 @@ const AudioTextToSpeechAsyncRetrieve2 = {
         results: {
           properties: {
             lovoai: {
-              required: ['audio', 'voice_type', 'audio_resource_url', 'id', 'final_status'],
+              required: [
+                'audio',
+                'voice_type',
+                'audio_resource_url',
+                'id',
+                'final_status',
+              ],
               title: 'audiotext_to_speech_asyncTextToSpeechAsyncDataClass',
               type: 'object',
               properties: {
                 audio: { title: 'Audio', type: 'string' },
                 voice_type: { title: 'Voice Type', type: 'integer' },
-                audio_resource_url: { title: 'Audio Resource Url', type: 'string' },
+                audio_resource_url: {
+                  title: 'Audio Resource Url',
+                  type: 'string',
+                },
                 original_response: {
                   default: null,
                   description:
@@ -1184,7 +1490,11 @@ const AudioTextToSpeechAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -1209,7 +1519,12 @@ const AudioTextToSpeechAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -1249,7 +1564,7 @@ const AudioTextToSpeechAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const AudioTextToSpeechCreate = {
   body: {
     type: 'object',
@@ -1486,7 +1801,12 @@ const AudioTextToSpeechCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -1526,16 +1846,25 @@ const AudioTextToSpeechCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const BatchCreate = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          feature: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
-          name: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
-          subfeature: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          feature: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
+          name: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
+          subfeature: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['feature', 'name', 'subfeature'],
       },
@@ -1555,9 +1884,14 @@ const BatchCreate = {
           title: 'Nb Failed',
           type: 'integer',
         },
-        total: { description: 'Total number of requests sent', title: 'Total', type: 'integer' },
+        total: {
+          description: 'Total number of requests sent',
+          title: 'Total',
+          type: 'integer',
+        },
         failed_requests: {
-          description: 'if any requests failed, they will be shown in this list',
+          description:
+            'if any requests failed, they will be shown in this list',
           items: {
             properties: {
               name: {
@@ -1565,7 +1899,11 @@ const BatchCreate = {
                 title: 'Name',
                 type: 'string',
               },
-              public_id: { description: 'Request ID', title: 'Public Id', type: 'integer' },
+              public_id: {
+                description: 'Request ID',
+                title: 'Public Id',
+                type: 'integer',
+              },
               body: {
                 description: 'Parameters passed to the request',
                 title: 'Body',
@@ -1587,7 +1925,13 @@ const BatchCreate = {
           type: 'array',
         },
       },
-      required: ['job_id', 'nb_launched', 'nb_failed', 'total', 'failed_requests'],
+      required: [
+        'job_id',
+        'nb_launched',
+        'nb_failed',
+        'total',
+        'failed_requests',
+      ],
       title: 'BatchLaunchResponse',
       type: 'object',
       $schema: 'http://json-schema.org/draft-04/schema#',
@@ -1601,7 +1945,12 @@ const BatchCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -1641,16 +1990,25 @@ const BatchCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const BatchRetrieve = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          feature: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
-          name: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
-          subfeature: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          feature: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
+          name: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
+          subfeature: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['feature', 'name', 'subfeature'],
       },
@@ -1662,7 +2020,11 @@ const BatchRetrieve = {
             minLength: 1,
             $schema: 'http://json-schema.org/draft-04/schema#',
           },
-          page: { type: 'integer', minimum: 0, $schema: 'http://json-schema.org/draft-04/schema#' },
+          page: {
+            type: 'integer',
+            minimum: 0,
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
           public_id: {
             type: 'integer',
             minimum: 0,
@@ -1688,7 +2050,10 @@ const BatchRetrieve = {
         total: { type: 'integer', description: 'Total requests made' },
         current_page: { type: 'integer', description: 'Current page number' },
         last_page: { type: 'integer' },
-        per_page: { type: 'integer', description: 'Number of requests per page' },
+        per_page: {
+          type: 'integer',
+          description: 'Number of requests per page',
+        },
         From: { type: 'integer' },
         to: { type: 'integer' },
         prev_page_url: { type: 'string', format: 'uri' },
@@ -1707,7 +2072,10 @@ const BatchRetrieve = {
               },
               name: { type: ['string', 'null'], maxLength: 1023 },
               errors: { type: ['object', 'null'], additionalProperties: true },
-              response: { type: ['object', 'null'], additionalProperties: true },
+              response: {
+                type: ['object', 'null'],
+                additionalProperties: true,
+              },
             },
             required: ['public_id'],
           },
@@ -1743,7 +2111,12 @@ const BatchRetrieve = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -1783,7 +2156,7 @@ const BatchRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageAnonymizationCreate = {
   body: {
     type: 'object',
@@ -1899,7 +2272,12 @@ const ImageAnonymizationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -1939,7 +2317,7 @@ const ImageAnonymizationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageExplicitContentCreate = {
   body: {
     type: 'object',
@@ -1949,7 +2327,9 @@ const ImageExplicitContentCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['amazon,google,microsoft,sentisight,picpurify,api4ai,clarifai'],
+        examples: [
+          'amazon,google,microsoft,sentisight,picpurify,api4ai,clarifai',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -2274,7 +2654,12 @@ const ImageExplicitContentCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -2314,7 +2699,7 @@ const ImageExplicitContentCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageFaceCompareCreate = {
   body: {
     type: 'object',
@@ -2525,7 +2910,12 @@ const ImageFaceCompareCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -2565,7 +2955,7 @@ const ImageFaceCompareCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageFaceDetectionCreate = {
   body: {
     type: 'object',
@@ -2575,7 +2965,9 @@ const ImageFaceDetectionCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['clarifai,amazon,skybiometry,google,api4ai,microsoft,picpurify'],
+        examples: [
+          'clarifai,amazon,skybiometry,google,api4ai,microsoft,picpurify',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -2655,7 +3047,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -2676,7 +3072,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -2732,7 +3132,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -2798,8 +3202,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -2825,7 +3237,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -2960,7 +3376,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -2979,7 +3398,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -3012,21 +3437,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -3089,7 +3530,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -3110,7 +3555,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -3166,7 +3615,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -3232,8 +3685,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -3259,7 +3720,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -3394,7 +3859,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -3413,7 +3881,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -3446,21 +3920,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -3523,7 +4013,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -3544,7 +4038,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -3600,7 +4098,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -3666,8 +4168,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -3693,7 +4203,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -3828,7 +4342,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -3847,7 +4364,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -3880,21 +4403,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -3957,7 +4496,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -3978,7 +4521,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -4034,7 +4581,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -4100,8 +4651,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -4127,7 +4686,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -4262,7 +4825,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -4281,7 +4847,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -4314,21 +4886,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -4391,7 +4979,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -4412,7 +5004,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -4468,7 +5064,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -4534,8 +5134,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -4561,7 +5169,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -4696,7 +5308,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -4715,7 +5330,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -4748,21 +5369,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -4825,7 +5462,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -4846,7 +5487,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -4902,7 +5547,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -4968,8 +5617,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -4995,7 +5652,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -5130,7 +5791,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -5149,7 +5813,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -5182,21 +5852,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -5259,7 +5945,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -5280,7 +5970,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -5336,7 +6030,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -5402,8 +6100,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -5429,7 +6135,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -5564,7 +6274,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -5583,7 +6296,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -5616,21 +6335,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -5693,7 +6428,11 @@ const ImageFaceDetectionCreate = {
                     title: 'FaceLandmarks',
                     type: 'object',
                     properties: {
-                      left_eye: { title: 'Left Eye', type: 'array', items: { type: 'integer' } },
+                      left_eye: {
+                        title: 'Left Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       left_eye_top: {
                         title: 'Left Eye Top',
                         type: 'array',
@@ -5714,7 +6453,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      right_eye: { title: 'Right Eye', type: 'array', items: { type: 'integer' } },
+                      right_eye: {
+                        title: 'Right Eye',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       right_eye_top: {
                         title: 'Right Eye Top',
                         type: 'array',
@@ -5770,7 +6513,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      nose_tip: { title: 'Nose Tip', type: 'array', items: { type: 'integer' } },
+                      nose_tip: {
+                        title: 'Nose Tip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       nose_bottom_right: {
                         title: 'Nose Bottom Right',
                         type: 'array',
@@ -5836,8 +6583,16 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      upper_lip: { title: 'Upper Lip', type: 'array', items: { type: 'integer' } },
-                      under_lip: { title: 'Under Lip', type: 'array', items: { type: 'integer' } },
+                      upper_lip: {
+                        title: 'Upper Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
+                      under_lip: {
+                        title: 'Under Lip',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       under_lip_bottom: {
                         title: 'Under Lip Bottom',
                         type: 'array',
@@ -5863,7 +6618,11 @@ const ImageFaceDetectionCreate = {
                         type: 'array',
                         items: { type: 'integer' },
                       },
-                      mouth_top: { title: 'Mouth Top', type: 'array', items: { type: 'integer' } },
+                      mouth_top: {
+                        title: 'Mouth Top',
+                        type: 'array',
+                        items: { type: 'integer' },
+                      },
                       mouth_bottom: {
                         title: 'Mouth Bottom',
                         type: 'array',
@@ -5998,7 +6757,10 @@ const ImageFaceDetectionCreate = {
                           type: 'object',
                           properties: {
                             color: { title: 'Color', type: 'string' },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -6017,7 +6779,13 @@ const ImageFaceDetectionCreate = {
                     },
                   },
                   quality: {
-                    required: ['noise', 'exposure', 'blur', 'brightness', 'sharpness'],
+                    required: [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness',
+                    ],
                     title: 'FaceQuality',
                     type: 'object',
                     properties: {
@@ -6050,21 +6818,37 @@ const ImageFaceDetectionCreate = {
                     type: 'object',
                     properties: {
                       sunglasses: { title: 'Sunglasses', type: 'integer' },
-                      reading_glasses: { title: 'Reading Glasses', type: 'integer' },
-                      swimming_goggles: { title: 'Swimming Goggles', type: 'integer' },
+                      reading_glasses: {
+                        title: 'Reading Glasses',
+                        type: 'integer',
+                      },
+                      swimming_goggles: {
+                        title: 'Swimming Goggles',
+                        type: 'integer',
+                      },
                       face_mask: { title: 'Face Mask', type: 'integer' },
                       eyeglasses: { title: 'Eyeglasses', type: 'integer' },
                       headwear: { title: 'Headwear', type: 'integer' },
                     },
                   },
                   occlusions: {
-                    required: ['eye_occluded', 'forehead_occluded', 'mouth_occluded'],
+                    required: [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded',
+                    ],
                     title: 'FaceOcclusions',
                     type: 'object',
                     properties: {
                       eye_occluded: { title: 'Eye Occluded', type: 'boolean' },
-                      forehead_occluded: { title: 'Forehead Occluded', type: 'boolean' },
-                      mouth_occluded: { title: 'Mouth Occluded', type: 'boolean' },
+                      forehead_occluded: {
+                        title: 'Forehead Occluded',
+                        type: 'boolean',
+                      },
+                      mouth_occluded: {
+                        title: 'Mouth Occluded',
+                        type: 'boolean',
+                      },
                     },
                   },
                   features: {
@@ -6108,7 +6892,12 @@ const ImageFaceDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -6148,7 +6937,7 @@ const ImageFaceDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageFaceRecognitionAddFaceCreate = {
   body: {
     type: 'object',
@@ -6210,7 +6999,11 @@ const ImageFaceRecognitionAddFaceCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6230,7 +7023,11 @@ const ImageFaceRecognitionAddFaceCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6250,7 +7047,11 @@ const ImageFaceRecognitionAddFaceCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6279,7 +7080,12 @@ const ImageFaceRecognitionAddFaceCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -6319,7 +7125,7 @@ const ImageFaceRecognitionAddFaceCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageFaceRecognitionDeleteFaceCreate = {
   body: {
     type: 'object',
@@ -6373,7 +7179,11 @@ const ImageFaceRecognitionDeleteFaceCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6393,7 +7203,11 @@ const ImageFaceRecognitionDeleteFaceCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6413,7 +7227,11 @@ const ImageFaceRecognitionDeleteFaceCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6442,7 +7260,12 @@ const ImageFaceRecognitionDeleteFaceCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -6482,7 +7305,7 @@ const ImageFaceRecognitionDeleteFaceCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageFaceRecognitionListFacesRetrieve = {
   metadata: {
     allOf: [
@@ -6537,7 +7360,11 @@ const ImageFaceRecognitionListFacesRetrieve = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6557,7 +7384,11 @@ const ImageFaceRecognitionListFacesRetrieve = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6577,7 +7408,11 @@ const ImageFaceRecognitionListFacesRetrieve = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6606,7 +7441,12 @@ const ImageFaceRecognitionListFacesRetrieve = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -6646,7 +7486,7 @@ const ImageFaceRecognitionListFacesRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageFaceRecognitionRecognizeCreate = {
   body: {
     type: 'object',
@@ -6708,7 +7548,11 @@ const ImageFaceRecognitionRecognizeCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6728,7 +7572,11 @@ const ImageFaceRecognitionRecognizeCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6748,7 +7596,11 @@ const ImageFaceRecognitionRecognizeCreate = {
           title: 'imageface_recognitionFaceRecognitionAddFaceDataClass',
           type: 'object',
           properties: {
-            face_ids: { title: 'Face Ids', type: 'array', items: { type: 'string' } },
+            face_ids: {
+              title: 'Face Ids',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -6777,7 +7629,12 @@ const ImageFaceRecognitionRecognizeCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -6817,7 +7674,7 @@ const ImageFaceRecognitionRecognizeCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageGenerationCreate = {
   body: {
     type: 'object',
@@ -6856,14 +7713,16 @@ const ImageGenerationCreate = {
       text: {
         type: 'string',
         minLength: 1,
-        description: 'Description of the desired image(s). The maximum length is 1000 characters',
+        description:
+          'Description of the desired image(s). The maximum length is 1000 characters',
         maxLength: 1000,
         examples: ['A huge red ballon flying outside the city.'],
       },
       resolution: {
         enum: ['256x256', '512x512', '1024x1024'],
         type: 'string',
-        description: '* `256x256` - 256x256\n* `512x512` - 512x512\n* `1024x1024` - 1024x1024',
+        description:
+          '* `256x256` - 256x256\n* `512x512` - 512x512\n* `1024x1024` - 1024x1024',
         examples: ['512x512'],
       },
       num_images: {
@@ -6871,7 +7730,8 @@ const ImageGenerationCreate = {
         maximum: 10,
         minimum: 1,
         default: 1,
-        description: 'The number of images to generate. Must be between 1 and 10.',
+        description:
+          'The number of images to generate. Must be between 1 and 10.',
         examples: [2],
       },
     },
@@ -6895,7 +7755,10 @@ const ImageGenerationCreate = {
                 type: 'object',
                 properties: {
                   image: { title: 'Image', type: 'string' },
-                  image_resource_url: { title: 'Image Resource Url', type: 'string' },
+                  image_resource_url: {
+                    title: 'Image Resource Url',
+                    type: 'string',
+                  },
                 },
               },
             },
@@ -6927,7 +7790,10 @@ const ImageGenerationCreate = {
                 type: 'object',
                 properties: {
                   image: { title: 'Image', type: 'string' },
-                  image_resource_url: { title: 'Image Resource Url', type: 'string' },
+                  image_resource_url: {
+                    title: 'Image Resource Url',
+                    type: 'string',
+                  },
                 },
               },
             },
@@ -6959,7 +7825,10 @@ const ImageGenerationCreate = {
                 type: 'object',
                 properties: {
                   image: { title: 'Image', type: 'string' },
-                  image_resource_url: { title: 'Image Resource Url', type: 'string' },
+                  image_resource_url: {
+                    title: 'Image Resource Url',
+                    type: 'string',
+                  },
                 },
               },
             },
@@ -6991,7 +7860,12 @@ const ImageGenerationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -7031,7 +7905,7 @@ const ImageGenerationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageLandmarkDetectionCreate = {
   body: {
     type: 'object',
@@ -7232,7 +8106,12 @@ const ImageLandmarkDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -7272,7 +8151,7 @@ const ImageLandmarkDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageLogoDetectionCreate = {
   body: {
     type: 'object',
@@ -7603,7 +8482,12 @@ const ImageLogoDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -7643,7 +8527,7 @@ const ImageLogoDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageObjectDetectionCreate = {
   body: {
     type: 'object',
@@ -7720,7 +8604,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7756,7 +8647,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7792,7 +8690,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7828,7 +8733,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7864,7 +8776,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7900,7 +8819,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7936,7 +8862,14 @@ const ImageObjectDetectionCreate = {
               title: 'Items',
               type: 'array',
               items: {
-                required: ['label', 'confidence', 'x_min', 'x_max', 'y_min', 'y_max'],
+                required: [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max',
+                ],
                 title: 'ObjectItem',
                 type: 'object',
                 properties: {
@@ -7977,7 +8910,12 @@ const ImageObjectDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -8017,7 +8955,7 @@ const ImageObjectDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageSearchDeleteImageCreate = {
   body: {
     type: 'object',
@@ -8094,7 +9032,12 @@ const ImageSearchDeleteImageCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -8134,7 +9077,7 @@ const ImageSearchDeleteImageCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageSearchGetImageRetrieve = {
   metadata: {
     allOf: [
@@ -8222,7 +9165,12 @@ const ImageSearchGetImageRetrieve = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -8262,7 +9210,7 @@ const ImageSearchGetImageRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageSearchGetImagesRetrieve = {
   metadata: {
     allOf: [
@@ -8345,7 +9293,12 @@ const ImageSearchGetImagesRetrieve = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -8385,7 +9338,7 @@ const ImageSearchGetImagesRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageSearchLaunchSimilarityCreate = {
   body: {
     type: 'object',
@@ -8475,7 +9428,12 @@ const ImageSearchLaunchSimilarityCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -8515,7 +9473,7 @@ const ImageSearchLaunchSimilarityCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const ImageSearchUploadImageCreate = {
   body: {
     type: 'object',
@@ -8606,7 +9564,12 @@ const ImageSearchUploadImageCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -8646,29 +9609,44 @@ const ImageSearchUploadImageCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const InfoProviderSubfeaturesList = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          feature__name: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          feature__name: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
           gender: {
             type: 'string',
             $schema: 'http://json-schema.org/draft-04/schema#',
             description:
               "Accepts two values: either 'male' or 'female'. Used to                              filter models voices for the text_to_speech subfeature",
           },
-          is_working: { type: 'boolean', $schema: 'http://json-schema.org/draft-04/schema#' },
+          is_working: {
+            type: 'boolean',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
           language: {
             type: 'string',
             $schema: 'http://json-schema.org/draft-04/schema#',
             description: 'languages [icontains]',
           },
-          phase__name: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
-          provider__name: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
-          subfeature__name: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          phase__name: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
+          provider__name: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
+          subfeature__name: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: [],
       },
@@ -8689,7 +9667,8 @@ const InfoProviderSubfeaturesList = {
               properties: {
                 model_name: {
                   type: 'string',
-                  description: "Model name, default to 'default' if no models to chose from",
+                  description:
+                    "Model name, default to 'default' if no models to chose from",
                   maxLength: 255,
                 },
                 price: {
@@ -8697,8 +9676,16 @@ const InfoProviderSubfeaturesList = {
                   format: 'decimal',
                   pattern: '^-?\\d{0,6}(?:\\.\\d{0,9})?$',
                 },
-                price_unit_quantity: { type: 'integer', maximum: 2147483647, minimum: 0 },
-                min_price_quantity: { type: ['integer', 'null'], maximum: 2147483647, minimum: 0 },
+                price_unit_quantity: {
+                  type: 'integer',
+                  maximum: 2147483647,
+                  minimum: 0,
+                },
+                min_price_quantity: {
+                  type: ['integer', 'null'],
+                  maximum: 2147483647,
+                  minimum: 0,
+                },
                 price_unit_type: {
                   enum: [
                     'file',
@@ -8727,7 +9714,8 @@ const InfoProviderSubfeaturesList = {
                     {
                       enum: ['resolution'],
                       type: 'string',
-                      description: '* `resolution` - Resolution\n\n`resolution`',
+                      description:
+                        '* `resolution` - Resolution\n\n`resolution`',
                     },
                     { enum: [''] },
                     { enum: [null] },
@@ -8775,13 +9763,24 @@ const InfoProviderSubfeaturesList = {
             },
             required: ['name'],
           },
-          constraints: { type: 'object', additionalProperties: true, readOnly: true },
-          models: { type: 'object', additionalProperties: true, readOnly: true },
+          constraints: {
+            type: 'object',
+            additionalProperties: true,
+            readOnly: true,
+          },
+          models: {
+            type: 'object',
+            additionalProperties: true,
+            readOnly: true,
+          },
           languages: {
             type: 'array',
             items: {
               type: 'object',
-              properties: { language_name: { type: 'string' }, language_code: { type: 'string' } },
+              properties: {
+                language_name: { type: 'string' },
+                language_code: { type: 'string' },
+              },
             },
             readOnly: true,
           },
@@ -8803,7 +9802,7 @@ const InfoProviderSubfeaturesList = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrBankCheckParsingCreate = {
   body: {
     type: 'object',
@@ -8893,7 +9892,10 @@ const OcrBankCheckParsingCreate = {
                   memo: { title: 'Memo', type: 'string' },
                   payer_address: { title: 'Payer Address', type: 'string' },
                   payer_name: { title: 'Payer Name', type: 'string' },
-                  receiver_address: { title: 'Receiver Address', type: 'string' },
+                  receiver_address: {
+                    title: 'Receiver Address',
+                    type: 'string',
+                  },
                   receiver_name: { title: 'Receiver Name', type: 'string' },
                   currency: { title: 'Currency', type: 'string' },
                   micr: {
@@ -8908,8 +9910,14 @@ const OcrBankCheckParsingCreate = {
                     type: 'object',
                     properties: {
                       raw: { title: 'Raw', type: 'string' },
-                      account_number: { title: 'Account Number', type: 'string' },
-                      routing_number: { title: 'Routing Number', type: 'string' },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                      },
+                      routing_number: {
+                        title: 'Routing Number',
+                        type: 'string',
+                      },
                       serial_number: { title: 'Serial Number', type: 'string' },
                       check_number: { title: 'Check Number', type: 'string' },
                     },
@@ -8965,7 +9973,10 @@ const OcrBankCheckParsingCreate = {
                   memo: { title: 'Memo', type: 'string' },
                   payer_address: { title: 'Payer Address', type: 'string' },
                   payer_name: { title: 'Payer Name', type: 'string' },
-                  receiver_address: { title: 'Receiver Address', type: 'string' },
+                  receiver_address: {
+                    title: 'Receiver Address',
+                    type: 'string',
+                  },
                   receiver_name: { title: 'Receiver Name', type: 'string' },
                   currency: { title: 'Currency', type: 'string' },
                   micr: {
@@ -8980,8 +9991,14 @@ const OcrBankCheckParsingCreate = {
                     type: 'object',
                     properties: {
                       raw: { title: 'Raw', type: 'string' },
-                      account_number: { title: 'Account Number', type: 'string' },
-                      routing_number: { title: 'Routing Number', type: 'string' },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                      },
+                      routing_number: {
+                        title: 'Routing Number',
+                        type: 'string',
+                      },
                       serial_number: { title: 'Serial Number', type: 'string' },
                       check_number: { title: 'Check Number', type: 'string' },
                     },
@@ -9037,7 +10054,10 @@ const OcrBankCheckParsingCreate = {
                   memo: { title: 'Memo', type: 'string' },
                   payer_address: { title: 'Payer Address', type: 'string' },
                   payer_name: { title: 'Payer Name', type: 'string' },
-                  receiver_address: { title: 'Receiver Address', type: 'string' },
+                  receiver_address: {
+                    title: 'Receiver Address',
+                    type: 'string',
+                  },
                   receiver_name: { title: 'Receiver Name', type: 'string' },
                   currency: { title: 'Currency', type: 'string' },
                   micr: {
@@ -9052,8 +10072,14 @@ const OcrBankCheckParsingCreate = {
                     type: 'object',
                     properties: {
                       raw: { title: 'Raw', type: 'string' },
-                      account_number: { title: 'Account Number', type: 'string' },
-                      routing_number: { title: 'Routing Number', type: 'string' },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                      },
+                      routing_number: {
+                        title: 'Routing Number',
+                        type: 'string',
+                      },
                       serial_number: { title: 'Serial Number', type: 'string' },
                       check_number: { title: 'Check Number', type: 'string' },
                     },
@@ -9089,7 +10115,12 @@ const OcrBankCheckParsingCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -9129,7 +10160,7 @@ const OcrBankCheckParsingCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrCustomDocumentParsingAsyncCreate = {
   body: {
     type: 'object',
@@ -9200,7 +10231,7 @@ const OcrCustomDocumentParsingAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrCustomDocumentParsingAsyncRetrieve = {
   response: {
     '200': {
@@ -9223,7 +10254,14 @@ const OcrCustomDocumentParsingAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -9231,14 +10269,17 @@ const OcrCustomDocumentParsingAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrCustomDocumentParsingAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -9267,14 +10308,21 @@ const OcrCustomDocumentParsingAsyncRetrieve2 = {
           properties: {
             amazon: {
               required: ['id', 'final_status'],
-              title: 'ocrcustom_document_parsing_asyncCustomDocumentParsingAsyncDataClass',
+              title:
+                'ocrcustom_document_parsing_asyncCustomDocumentParsingAsyncDataClass',
               type: 'object',
               properties: {
                 items: {
                   title: 'Items',
                   type: 'array',
                   items: {
-                    required: ['confidence', 'value', 'query', 'bounding_box', 'page'],
+                    required: [
+                      'confidence',
+                      'value',
+                      'query',
+                      'bounding_box',
+                      'page',
+                    ],
                     title: 'CustomDocumentParsingAsyncItem',
                     type: 'object',
                     properties: {
@@ -9309,7 +10357,11 @@ const OcrCustomDocumentParsingAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -9334,7 +10386,12 @@ const OcrCustomDocumentParsingAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -9374,7 +10431,7 @@ const OcrCustomDocumentParsingAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrDataExtractionCreate = {
   body: {
     type: 'object',
@@ -9578,7 +10635,12 @@ const OcrDataExtractionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -9618,7 +10680,7 @@ const OcrDataExtractionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrIdentityParserCreate = {
   body: {
     type: 'object',
@@ -9707,7 +10769,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   given_names: {
@@ -9717,8 +10783,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -9727,7 +10801,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   birth_date: {
@@ -9735,7 +10813,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuance_date: {
@@ -9743,7 +10825,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   expire_date: {
@@ -9751,7 +10837,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   document_id: {
@@ -9759,7 +10849,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuing_state: {
@@ -9767,7 +10861,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   address: {
@@ -9775,7 +10873,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   age: {
@@ -9783,7 +10885,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   country: {
@@ -9802,7 +10908,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   gender: {
@@ -9810,7 +10920,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   image_id: {
@@ -9820,8 +10934,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -9832,8 +10954,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -9842,7 +10972,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   nationality: {
@@ -9850,7 +10984,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                 },
@@ -9903,7 +11041,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   given_names: {
@@ -9913,8 +11055,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -9923,7 +11073,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   birth_date: {
@@ -9931,7 +11085,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuance_date: {
@@ -9939,7 +11097,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   expire_date: {
@@ -9947,7 +11109,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   document_id: {
@@ -9955,7 +11121,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuing_state: {
@@ -9963,7 +11133,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   address: {
@@ -9971,7 +11145,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   age: {
@@ -9979,7 +11157,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   country: {
@@ -9998,7 +11180,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   gender: {
@@ -10006,7 +11192,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   image_id: {
@@ -10016,8 +11206,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10028,8 +11226,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10038,7 +11244,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   nationality: {
@@ -10046,7 +11256,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                 },
@@ -10099,7 +11313,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   given_names: {
@@ -10109,8 +11327,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10119,7 +11345,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   birth_date: {
@@ -10127,7 +11357,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuance_date: {
@@ -10135,7 +11369,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   expire_date: {
@@ -10143,7 +11381,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   document_id: {
@@ -10151,7 +11393,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuing_state: {
@@ -10159,7 +11405,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   address: {
@@ -10167,7 +11417,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   age: {
@@ -10175,7 +11429,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   country: {
@@ -10194,7 +11452,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   gender: {
@@ -10202,7 +11464,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   image_id: {
@@ -10212,8 +11478,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10224,8 +11498,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10234,7 +11516,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   nationality: {
@@ -10242,7 +11528,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                 },
@@ -10295,7 +11585,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   given_names: {
@@ -10305,8 +11599,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10315,7 +11617,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   birth_date: {
@@ -10323,7 +11629,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuance_date: {
@@ -10331,7 +11641,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   expire_date: {
@@ -10339,7 +11653,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   document_id: {
@@ -10347,7 +11665,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuing_state: {
@@ -10355,7 +11677,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   address: {
@@ -10363,7 +11689,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   age: {
@@ -10371,7 +11701,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   country: {
@@ -10390,7 +11724,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   gender: {
@@ -10398,7 +11736,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   image_id: {
@@ -10408,8 +11750,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10420,8 +11770,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10430,7 +11788,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   nationality: {
@@ -10438,7 +11800,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                 },
@@ -10491,7 +11857,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   given_names: {
@@ -10501,8 +11871,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10511,7 +11889,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   birth_date: {
@@ -10519,7 +11901,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuance_date: {
@@ -10527,7 +11913,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   expire_date: {
@@ -10535,7 +11925,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   document_id: {
@@ -10543,7 +11937,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuing_state: {
@@ -10551,7 +11949,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   address: {
@@ -10559,7 +11961,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   age: {
@@ -10567,7 +11973,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   country: {
@@ -10586,7 +11996,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   gender: {
@@ -10594,7 +12008,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   image_id: {
@@ -10604,8 +12022,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10616,8 +12042,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10626,7 +12060,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   nationality: {
@@ -10634,7 +12072,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                 },
@@ -10687,7 +12129,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   given_names: {
@@ -10697,8 +12143,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10707,7 +12161,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   birth_date: {
@@ -10715,7 +12173,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuance_date: {
@@ -10723,7 +12185,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   expire_date: {
@@ -10731,7 +12197,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   document_id: {
@@ -10739,7 +12209,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   issuing_state: {
@@ -10747,7 +12221,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   address: {
@@ -10755,7 +12233,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   age: {
@@ -10763,7 +12245,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   country: {
@@ -10782,7 +12268,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   gender: {
@@ -10790,7 +12280,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   image_id: {
@@ -10800,8 +12294,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10812,8 +12314,16 @@ const OcrIdentityParserCreate = {
                       title: 'ItemIdentityParserDataClass',
                       type: 'object',
                       properties: {
-                        value: { default: null, title: 'Value', type: 'string' },
-                        confidence: { default: null, title: 'Confidence', type: 'integer' },
+                        value: {
+                          default: null,
+                          title: 'Value',
+                          type: 'string',
+                        },
+                        confidence: {
+                          default: null,
+                          title: 'Confidence',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -10822,7 +12332,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                   nationality: {
@@ -10830,7 +12344,11 @@ const OcrIdentityParserCreate = {
                     type: 'object',
                     properties: {
                       value: { default: null, title: 'Value', type: 'string' },
-                      confidence: { default: null, title: 'Confidence', type: 'integer' },
+                      confidence: {
+                        default: null,
+                        title: 'Confidence',
+                        type: 'integer',
+                      },
                     },
                   },
                 },
@@ -10864,7 +12382,12 @@ const OcrIdentityParserCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -10904,7 +12427,7 @@ const OcrIdentityParserCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrInvoiceParserCreate = {
   body: {
     type: 'object',
@@ -10914,7 +12437,9 @@ const OcrInvoiceParserCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['amazon,base64,dataleon,mindee,veryfi,google,klippa,affinda,microsoft'],
+        examples: [
+          'amazon,base64,dataleon,mindee,veryfi,google,klippa,affinda,microsoft',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -10998,15 +12523,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -11032,10 +12573,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -11057,40 +12614,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -11104,21 +12729,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -11134,12 +12795,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -11150,15 +12827,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -11211,15 +12924,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -11245,10 +12974,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -11270,40 +13015,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -11317,21 +13130,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -11347,12 +13196,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -11363,15 +13228,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -11424,15 +13325,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -11458,10 +13375,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -11483,40 +13416,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -11530,21 +13531,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -11560,12 +13597,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -11576,15 +13629,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -11637,15 +13726,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -11671,10 +13776,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -11696,40 +13817,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -11743,21 +13932,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -11773,12 +13998,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -11789,15 +14030,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -11850,15 +14127,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -11884,10 +14177,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -11909,40 +14218,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -11956,21 +14333,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -11986,12 +14399,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -12002,15 +14431,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -12063,15 +14528,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -12097,10 +14578,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -12122,40 +14619,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -12169,21 +14734,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -12199,12 +14800,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -12215,15 +14832,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -12276,15 +14929,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -12310,10 +14979,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -12335,40 +15020,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -12382,21 +15135,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -12412,12 +15201,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -12428,15 +15233,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -12489,15 +15330,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -12523,10 +15380,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -12548,40 +15421,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -12595,21 +15536,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -12625,12 +15602,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -12641,15 +15634,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -12702,15 +15731,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -12736,10 +15781,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -12761,40 +15822,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -12808,21 +15937,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -12838,12 +16003,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -12854,15 +16035,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -12915,15 +16132,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -12949,10 +16182,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -12974,40 +16223,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -13021,21 +16338,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -13051,12 +16404,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -13067,15 +16436,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -13128,15 +16533,31 @@ const OcrInvoiceParserCreate = {
                     title: 'CustomerInformationInvoice',
                     type: 'object',
                     properties: {
-                      customer_name: { title: 'Customer Name', type: 'string', default: null },
+                      customer_name: {
+                        title: 'Customer Name',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_address: {
                         title: 'Customer Address',
                         type: 'string',
                         default: null,
                       },
-                      customer_email: { title: 'Customer Email', type: 'string', default: null },
-                      customer_id: { title: 'Customer Id', type: 'string', default: null },
-                      customer_tax_id: { title: 'Customer Tax Id', type: 'string', default: null },
+                      customer_email: {
+                        title: 'Customer Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_id: {
+                        title: 'Customer Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      customer_tax_id: {
+                        title: 'Customer Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
                       customer_mailing_address: {
                         title: 'Customer Mailing Address',
                         type: 'string',
@@ -13162,10 +16583,26 @@ const OcrInvoiceParserCreate = {
                         type: 'string',
                         default: null,
                       },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   merchant_information: {
@@ -13187,40 +16624,108 @@ const OcrInvoiceParserCreate = {
                     title: 'MerchantInformationInvoice',
                     type: 'object',
                     properties: {
-                      merchant_name: { title: 'Merchant Name', type: 'string', default: null },
+                      merchant_name: {
+                        title: 'Merchant Name',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_address: {
                         title: 'Merchant Address',
                         type: 'string',
                         default: null,
                       },
-                      merchant_phone: { title: 'Merchant Phone', type: 'string', default: null },
-                      merchant_email: { title: 'Merchant Email', type: 'string', default: null },
-                      merchant_fax: { title: 'Merchant Fax', type: 'string', default: null },
+                      merchant_phone: {
+                        title: 'Merchant Phone',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_email: {
+                        title: 'Merchant Email',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_fax: {
+                        title: 'Merchant Fax',
+                        type: 'string',
+                        default: null,
+                      },
                       merchant_website: {
                         title: 'Merchant Website',
                         type: 'string',
                         default: null,
                       },
-                      merchant_tax_id: { title: 'Merchant Tax Id', type: 'string', default: null },
-                      merchant_siret: { title: 'Merchant Siret', type: 'string', default: null },
-                      merchant_siren: { title: 'Merchant Siren', type: 'string', default: null },
-                      abn_number: { title: 'Abn Number', type: 'string', default: null },
-                      gst_number: { title: 'Gst Number', type: 'string', default: null },
-                      pan_number: { title: 'Pan Number', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
+                      merchant_tax_id: {
+                        title: 'Merchant Tax Id',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siret: {
+                        title: 'Merchant Siret',
+                        type: 'string',
+                        default: null,
+                      },
+                      merchant_siren: {
+                        title: 'Merchant Siren',
+                        type: 'string',
+                        default: null,
+                      },
+                      abn_number: {
+                        title: 'Abn Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      gst_number: {
+                        title: 'Gst Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      pan_number: {
+                        title: 'Pan Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
-                  gratuity: { default: null, title: 'Gratuity', type: 'integer' },
-                  amount_due: { default: null, title: 'Amount Due', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
+                  gratuity: {
+                    default: null,
+                    title: 'Gratuity',
+                    type: 'integer',
+                  },
+                  amount_due: {
+                    default: null,
+                    title: 'Amount Due',
+                    type: 'integer',
+                  },
                   previous_unpaid_balance: {
                     default: null,
                     title: 'Previous Unpaid Balance',
                     type: 'integer',
                   },
-                  discount: { default: null, title: 'Discount', type: 'integer' },
+                  discount: {
+                    default: null,
+                    title: 'Discount',
+                    type: 'integer',
+                  },
                   taxes: {
                     title: 'Taxes',
                     type: 'array',
@@ -13234,21 +16739,57 @@ const OcrInvoiceParserCreate = {
                       },
                     },
                   },
-                  service_charge: { default: null, title: 'Service Charge', type: 'integer' },
-                  payment_term: { default: null, title: 'Payment Term', type: 'string' },
-                  purchase_order: { default: null, title: 'Purchase Order', type: 'string' },
+                  service_charge: {
+                    default: null,
+                    title: 'Service Charge',
+                    type: 'integer',
+                  },
+                  payment_term: {
+                    default: null,
+                    title: 'Payment Term',
+                    type: 'string',
+                  },
+                  purchase_order: {
+                    default: null,
+                    title: 'Purchase Order',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
-                  service_date: { default: null, title: 'Service Date', type: 'string' },
-                  service_due_date: { default: null, title: 'Service Due Date', type: 'string' },
-                  po_number: { default: null, title: 'Po Number', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
+                  service_date: {
+                    default: null,
+                    title: 'Service Date',
+                    type: 'string',
+                  },
+                  service_due_date: {
+                    default: null,
+                    title: 'Service Due Date',
+                    type: 'string',
+                  },
+                  po_number: {
+                    default: null,
+                    title: 'Po Number',
+                    type: 'string',
+                  },
                   locale: {
                     required: ['currency', 'language'],
                     title: 'LocaleInvoice',
                     type: 'object',
                     properties: {
-                      currency: { title: 'Currency', type: 'string', default: null },
-                      language: { title: 'Language', type: 'string', default: null },
+                      currency: {
+                        title: 'Currency',
+                        type: 'string',
+                        default: null,
+                      },
+                      language: {
+                        title: 'Language',
+                        type: 'string',
+                        default: null,
+                      },
                     },
                   },
                   bank_informations: {
@@ -13264,12 +16805,28 @@ const OcrInvoiceParserCreate = {
                     title: 'BankInvoice',
                     type: 'object',
                     properties: {
-                      account_number: { title: 'Account Number', type: 'string', default: null },
+                      account_number: {
+                        title: 'Account Number',
+                        type: 'string',
+                        default: null,
+                      },
                       iban: { title: 'Iban', type: 'string', default: null },
                       bsb: { title: 'Bsb', type: 'string', default: null },
-                      sort_code: { title: 'Sort Code', type: 'string', default: null },
-                      vat_number: { title: 'Vat Number', type: 'string', default: null },
-                      rooting_number: { title: 'Rooting Number', type: 'string', default: null },
+                      sort_code: {
+                        title: 'Sort Code',
+                        type: 'string',
+                        default: null,
+                      },
+                      vat_number: {
+                        title: 'Vat Number',
+                        type: 'string',
+                        default: null,
+                      },
+                      rooting_number: {
+                        title: 'Rooting Number',
+                        type: 'string',
+                        default: null,
+                      },
                       swift: { title: 'Swift', type: 'string', default: null },
                     },
                   },
@@ -13280,15 +16837,51 @@ const OcrInvoiceParserCreate = {
                       title: 'ItemLinesInvoice',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
-                        discount: { default: null, title: 'Discount', type: 'integer' },
-                        product_code: { default: null, title: 'Product Code', type: 'string' },
-                        date_item: { default: null, title: 'Date Item', type: 'string' },
-                        tax_item: { default: null, title: 'Tax Item', type: 'integer' },
-                        tax_rate: { default: null, title: 'Tax Rate', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
+                        discount: {
+                          default: null,
+                          title: 'Discount',
+                          type: 'integer',
+                        },
+                        product_code: {
+                          default: null,
+                          title: 'Product Code',
+                          type: 'string',
+                        },
+                        date_item: {
+                          default: null,
+                          title: 'Date Item',
+                          type: 'string',
+                        },
+                        tax_item: {
+                          default: null,
+                          title: 'Tax Item',
+                          type: 'integer',
+                        },
+                        tax_rate: {
+                          default: null,
+                          title: 'Tax Rate',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -13323,7 +16916,12 @@ const OcrInvoiceParserCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -13363,7 +16961,7 @@ const OcrInvoiceParserCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrAsyncCreate = {
   body: {
     type: 'object',
@@ -13425,7 +17023,7 @@ const OcrOcrAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrAsyncRetrieve = {
   response: {
     '200': {
@@ -13448,7 +17046,14 @@ const OcrOcrAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -13456,14 +17061,17 @@ const OcrOcrAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -13529,7 +17137,11 @@ const OcrOcrAsyncRetrieve2 = {
                               items: {
                                 description:
                                   'Word of a document\n\n    Attributes:\n        text (str): Text detected in the word\n        bounding_boxes (Sequence[BoundingBox]): Bounding boxes of the words in the word\n        confidence (float): Confidence score of the word\n    ',
-                                required: ['text', 'bounding_box', 'confidence'],
+                                required: [
+                                  'text',
+                                  'bounding_box',
+                                  'confidence',
+                                ],
                                 title: 'Word',
                                 type: 'object',
                                 properties: {
@@ -13541,27 +17153,36 @@ const OcrOcrAsyncRetrieve2 = {
                                   bounding_box: {
                                     description:
                                       'Bounding box of a word in the image\n\n    Attributes:\n        left (float): Left coordinate of the bounding box\n        top (float): Top coordinate of the bounding box\n        width (float): Width of the bounding box\n        height (float): Height of the bounding box\n        text (str): Text detected in the bounding box\n\n    Constructor:\n        from_json (classmethod): Create a new instance of BoundingBox from a JSON object\n        from_normalized_vertices (classmethod): Create a new instance of BoundingBox from normalized vertices\n        unknown (classmethod): Return a invalid bouding_box with all field filled with `-1`\n    ',
-                                    required: ['left', 'top', 'width', 'height'],
+                                    required: [
+                                      'left',
+                                      'top',
+                                      'width',
+                                      'height',
+                                    ],
                                     title: 'BoundingBox',
                                     type: 'object',
                                     properties: {
                                       left: {
-                                        description: 'Left coordinate of the bounding box',
+                                        description:
+                                          'Left coordinate of the bounding box',
                                         title: 'Left',
                                         type: 'integer',
                                       },
                                       top: {
-                                        description: 'Top coordinate of the bounding box',
+                                        description:
+                                          'Top coordinate of the bounding box',
                                         title: 'Top',
                                         type: 'integer',
                                       },
                                       width: {
-                                        description: 'Width of the bounding box',
+                                        description:
+                                          'Width of the bounding box',
                                         title: 'Width',
                                         type: 'integer',
                                       },
                                       height: {
-                                        description: 'Height of the bounding box',
+                                        description:
+                                          'Height of the bounding box',
                                         title: 'Height',
                                         type: 'integer',
                                       },
@@ -13583,12 +17204,14 @@ const OcrOcrAsyncRetrieve2 = {
                               type: 'object',
                               properties: {
                                 left: {
-                                  description: 'Left coordinate of the bounding box',
+                                  description:
+                                    'Left coordinate of the bounding box',
                                   title: 'Left',
                                   type: 'integer',
                                 },
                                 top: {
-                                  description: 'Top coordinate of the bounding box',
+                                  description:
+                                    'Top coordinate of the bounding box',
                                   title: 'Top',
                                   type: 'integer',
                                 },
@@ -13633,7 +17256,11 @@ const OcrOcrAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             google: {
@@ -13675,7 +17302,11 @@ const OcrOcrAsyncRetrieve2 = {
                               items: {
                                 description:
                                   'Word of a document\n\n    Attributes:\n        text (str): Text detected in the word\n        bounding_boxes (Sequence[BoundingBox]): Bounding boxes of the words in the word\n        confidence (float): Confidence score of the word\n    ',
-                                required: ['text', 'bounding_box', 'confidence'],
+                                required: [
+                                  'text',
+                                  'bounding_box',
+                                  'confidence',
+                                ],
                                 title: 'Word',
                                 type: 'object',
                                 properties: {
@@ -13687,27 +17318,36 @@ const OcrOcrAsyncRetrieve2 = {
                                   bounding_box: {
                                     description:
                                       'Bounding box of a word in the image\n\n    Attributes:\n        left (float): Left coordinate of the bounding box\n        top (float): Top coordinate of the bounding box\n        width (float): Width of the bounding box\n        height (float): Height of the bounding box\n        text (str): Text detected in the bounding box\n\n    Constructor:\n        from_json (classmethod): Create a new instance of BoundingBox from a JSON object\n        from_normalized_vertices (classmethod): Create a new instance of BoundingBox from normalized vertices\n        unknown (classmethod): Return a invalid bouding_box with all field filled with `-1`\n    ',
-                                    required: ['left', 'top', 'width', 'height'],
+                                    required: [
+                                      'left',
+                                      'top',
+                                      'width',
+                                      'height',
+                                    ],
                                     title: 'BoundingBox',
                                     type: 'object',
                                     properties: {
                                       left: {
-                                        description: 'Left coordinate of the bounding box',
+                                        description:
+                                          'Left coordinate of the bounding box',
                                         title: 'Left',
                                         type: 'integer',
                                       },
                                       top: {
-                                        description: 'Top coordinate of the bounding box',
+                                        description:
+                                          'Top coordinate of the bounding box',
                                         title: 'Top',
                                         type: 'integer',
                                       },
                                       width: {
-                                        description: 'Width of the bounding box',
+                                        description:
+                                          'Width of the bounding box',
                                         title: 'Width',
                                         type: 'integer',
                                       },
                                       height: {
-                                        description: 'Height of the bounding box',
+                                        description:
+                                          'Height of the bounding box',
                                         title: 'Height',
                                         type: 'integer',
                                       },
@@ -13729,12 +17369,14 @@ const OcrOcrAsyncRetrieve2 = {
                               type: 'object',
                               properties: {
                                 left: {
-                                  description: 'Left coordinate of the bounding box',
+                                  description:
+                                    'Left coordinate of the bounding box',
                                   title: 'Left',
                                   type: 'integer',
                                 },
                                 top: {
-                                  description: 'Top coordinate of the bounding box',
+                                  description:
+                                    'Top coordinate of the bounding box',
                                   title: 'Top',
                                   type: 'integer',
                                 },
@@ -13779,7 +17421,11 @@ const OcrOcrAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -13821,7 +17467,11 @@ const OcrOcrAsyncRetrieve2 = {
                               items: {
                                 description:
                                   'Word of a document\n\n    Attributes:\n        text (str): Text detected in the word\n        bounding_boxes (Sequence[BoundingBox]): Bounding boxes of the words in the word\n        confidence (float): Confidence score of the word\n    ',
-                                required: ['text', 'bounding_box', 'confidence'],
+                                required: [
+                                  'text',
+                                  'bounding_box',
+                                  'confidence',
+                                ],
                                 title: 'Word',
                                 type: 'object',
                                 properties: {
@@ -13833,27 +17483,36 @@ const OcrOcrAsyncRetrieve2 = {
                                   bounding_box: {
                                     description:
                                       'Bounding box of a word in the image\n\n    Attributes:\n        left (float): Left coordinate of the bounding box\n        top (float): Top coordinate of the bounding box\n        width (float): Width of the bounding box\n        height (float): Height of the bounding box\n        text (str): Text detected in the bounding box\n\n    Constructor:\n        from_json (classmethod): Create a new instance of BoundingBox from a JSON object\n        from_normalized_vertices (classmethod): Create a new instance of BoundingBox from normalized vertices\n        unknown (classmethod): Return a invalid bouding_box with all field filled with `-1`\n    ',
-                                    required: ['left', 'top', 'width', 'height'],
+                                    required: [
+                                      'left',
+                                      'top',
+                                      'width',
+                                      'height',
+                                    ],
                                     title: 'BoundingBox',
                                     type: 'object',
                                     properties: {
                                       left: {
-                                        description: 'Left coordinate of the bounding box',
+                                        description:
+                                          'Left coordinate of the bounding box',
                                         title: 'Left',
                                         type: 'integer',
                                       },
                                       top: {
-                                        description: 'Top coordinate of the bounding box',
+                                        description:
+                                          'Top coordinate of the bounding box',
                                         title: 'Top',
                                         type: 'integer',
                                       },
                                       width: {
-                                        description: 'Width of the bounding box',
+                                        description:
+                                          'Width of the bounding box',
                                         title: 'Width',
                                         type: 'integer',
                                       },
                                       height: {
-                                        description: 'Height of the bounding box',
+                                        description:
+                                          'Height of the bounding box',
                                         title: 'Height',
                                         type: 'integer',
                                       },
@@ -13875,12 +17534,14 @@ const OcrOcrAsyncRetrieve2 = {
                               type: 'object',
                               properties: {
                                 left: {
-                                  description: 'Left coordinate of the bounding box',
+                                  description:
+                                    'Left coordinate of the bounding box',
                                   title: 'Left',
                                   type: 'integer',
                                 },
                                 top: {
-                                  description: 'Top coordinate of the bounding box',
+                                  description:
+                                    'Top coordinate of the bounding box',
                                   title: 'Top',
                                   type: 'integer',
                                 },
@@ -13925,7 +17586,11 @@ const OcrOcrAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -13950,7 +17615,12 @@ const OcrOcrAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -13990,7 +17660,7 @@ const OcrOcrAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrCreate = {
   body: {
     type: 'object',
@@ -14318,7 +17988,12 @@ const OcrOcrCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -14358,7 +18033,7 @@ const OcrOcrCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrTablesAsyncCreate = {
   body: {
     type: 'object',
@@ -14426,7 +18101,7 @@ const OcrOcrTablesAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrTablesAsyncRetrieve = {
   response: {
     '200': {
@@ -14449,7 +18124,14 @@ const OcrOcrTablesAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -14457,14 +18139,17 @@ const OcrOcrTablesAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrOcrTablesAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -14528,7 +18213,11 @@ const OcrOcrTablesAsyncRetrieve2 = {
                               items: {
                                 description:
                                   'Word of a document\n\n    Attributes:\n        text (str): Text detected in the word\n        bounding_boxes (Sequence[BoundingBox]): Bounding boxes of the words in the word\n        confidence (float): Confidence score of the word\n    ',
-                                required: ['text', 'bounding_box', 'confidence'],
+                                required: [
+                                  'text',
+                                  'bounding_box',
+                                  'confidence',
+                                ],
                                 title: 'Word',
                                 type: 'object',
                                 properties: {
@@ -14540,27 +18229,36 @@ const OcrOcrTablesAsyncRetrieve2 = {
                                   bounding_box: {
                                     description:
                                       'Bounding box of a word in the image\n\n    Attributes:\n        left (float): Left coordinate of the bounding box\n        top (float): Top coordinate of the bounding box\n        width (float): Width of the bounding box\n        height (float): Height of the bounding box\n        text (str): Text detected in the bounding box\n\n    Constructor:\n        from_json (classmethod): Create a new instance of BoundingBox from a JSON object\n        from_normalized_vertices (classmethod): Create a new instance of BoundingBox from normalized vertices\n        unknown (classmethod): Return a invalid bouding_box with all field filled with `-1`\n    ',
-                                    required: ['left', 'top', 'width', 'height'],
+                                    required: [
+                                      'left',
+                                      'top',
+                                      'width',
+                                      'height',
+                                    ],
                                     title: 'BoundingBox',
                                     type: 'object',
                                     properties: {
                                       left: {
-                                        description: 'Left coordinate of the bounding box',
+                                        description:
+                                          'Left coordinate of the bounding box',
                                         title: 'Left',
                                         type: 'integer',
                                       },
                                       top: {
-                                        description: 'Top coordinate of the bounding box',
+                                        description:
+                                          'Top coordinate of the bounding box',
                                         title: 'Top',
                                         type: 'integer',
                                       },
                                       width: {
-                                        description: 'Width of the bounding box',
+                                        description:
+                                          'Width of the bounding box',
                                         title: 'Width',
                                         type: 'integer',
                                       },
                                       height: {
-                                        description: 'Height of the bounding box',
+                                        description:
+                                          'Height of the bounding box',
                                         title: 'Height',
                                         type: 'integer',
                                       },
@@ -14582,12 +18280,14 @@ const OcrOcrTablesAsyncRetrieve2 = {
                               type: 'object',
                               properties: {
                                 left: {
-                                  description: 'Left coordinate of the bounding box',
+                                  description:
+                                    'Left coordinate of the bounding box',
                                   title: 'Left',
                                   type: 'integer',
                                 },
                                 top: {
-                                  description: 'Top coordinate of the bounding box',
+                                  description:
+                                    'Top coordinate of the bounding box',
                                   title: 'Top',
                                   type: 'integer',
                                 },
@@ -14628,7 +18328,11 @@ const OcrOcrTablesAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             microsoft: {
@@ -14668,7 +18372,11 @@ const OcrOcrTablesAsyncRetrieve2 = {
                               items: {
                                 description:
                                   'Word of a document\n\n    Attributes:\n        text (str): Text detected in the word\n        bounding_boxes (Sequence[BoundingBox]): Bounding boxes of the words in the word\n        confidence (float): Confidence score of the word\n    ',
-                                required: ['text', 'bounding_box', 'confidence'],
+                                required: [
+                                  'text',
+                                  'bounding_box',
+                                  'confidence',
+                                ],
                                 title: 'Word',
                                 type: 'object',
                                 properties: {
@@ -14680,27 +18388,36 @@ const OcrOcrTablesAsyncRetrieve2 = {
                                   bounding_box: {
                                     description:
                                       'Bounding box of a word in the image\n\n    Attributes:\n        left (float): Left coordinate of the bounding box\n        top (float): Top coordinate of the bounding box\n        width (float): Width of the bounding box\n        height (float): Height of the bounding box\n        text (str): Text detected in the bounding box\n\n    Constructor:\n        from_json (classmethod): Create a new instance of BoundingBox from a JSON object\n        from_normalized_vertices (classmethod): Create a new instance of BoundingBox from normalized vertices\n        unknown (classmethod): Return a invalid bouding_box with all field filled with `-1`\n    ',
-                                    required: ['left', 'top', 'width', 'height'],
+                                    required: [
+                                      'left',
+                                      'top',
+                                      'width',
+                                      'height',
+                                    ],
                                     title: 'BoundingBox',
                                     type: 'object',
                                     properties: {
                                       left: {
-                                        description: 'Left coordinate of the bounding box',
+                                        description:
+                                          'Left coordinate of the bounding box',
                                         title: 'Left',
                                         type: 'integer',
                                       },
                                       top: {
-                                        description: 'Top coordinate of the bounding box',
+                                        description:
+                                          'Top coordinate of the bounding box',
                                         title: 'Top',
                                         type: 'integer',
                                       },
                                       width: {
-                                        description: 'Width of the bounding box',
+                                        description:
+                                          'Width of the bounding box',
                                         title: 'Width',
                                         type: 'integer',
                                       },
                                       height: {
-                                        description: 'Height of the bounding box',
+                                        description:
+                                          'Height of the bounding box',
                                         title: 'Height',
                                         type: 'integer',
                                       },
@@ -14722,12 +18439,14 @@ const OcrOcrTablesAsyncRetrieve2 = {
                               type: 'object',
                               properties: {
                                 left: {
-                                  description: 'Left coordinate of the bounding box',
+                                  description:
+                                    'Left coordinate of the bounding box',
                                   title: 'Left',
                                   type: 'integer',
                                 },
                                 top: {
-                                  description: 'Top coordinate of the bounding box',
+                                  description:
+                                    'Top coordinate of the bounding box',
                                   title: 'Top',
                                   type: 'integer',
                                 },
@@ -14768,7 +18487,11 @@ const OcrOcrTablesAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -14808,7 +18531,11 @@ const OcrOcrTablesAsyncRetrieve2 = {
                               items: {
                                 description:
                                   'Word of a document\n\n    Attributes:\n        text (str): Text detected in the word\n        bounding_boxes (Sequence[BoundingBox]): Bounding boxes of the words in the word\n        confidence (float): Confidence score of the word\n    ',
-                                required: ['text', 'bounding_box', 'confidence'],
+                                required: [
+                                  'text',
+                                  'bounding_box',
+                                  'confidence',
+                                ],
                                 title: 'Word',
                                 type: 'object',
                                 properties: {
@@ -14820,27 +18547,36 @@ const OcrOcrTablesAsyncRetrieve2 = {
                                   bounding_box: {
                                     description:
                                       'Bounding box of a word in the image\n\n    Attributes:\n        left (float): Left coordinate of the bounding box\n        top (float): Top coordinate of the bounding box\n        width (float): Width of the bounding box\n        height (float): Height of the bounding box\n        text (str): Text detected in the bounding box\n\n    Constructor:\n        from_json (classmethod): Create a new instance of BoundingBox from a JSON object\n        from_normalized_vertices (classmethod): Create a new instance of BoundingBox from normalized vertices\n        unknown (classmethod): Return a invalid bouding_box with all field filled with `-1`\n    ',
-                                    required: ['left', 'top', 'width', 'height'],
+                                    required: [
+                                      'left',
+                                      'top',
+                                      'width',
+                                      'height',
+                                    ],
                                     title: 'BoundingBox',
                                     type: 'object',
                                     properties: {
                                       left: {
-                                        description: 'Left coordinate of the bounding box',
+                                        description:
+                                          'Left coordinate of the bounding box',
                                         title: 'Left',
                                         type: 'integer',
                                       },
                                       top: {
-                                        description: 'Top coordinate of the bounding box',
+                                        description:
+                                          'Top coordinate of the bounding box',
                                         title: 'Top',
                                         type: 'integer',
                                       },
                                       width: {
-                                        description: 'Width of the bounding box',
+                                        description:
+                                          'Width of the bounding box',
                                         title: 'Width',
                                         type: 'integer',
                                       },
                                       height: {
-                                        description: 'Height of the bounding box',
+                                        description:
+                                          'Height of the bounding box',
                                         title: 'Height',
                                         type: 'integer',
                                       },
@@ -14862,12 +18598,14 @@ const OcrOcrTablesAsyncRetrieve2 = {
                               type: 'object',
                               properties: {
                                 left: {
-                                  description: 'Left coordinate of the bounding box',
+                                  description:
+                                    'Left coordinate of the bounding box',
                                   title: 'Left',
                                   type: 'integer',
                                 },
                                 top: {
-                                  description: 'Top coordinate of the bounding box',
+                                  description:
+                                    'Top coordinate of the bounding box',
                                   title: 'Top',
                                   type: 'integer',
                                 },
@@ -14908,7 +18646,11 @@ const OcrOcrTablesAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -14933,7 +18675,12 @@ const OcrOcrTablesAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -14973,7 +18720,7 @@ const OcrOcrTablesAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrReceiptParserCreate = {
   body: {
     type: 'object',
@@ -14983,7 +18730,9 @@ const OcrReceiptParserCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['base64,dataleon,veryfi,amazon,google,microsoft,klippa,mindee,tabscanner'],
+        examples: [
+          'base64,dataleon,veryfi,amazon,google,microsoft,klippa,mindee,tabscanner',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -15047,9 +18796,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15063,52 +18824,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15118,7 +18939,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15135,10 +18960,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15171,9 +19012,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15187,52 +19040,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15242,7 +19155,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15259,10 +19176,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15295,9 +19228,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15311,52 +19256,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15366,7 +19371,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15383,10 +19392,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15419,9 +19444,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15435,52 +19472,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15490,7 +19587,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15507,10 +19608,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15543,9 +19660,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15559,52 +19688,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15614,7 +19803,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15631,10 +19824,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15667,9 +19876,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15683,52 +19904,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15738,7 +20019,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15755,10 +20040,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15791,9 +20092,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15807,52 +20120,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15862,7 +20235,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -15879,10 +20256,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -15915,9 +20308,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -15931,52 +20336,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -15986,7 +20451,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -16003,10 +20472,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -16039,9 +20524,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -16055,52 +20552,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -16110,7 +20667,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -16127,10 +20688,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -16163,9 +20740,21 @@ const OcrReceiptParserCreate = {
                 title: 'InfosReceiptParserDataClass',
                 type: 'object',
                 properties: {
-                  invoice_number: { default: null, title: 'Invoice Number', type: 'string' },
-                  invoice_total: { default: null, title: 'Invoice Total', type: 'integer' },
-                  invoice_subtotal: { default: null, title: 'Invoice Subtotal', type: 'integer' },
+                  invoice_number: {
+                    default: null,
+                    title: 'Invoice Number',
+                    type: 'string',
+                  },
+                  invoice_total: {
+                    default: null,
+                    title: 'Invoice Total',
+                    type: 'integer',
+                  },
+                  invoice_subtotal: {
+                    default: null,
+                    title: 'Invoice Subtotal',
+                    type: 'integer',
+                  },
                   barcodes: {
                     title: 'Barcodes',
                     type: 'array',
@@ -16179,52 +20768,112 @@ const OcrReceiptParserCreate = {
                       },
                     },
                   },
-                  category: { default: null, title: 'Category', type: 'string' },
+                  category: {
+                    default: null,
+                    title: 'Category',
+                    type: 'string',
+                  },
                   date: { default: null, title: 'Date', type: 'string' },
-                  due_date: { default: null, title: 'Due Date', type: 'string' },
+                  due_date: {
+                    default: null,
+                    title: 'Due Date',
+                    type: 'string',
+                  },
                   time: { default: null, title: 'Time', type: 'string' },
                   customer_information: {
                     title: 'CustomerInformation',
                     type: 'object',
                     properties: {
-                      customer_name: { default: null, title: 'Customer Name', type: 'string' },
+                      customer_name: {
+                        default: null,
+                        title: 'Customer Name',
+                        type: 'string',
+                      },
                     },
                   },
                   merchant_information: {
                     title: 'MerchantInformation',
                     type: 'object',
                     properties: {
-                      merchant_name: { default: null, title: 'Merchant Name', type: 'string' },
+                      merchant_name: {
+                        default: null,
+                        title: 'Merchant Name',
+                        type: 'string',
+                      },
                       merchant_address: {
                         default: null,
                         title: 'Merchant Address',
                         type: 'string',
                       },
-                      merchant_phone: { default: null, title: 'Merchant Phone', type: 'string' },
-                      merchant_url: { default: null, title: 'Merchant Url', type: 'string' },
-                      merchant_siret: { default: null, title: 'Merchant Siret', type: 'string' },
-                      merchant_siren: { default: null, title: 'Merchant Siren', type: 'string' },
+                      merchant_phone: {
+                        default: null,
+                        title: 'Merchant Phone',
+                        type: 'string',
+                      },
+                      merchant_url: {
+                        default: null,
+                        title: 'Merchant Url',
+                        type: 'string',
+                      },
+                      merchant_siret: {
+                        default: null,
+                        title: 'Merchant Siret',
+                        type: 'string',
+                      },
+                      merchant_siren: {
+                        default: null,
+                        title: 'Merchant Siren',
+                        type: 'string',
+                      },
                     },
                   },
                   payment_information: {
                     title: 'PaymentInformation',
                     type: 'object',
                     properties: {
-                      card_type: { default: null, title: 'Card Type', type: 'string' },
-                      card_number: { default: null, title: 'Card Number', type: 'string' },
+                      card_type: {
+                        default: null,
+                        title: 'Card Type',
+                        type: 'string',
+                      },
+                      card_number: {
+                        default: null,
+                        title: 'Card Number',
+                        type: 'string',
+                      },
                       cash: { default: null, title: 'Cash', type: 'string' },
                       tip: { default: null, title: 'Tip', type: 'string' },
-                      discount: { default: null, title: 'Discount', type: 'string' },
-                      change: { default: null, title: 'Change', type: 'string' },
+                      discount: {
+                        default: null,
+                        title: 'Discount',
+                        type: 'string',
+                      },
+                      change: {
+                        default: null,
+                        title: 'Change',
+                        type: 'string',
+                      },
                     },
                   },
                   locale: {
                     title: 'Locale',
                     type: 'object',
                     properties: {
-                      currency: { default: null, title: 'Currency', type: 'string' },
-                      language: { default: null, title: 'Language', type: 'string' },
-                      country: { default: null, title: 'Country', type: 'string' },
+                      currency: {
+                        default: null,
+                        title: 'Currency',
+                        type: 'string',
+                      },
+                      language: {
+                        default: null,
+                        title: 'Language',
+                        type: 'string',
+                      },
+                      country: {
+                        default: null,
+                        title: 'Country',
+                        type: 'string',
+                      },
                     },
                   },
                   taxes: {
@@ -16234,7 +20883,11 @@ const OcrReceiptParserCreate = {
                       title: 'Taxes',
                       type: 'object',
                       properties: {
-                        taxes: { default: null, title: 'Taxes', type: 'integer' },
+                        taxes: {
+                          default: null,
+                          title: 'Taxes',
+                          type: 'integer',
+                        },
                         rate: { default: null, title: 'Rate', type: 'integer' },
                       },
                     },
@@ -16251,10 +20904,26 @@ const OcrReceiptParserCreate = {
                       title: 'ItemLines',
                       type: 'object',
                       properties: {
-                        description: { default: null, title: 'Description', type: 'string' },
-                        quantity: { default: null, title: 'Quantity', type: 'integer' },
-                        amount: { default: null, title: 'Amount', type: 'integer' },
-                        unit_price: { default: null, title: 'Unit Price', type: 'integer' },
+                        description: {
+                          default: null,
+                          title: 'Description',
+                          type: 'string',
+                        },
+                        quantity: {
+                          default: null,
+                          title: 'Quantity',
+                          type: 'integer',
+                        },
+                        amount: {
+                          default: null,
+                          title: 'Amount',
+                          type: 'integer',
+                        },
+                        unit_price: {
+                          default: null,
+                          title: 'Unit Price',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -16289,7 +20958,12 @@ const OcrReceiptParserCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -16329,7 +21003,7 @@ const OcrReceiptParserCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const OcrResumeParserCreate = {
   body: {
     type: 'object',
@@ -16450,15 +21124,27 @@ const OcrResumeParserCreate = {
                       title: 'ResumeLocation',
                       type: 'object',
                       properties: {
-                        formatted_location: { title: 'Formatted Location', type: 'string' },
+                        formatted_location: {
+                          title: 'Formatted Location',
+                          type: 'string',
+                        },
                         postal_code: { title: 'Postal Code', type: 'string' },
                         region: { title: 'Region', type: 'string' },
                         country: { title: 'Country', type: 'string' },
                         country_code: { title: 'Country Code', type: 'string' },
-                        raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                        raw_input_location: {
+                          title: 'Raw Input Location',
+                          type: 'string',
+                        },
                         street: { title: 'Street', type: 'string' },
-                        street_number: { title: 'Street Number', type: 'string' },
-                        appartment_number: { title: 'Appartment Number', type: 'string' },
+                        street_number: {
+                          title: 'Street Number',
+                          type: 'string',
+                        },
+                        appartment_number: {
+                          title: 'Appartment Number',
+                          type: 'string',
+                        },
                         city: { title: 'City', type: 'string' },
                       },
                     },
@@ -16466,11 +21152,30 @@ const OcrResumeParserCreate = {
                     objective: { title: 'Objective', type: 'string' },
                     date_of_birth: { title: 'Date Of Birth', type: 'string' },
                     place_of_birth: { title: 'Place Of Birth', type: 'string' },
-                    phones: { title: 'Phones', type: 'array', items: { type: 'string' } },
-                    mails: { title: 'Mails', type: 'array', items: { type: 'string' } },
-                    urls: { title: 'Urls', type: 'array', items: { type: 'string' } },
-                    fax: { title: 'Fax', type: 'array', items: { type: 'string' } },
-                    current_profession: { title: 'Current Profession', type: 'string' },
+                    phones: {
+                      title: 'Phones',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    mails: {
+                      title: 'Mails',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    urls: {
+                      title: 'Urls',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    fax: {
+                      title: 'Fax',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    current_profession: {
+                      title: 'Current Profession',
+                      type: 'string',
+                    },
                     gender: { title: 'Gender', type: 'string' },
                     nationality: { title: 'Nationality', type: 'string' },
                     martial_status: { title: 'Martial Status', type: 'string' },
@@ -16482,7 +21187,10 @@ const OcrResumeParserCreate = {
                   title: 'ResumeEducation',
                   type: 'object',
                   properties: {
-                    total_years_education: { title: 'Total Years Education', type: 'integer' },
+                    total_years_education: {
+                      title: 'Total Years Education',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
@@ -16519,22 +21227,46 @@ const OcrResumeParserCreate = {
                             title: 'ResumeLocation',
                             type: 'object',
                             properties: {
-                              formatted_location: { title: 'Formatted Location', type: 'string' },
-                              postal_code: { title: 'Postal Code', type: 'string' },
+                              formatted_location: {
+                                title: 'Formatted Location',
+                                type: 'string',
+                              },
+                              postal_code: {
+                                title: 'Postal Code',
+                                type: 'string',
+                              },
                               region: { title: 'Region', type: 'string' },
                               country: { title: 'Country', type: 'string' },
-                              country_code: { title: 'Country Code', type: 'string' },
-                              raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                              country_code: {
+                                title: 'Country Code',
+                                type: 'string',
+                              },
+                              raw_input_location: {
+                                title: 'Raw Input Location',
+                                type: 'string',
+                              },
                               street: { title: 'Street', type: 'string' },
-                              street_number: { title: 'Street Number', type: 'string' },
-                              appartment_number: { title: 'Appartment Number', type: 'string' },
+                              street_number: {
+                                title: 'Street Number',
+                                type: 'string',
+                              },
+                              appartment_number: {
+                                title: 'Appartment Number',
+                                type: 'string',
+                              },
                               city: { title: 'City', type: 'string' },
                             },
                           },
-                          establishment: { title: 'Establishment', type: 'string' },
+                          establishment: {
+                            title: 'Establishment',
+                            type: 'string',
+                          },
                           description: { title: 'Description', type: 'string' },
                           gpa: { title: 'Gpa', type: 'string' },
-                          accreditation: { title: 'Accreditation', type: 'string' },
+                          accreditation: {
+                            title: 'Accreditation',
+                            type: 'string',
+                          },
                         },
                       },
                     },
@@ -16545,7 +21277,10 @@ const OcrResumeParserCreate = {
                   title: 'ResumeWorkExp',
                   type: 'object',
                   properties: {
-                    total_years_experience: { title: 'Total Years Experience', type: 'string' },
+                    total_years_experience: {
+                      title: 'Total Years Experience',
+                      type: 'string',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
@@ -16582,15 +21317,33 @@ const OcrResumeParserCreate = {
                             title: 'ResumeLocation',
                             type: 'object',
                             properties: {
-                              formatted_location: { title: 'Formatted Location', type: 'string' },
-                              postal_code: { title: 'Postal Code', type: 'string' },
+                              formatted_location: {
+                                title: 'Formatted Location',
+                                type: 'string',
+                              },
+                              postal_code: {
+                                title: 'Postal Code',
+                                type: 'string',
+                              },
                               region: { title: 'Region', type: 'string' },
                               country: { title: 'Country', type: 'string' },
-                              country_code: { title: 'Country Code', type: 'string' },
-                              raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                              country_code: {
+                                title: 'Country Code',
+                                type: 'string',
+                              },
+                              raw_input_location: {
+                                title: 'Raw Input Location',
+                                type: 'string',
+                              },
                               street: { title: 'Street', type: 'string' },
-                              street_number: { title: 'Street Number', type: 'string' },
-                              appartment_number: { title: 'Appartment Number', type: 'string' },
+                              street_number: {
+                                title: 'Street Number',
+                                type: 'string',
+                              },
+                              appartment_number: {
+                                title: 'Appartment Number',
+                                type: 'string',
+                              },
                               city: { title: 'City', type: 'string' },
                             },
                           },
@@ -16760,15 +21513,27 @@ const OcrResumeParserCreate = {
                       title: 'ResumeLocation',
                       type: 'object',
                       properties: {
-                        formatted_location: { title: 'Formatted Location', type: 'string' },
+                        formatted_location: {
+                          title: 'Formatted Location',
+                          type: 'string',
+                        },
                         postal_code: { title: 'Postal Code', type: 'string' },
                         region: { title: 'Region', type: 'string' },
                         country: { title: 'Country', type: 'string' },
                         country_code: { title: 'Country Code', type: 'string' },
-                        raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                        raw_input_location: {
+                          title: 'Raw Input Location',
+                          type: 'string',
+                        },
                         street: { title: 'Street', type: 'string' },
-                        street_number: { title: 'Street Number', type: 'string' },
-                        appartment_number: { title: 'Appartment Number', type: 'string' },
+                        street_number: {
+                          title: 'Street Number',
+                          type: 'string',
+                        },
+                        appartment_number: {
+                          title: 'Appartment Number',
+                          type: 'string',
+                        },
                         city: { title: 'City', type: 'string' },
                       },
                     },
@@ -16776,11 +21541,30 @@ const OcrResumeParserCreate = {
                     objective: { title: 'Objective', type: 'string' },
                     date_of_birth: { title: 'Date Of Birth', type: 'string' },
                     place_of_birth: { title: 'Place Of Birth', type: 'string' },
-                    phones: { title: 'Phones', type: 'array', items: { type: 'string' } },
-                    mails: { title: 'Mails', type: 'array', items: { type: 'string' } },
-                    urls: { title: 'Urls', type: 'array', items: { type: 'string' } },
-                    fax: { title: 'Fax', type: 'array', items: { type: 'string' } },
-                    current_profession: { title: 'Current Profession', type: 'string' },
+                    phones: {
+                      title: 'Phones',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    mails: {
+                      title: 'Mails',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    urls: {
+                      title: 'Urls',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    fax: {
+                      title: 'Fax',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    current_profession: {
+                      title: 'Current Profession',
+                      type: 'string',
+                    },
                     gender: { title: 'Gender', type: 'string' },
                     nationality: { title: 'Nationality', type: 'string' },
                     martial_status: { title: 'Martial Status', type: 'string' },
@@ -16792,7 +21576,10 @@ const OcrResumeParserCreate = {
                   title: 'ResumeEducation',
                   type: 'object',
                   properties: {
-                    total_years_education: { title: 'Total Years Education', type: 'integer' },
+                    total_years_education: {
+                      title: 'Total Years Education',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
@@ -16829,22 +21616,46 @@ const OcrResumeParserCreate = {
                             title: 'ResumeLocation',
                             type: 'object',
                             properties: {
-                              formatted_location: { title: 'Formatted Location', type: 'string' },
-                              postal_code: { title: 'Postal Code', type: 'string' },
+                              formatted_location: {
+                                title: 'Formatted Location',
+                                type: 'string',
+                              },
+                              postal_code: {
+                                title: 'Postal Code',
+                                type: 'string',
+                              },
                               region: { title: 'Region', type: 'string' },
                               country: { title: 'Country', type: 'string' },
-                              country_code: { title: 'Country Code', type: 'string' },
-                              raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                              country_code: {
+                                title: 'Country Code',
+                                type: 'string',
+                              },
+                              raw_input_location: {
+                                title: 'Raw Input Location',
+                                type: 'string',
+                              },
                               street: { title: 'Street', type: 'string' },
-                              street_number: { title: 'Street Number', type: 'string' },
-                              appartment_number: { title: 'Appartment Number', type: 'string' },
+                              street_number: {
+                                title: 'Street Number',
+                                type: 'string',
+                              },
+                              appartment_number: {
+                                title: 'Appartment Number',
+                                type: 'string',
+                              },
                               city: { title: 'City', type: 'string' },
                             },
                           },
-                          establishment: { title: 'Establishment', type: 'string' },
+                          establishment: {
+                            title: 'Establishment',
+                            type: 'string',
+                          },
                           description: { title: 'Description', type: 'string' },
                           gpa: { title: 'Gpa', type: 'string' },
-                          accreditation: { title: 'Accreditation', type: 'string' },
+                          accreditation: {
+                            title: 'Accreditation',
+                            type: 'string',
+                          },
                         },
                       },
                     },
@@ -16855,7 +21666,10 @@ const OcrResumeParserCreate = {
                   title: 'ResumeWorkExp',
                   type: 'object',
                   properties: {
-                    total_years_experience: { title: 'Total Years Experience', type: 'string' },
+                    total_years_experience: {
+                      title: 'Total Years Experience',
+                      type: 'string',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
@@ -16892,15 +21706,33 @@ const OcrResumeParserCreate = {
                             title: 'ResumeLocation',
                             type: 'object',
                             properties: {
-                              formatted_location: { title: 'Formatted Location', type: 'string' },
-                              postal_code: { title: 'Postal Code', type: 'string' },
+                              formatted_location: {
+                                title: 'Formatted Location',
+                                type: 'string',
+                              },
+                              postal_code: {
+                                title: 'Postal Code',
+                                type: 'string',
+                              },
                               region: { title: 'Region', type: 'string' },
                               country: { title: 'Country', type: 'string' },
-                              country_code: { title: 'Country Code', type: 'string' },
-                              raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                              country_code: {
+                                title: 'Country Code',
+                                type: 'string',
+                              },
+                              raw_input_location: {
+                                title: 'Raw Input Location',
+                                type: 'string',
+                              },
                               street: { title: 'Street', type: 'string' },
-                              street_number: { title: 'Street Number', type: 'string' },
-                              appartment_number: { title: 'Appartment Number', type: 'string' },
+                              street_number: {
+                                title: 'Street Number',
+                                type: 'string',
+                              },
+                              appartment_number: {
+                                title: 'Appartment Number',
+                                type: 'string',
+                              },
                               city: { title: 'City', type: 'string' },
                             },
                           },
@@ -17070,15 +21902,27 @@ const OcrResumeParserCreate = {
                       title: 'ResumeLocation',
                       type: 'object',
                       properties: {
-                        formatted_location: { title: 'Formatted Location', type: 'string' },
+                        formatted_location: {
+                          title: 'Formatted Location',
+                          type: 'string',
+                        },
                         postal_code: { title: 'Postal Code', type: 'string' },
                         region: { title: 'Region', type: 'string' },
                         country: { title: 'Country', type: 'string' },
                         country_code: { title: 'Country Code', type: 'string' },
-                        raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                        raw_input_location: {
+                          title: 'Raw Input Location',
+                          type: 'string',
+                        },
                         street: { title: 'Street', type: 'string' },
-                        street_number: { title: 'Street Number', type: 'string' },
-                        appartment_number: { title: 'Appartment Number', type: 'string' },
+                        street_number: {
+                          title: 'Street Number',
+                          type: 'string',
+                        },
+                        appartment_number: {
+                          title: 'Appartment Number',
+                          type: 'string',
+                        },
                         city: { title: 'City', type: 'string' },
                       },
                     },
@@ -17086,11 +21930,30 @@ const OcrResumeParserCreate = {
                     objective: { title: 'Objective', type: 'string' },
                     date_of_birth: { title: 'Date Of Birth', type: 'string' },
                     place_of_birth: { title: 'Place Of Birth', type: 'string' },
-                    phones: { title: 'Phones', type: 'array', items: { type: 'string' } },
-                    mails: { title: 'Mails', type: 'array', items: { type: 'string' } },
-                    urls: { title: 'Urls', type: 'array', items: { type: 'string' } },
-                    fax: { title: 'Fax', type: 'array', items: { type: 'string' } },
-                    current_profession: { title: 'Current Profession', type: 'string' },
+                    phones: {
+                      title: 'Phones',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    mails: {
+                      title: 'Mails',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    urls: {
+                      title: 'Urls',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    fax: {
+                      title: 'Fax',
+                      type: 'array',
+                      items: { type: 'string' },
+                    },
+                    current_profession: {
+                      title: 'Current Profession',
+                      type: 'string',
+                    },
                     gender: { title: 'Gender', type: 'string' },
                     nationality: { title: 'Nationality', type: 'string' },
                     martial_status: { title: 'Martial Status', type: 'string' },
@@ -17102,7 +21965,10 @@ const OcrResumeParserCreate = {
                   title: 'ResumeEducation',
                   type: 'object',
                   properties: {
-                    total_years_education: { title: 'Total Years Education', type: 'integer' },
+                    total_years_education: {
+                      title: 'Total Years Education',
+                      type: 'integer',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
@@ -17139,22 +22005,46 @@ const OcrResumeParserCreate = {
                             title: 'ResumeLocation',
                             type: 'object',
                             properties: {
-                              formatted_location: { title: 'Formatted Location', type: 'string' },
-                              postal_code: { title: 'Postal Code', type: 'string' },
+                              formatted_location: {
+                                title: 'Formatted Location',
+                                type: 'string',
+                              },
+                              postal_code: {
+                                title: 'Postal Code',
+                                type: 'string',
+                              },
                               region: { title: 'Region', type: 'string' },
                               country: { title: 'Country', type: 'string' },
-                              country_code: { title: 'Country Code', type: 'string' },
-                              raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                              country_code: {
+                                title: 'Country Code',
+                                type: 'string',
+                              },
+                              raw_input_location: {
+                                title: 'Raw Input Location',
+                                type: 'string',
+                              },
                               street: { title: 'Street', type: 'string' },
-                              street_number: { title: 'Street Number', type: 'string' },
-                              appartment_number: { title: 'Appartment Number', type: 'string' },
+                              street_number: {
+                                title: 'Street Number',
+                                type: 'string',
+                              },
+                              appartment_number: {
+                                title: 'Appartment Number',
+                                type: 'string',
+                              },
                               city: { title: 'City', type: 'string' },
                             },
                           },
-                          establishment: { title: 'Establishment', type: 'string' },
+                          establishment: {
+                            title: 'Establishment',
+                            type: 'string',
+                          },
                           description: { title: 'Description', type: 'string' },
                           gpa: { title: 'Gpa', type: 'string' },
-                          accreditation: { title: 'Accreditation', type: 'string' },
+                          accreditation: {
+                            title: 'Accreditation',
+                            type: 'string',
+                          },
                         },
                       },
                     },
@@ -17165,7 +22055,10 @@ const OcrResumeParserCreate = {
                   title: 'ResumeWorkExp',
                   type: 'object',
                   properties: {
-                    total_years_experience: { title: 'Total Years Experience', type: 'string' },
+                    total_years_experience: {
+                      title: 'Total Years Experience',
+                      type: 'string',
+                    },
                     entries: {
                       title: 'Entries',
                       type: 'array',
@@ -17202,15 +22095,33 @@ const OcrResumeParserCreate = {
                             title: 'ResumeLocation',
                             type: 'object',
                             properties: {
-                              formatted_location: { title: 'Formatted Location', type: 'string' },
-                              postal_code: { title: 'Postal Code', type: 'string' },
+                              formatted_location: {
+                                title: 'Formatted Location',
+                                type: 'string',
+                              },
+                              postal_code: {
+                                title: 'Postal Code',
+                                type: 'string',
+                              },
                               region: { title: 'Region', type: 'string' },
                               country: { title: 'Country', type: 'string' },
-                              country_code: { title: 'Country Code', type: 'string' },
-                              raw_input_location: { title: 'Raw Input Location', type: 'string' },
+                              country_code: {
+                                title: 'Country Code',
+                                type: 'string',
+                              },
+                              raw_input_location: {
+                                title: 'Raw Input Location',
+                                type: 'string',
+                              },
                               street: { title: 'Street', type: 'string' },
-                              street_number: { title: 'Street Number', type: 'string' },
-                              appartment_number: { title: 'Appartment Number', type: 'string' },
+                              street_number: {
+                                title: 'Street Number',
+                                type: 'string',
+                              },
+                              appartment_number: {
+                                title: 'Appartment Number',
+                                type: 'string',
+                              },
                               city: { title: 'City', type: 'string' },
                             },
                           },
@@ -17329,7 +22240,12 @@ const OcrResumeParserCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -17369,7 +22285,7 @@ const OcrResumeParserCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const PipelineCreate = {
   body: {
     type: 'object',
@@ -17414,7 +22330,7 @@ const PipelineCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextAiDetectionCreate = {
   body: {
     type: 'object',
@@ -17460,7 +22376,8 @@ const TextAiDetectionCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
       },
     },
     required: ['providers', 'text'],
@@ -17551,7 +22468,12 @@ const TextAiDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -17591,7 +22513,7 @@ const TextAiDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextAnonymizationCreate = {
   body: {
     type: 'object',
@@ -17637,7 +22559,8 @@ const TextAnonymizationCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -17672,7 +22595,11 @@ const TextAnonymizationCreate = {
                 type: 'object',
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
-                  length: { exclusiveMinimum: true, title: 'Length', type: 'integer' },
+                  length: {
+                    exclusiveMinimum: true,
+                    title: 'Length',
+                    type: 'integer',
+                  },
                   category: {
                     description:
                       'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`',
@@ -17709,7 +22636,8 @@ const TextAnonymizationCreate = {
                         enum: ['Name', 'Age', 'Email', 'Phone', 'PersonType'],
                         title: 'PersonalInformationSubCategoryType',
                         type: 'string',
-                        description: '`Name` `Age` `Email` `Phone` `PersonType`',
+                        description:
+                          '`Name` `Age` `Email` `Phone` `PersonType`',
                       },
                       {
                         enum: [
@@ -17743,10 +22671,15 @@ const TextAnonymizationCreate = {
                           '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`',
                       },
                       {
-                        enum: ['CompanyName', 'CompanyNumber', 'BuisnessNumber'],
+                        enum: [
+                          'CompanyName',
+                          'CompanyNumber',
+                          'BuisnessNumber',
+                        ],
                         title: 'OrganizationSubCategoryType',
                         type: 'string',
-                        description: '`CompanyName` `CompanyNumber` `BuisnessNumber`',
+                        description:
+                          '`CompanyName` `CompanyNumber` `BuisnessNumber`',
                       },
                       {
                         enum: ['Date', 'Time', 'DateTime', 'Duration'],
@@ -17764,12 +22697,17 @@ const TextAnonymizationCreate = {
                         enum: ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'],
                         title: 'OtherSubCategoryType',
                         type: 'string',
-                        description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
+                        description:
+                          '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
                       },
                     ],
                     title: 'Subcategory',
                   },
-                  original_label: { minLength: 1, title: 'Original Label', type: 'string' },
+                  original_label: {
+                    minLength: 1,
+                    title: 'Original Label',
+                    type: 'string',
+                  },
                   content: { minLength: 1, title: 'Content', type: 'string' },
                   confidence_score: {
                     maximum: 1,
@@ -17819,7 +22757,11 @@ const TextAnonymizationCreate = {
                 type: 'object',
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
-                  length: { exclusiveMinimum: true, title: 'Length', type: 'integer' },
+                  length: {
+                    exclusiveMinimum: true,
+                    title: 'Length',
+                    type: 'integer',
+                  },
                   category: {
                     description:
                       'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`',
@@ -17856,7 +22798,8 @@ const TextAnonymizationCreate = {
                         enum: ['Name', 'Age', 'Email', 'Phone', 'PersonType'],
                         title: 'PersonalInformationSubCategoryType',
                         type: 'string',
-                        description: '`Name` `Age` `Email` `Phone` `PersonType`',
+                        description:
+                          '`Name` `Age` `Email` `Phone` `PersonType`',
                       },
                       {
                         enum: [
@@ -17890,10 +22833,15 @@ const TextAnonymizationCreate = {
                           '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`',
                       },
                       {
-                        enum: ['CompanyName', 'CompanyNumber', 'BuisnessNumber'],
+                        enum: [
+                          'CompanyName',
+                          'CompanyNumber',
+                          'BuisnessNumber',
+                        ],
                         title: 'OrganizationSubCategoryType',
                         type: 'string',
-                        description: '`CompanyName` `CompanyNumber` `BuisnessNumber`',
+                        description:
+                          '`CompanyName` `CompanyNumber` `BuisnessNumber`',
                       },
                       {
                         enum: ['Date', 'Time', 'DateTime', 'Duration'],
@@ -17911,12 +22859,17 @@ const TextAnonymizationCreate = {
                         enum: ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'],
                         title: 'OtherSubCategoryType',
                         type: 'string',
-                        description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
+                        description:
+                          '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
                       },
                     ],
                     title: 'Subcategory',
                   },
-                  original_label: { minLength: 1, title: 'Original Label', type: 'string' },
+                  original_label: {
+                    minLength: 1,
+                    title: 'Original Label',
+                    type: 'string',
+                  },
                   content: { minLength: 1, title: 'Content', type: 'string' },
                   confidence_score: {
                     maximum: 1,
@@ -17966,7 +22919,11 @@ const TextAnonymizationCreate = {
                 type: 'object',
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
-                  length: { exclusiveMinimum: true, title: 'Length', type: 'integer' },
+                  length: {
+                    exclusiveMinimum: true,
+                    title: 'Length',
+                    type: 'integer',
+                  },
                   category: {
                     description:
                       'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`',
@@ -18003,7 +22960,8 @@ const TextAnonymizationCreate = {
                         enum: ['Name', 'Age', 'Email', 'Phone', 'PersonType'],
                         title: 'PersonalInformationSubCategoryType',
                         type: 'string',
-                        description: '`Name` `Age` `Email` `Phone` `PersonType`',
+                        description:
+                          '`Name` `Age` `Email` `Phone` `PersonType`',
                       },
                       {
                         enum: [
@@ -18037,10 +22995,15 @@ const TextAnonymizationCreate = {
                           '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`',
                       },
                       {
-                        enum: ['CompanyName', 'CompanyNumber', 'BuisnessNumber'],
+                        enum: [
+                          'CompanyName',
+                          'CompanyNumber',
+                          'BuisnessNumber',
+                        ],
                         title: 'OrganizationSubCategoryType',
                         type: 'string',
-                        description: '`CompanyName` `CompanyNumber` `BuisnessNumber`',
+                        description:
+                          '`CompanyName` `CompanyNumber` `BuisnessNumber`',
                       },
                       {
                         enum: ['Date', 'Time', 'DateTime', 'Duration'],
@@ -18058,12 +23021,17 @@ const TextAnonymizationCreate = {
                         enum: ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'],
                         title: 'OtherSubCategoryType',
                         type: 'string',
-                        description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
+                        description:
+                          '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
                       },
                     ],
                     title: 'Subcategory',
                   },
-                  original_label: { minLength: 1, title: 'Original Label', type: 'string' },
+                  original_label: {
+                    minLength: 1,
+                    title: 'Original Label',
+                    type: 'string',
+                  },
                   content: { minLength: 1, title: 'Content', type: 'string' },
                   confidence_score: {
                     maximum: 1,
@@ -18113,7 +23081,11 @@ const TextAnonymizationCreate = {
                 type: 'object',
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
-                  length: { exclusiveMinimum: true, title: 'Length', type: 'integer' },
+                  length: {
+                    exclusiveMinimum: true,
+                    title: 'Length',
+                    type: 'integer',
+                  },
                   category: {
                     description:
                       'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`',
@@ -18150,7 +23122,8 @@ const TextAnonymizationCreate = {
                         enum: ['Name', 'Age', 'Email', 'Phone', 'PersonType'],
                         title: 'PersonalInformationSubCategoryType',
                         type: 'string',
-                        description: '`Name` `Age` `Email` `Phone` `PersonType`',
+                        description:
+                          '`Name` `Age` `Email` `Phone` `PersonType`',
                       },
                       {
                         enum: [
@@ -18184,10 +23157,15 @@ const TextAnonymizationCreate = {
                           '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`',
                       },
                       {
-                        enum: ['CompanyName', 'CompanyNumber', 'BuisnessNumber'],
+                        enum: [
+                          'CompanyName',
+                          'CompanyNumber',
+                          'BuisnessNumber',
+                        ],
                         title: 'OrganizationSubCategoryType',
                         type: 'string',
-                        description: '`CompanyName` `CompanyNumber` `BuisnessNumber`',
+                        description:
+                          '`CompanyName` `CompanyNumber` `BuisnessNumber`',
                       },
                       {
                         enum: ['Date', 'Time', 'DateTime', 'Duration'],
@@ -18205,12 +23183,17 @@ const TextAnonymizationCreate = {
                         enum: ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'],
                         title: 'OtherSubCategoryType',
                         type: 'string',
-                        description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
+                        description:
+                          '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
                       },
                     ],
                     title: 'Subcategory',
                   },
-                  original_label: { minLength: 1, title: 'Original Label', type: 'string' },
+                  original_label: {
+                    minLength: 1,
+                    title: 'Original Label',
+                    type: 'string',
+                  },
                   content: { minLength: 1, title: 'Content', type: 'string' },
                   confidence_score: {
                     maximum: 1,
@@ -18260,7 +23243,11 @@ const TextAnonymizationCreate = {
                 type: 'object',
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
-                  length: { exclusiveMinimum: true, title: 'Length', type: 'integer' },
+                  length: {
+                    exclusiveMinimum: true,
+                    title: 'Length',
+                    type: 'integer',
+                  },
                   category: {
                     description:
                       'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`',
@@ -18297,7 +23284,8 @@ const TextAnonymizationCreate = {
                         enum: ['Name', 'Age', 'Email', 'Phone', 'PersonType'],
                         title: 'PersonalInformationSubCategoryType',
                         type: 'string',
-                        description: '`Name` `Age` `Email` `Phone` `PersonType`',
+                        description:
+                          '`Name` `Age` `Email` `Phone` `PersonType`',
                       },
                       {
                         enum: [
@@ -18331,10 +23319,15 @@ const TextAnonymizationCreate = {
                           '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`',
                       },
                       {
-                        enum: ['CompanyName', 'CompanyNumber', 'BuisnessNumber'],
+                        enum: [
+                          'CompanyName',
+                          'CompanyNumber',
+                          'BuisnessNumber',
+                        ],
                         title: 'OrganizationSubCategoryType',
                         type: 'string',
-                        description: '`CompanyName` `CompanyNumber` `BuisnessNumber`',
+                        description:
+                          '`CompanyName` `CompanyNumber` `BuisnessNumber`',
                       },
                       {
                         enum: ['Date', 'Time', 'DateTime', 'Duration'],
@@ -18352,12 +23345,17 @@ const TextAnonymizationCreate = {
                         enum: ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'],
                         title: 'OtherSubCategoryType',
                         type: 'string',
-                        description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
+                        description:
+                          '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`',
                       },
                     ],
                     title: 'Subcategory',
                   },
-                  original_label: { minLength: 1, title: 'Original Label', type: 'string' },
+                  original_label: {
+                    minLength: 1,
+                    title: 'Original Label',
+                    type: 'string',
+                  },
                   content: { minLength: 1, title: 'Content', type: 'string' },
                   confidence_score: {
                     maximum: 1,
@@ -18396,7 +23394,12 @@ const TextAnonymizationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -18436,7 +23439,7 @@ const TextAnonymizationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextChatCreate = {
   body: {
     type: 'object',
@@ -18494,7 +23497,9 @@ const TextChatCreate = {
         type: ['string', 'null'],
         description:
           "A system message that helps set the behavior of the assistant. For example, 'You are a helpful assistant'.",
-        examples: ['You are a keyword extractor. Extract Only the word from the text provided.'],
+        examples: [
+          'You are a keyword extractor. Extract Only the word from the text provided.',
+        ],
       },
       previous_history: {
         type: 'array',
@@ -18612,7 +23617,12 @@ const TextChatCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -18652,7 +23662,7 @@ const TextChatCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextCodeGenerationCreate = {
   body: {
     type: 'object',
@@ -18778,7 +23788,12 @@ const TextCodeGenerationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -18818,7 +23833,7 @@ const TextCodeGenerationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextCustomClassificationCreate = {
   body: {
     type: 'object',
@@ -18856,13 +23871,18 @@ const TextCustomClassificationCreate = {
       },
       texts: {
         type: 'array',
-        items: { type: 'string', minLength: 1, examples: ['Confirm your email address'] },
+        items: {
+          type: 'string',
+          minLength: 1,
+          examples: ['Confirm your email address'],
+        },
         description: 'List of texts to classify',
       },
       labels: {
         type: 'array',
         items: { type: 'string', minLength: 1, examples: ['spam'] },
-        description: 'List of the labels (classes) you want the texts to be classified as.',
+        description:
+          'List of the labels (classes) you want the texts to be classified as.',
       },
       examples: {
         type: 'array',
@@ -18966,7 +23986,12 @@ const TextCustomClassificationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -19006,7 +24031,7 @@ const TextCustomClassificationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextCustomNamedEntityRecognitionCreate = {
   body: {
     type: 'object',
@@ -19072,7 +24097,8 @@ const TextCustomNamedEntityRecognitionCreate = {
       properties: {
         openai: {
           required: ['status'],
-          title: 'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass',
+          title:
+            'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass',
           type: 'object',
           properties: {
             items: {
@@ -19104,7 +24130,8 @@ const TextCustomNamedEntityRecognitionCreate = {
         },
         cohere: {
           required: ['status'],
-          title: 'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass',
+          title:
+            'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass',
           type: 'object',
           properties: {
             items: {
@@ -19136,7 +24163,8 @@ const TextCustomNamedEntityRecognitionCreate = {
         },
         'eden-ai': {
           required: ['status'],
-          title: 'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass',
+          title:
+            'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass',
           type: 'object',
           properties: {
             items: {
@@ -19180,7 +24208,12 @@ const TextCustomNamedEntityRecognitionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -19220,7 +24253,7 @@ const TextCustomNamedEntityRecognitionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextEmbeddingsCreate = {
   body: {
     type: 'object',
@@ -19281,7 +24314,11 @@ const TextEmbeddingsCreate = {
                 title: 'EmbeddingDataClass',
                 type: 'object',
                 properties: {
-                  embedding: { title: 'Embedding', type: 'array', items: { type: 'integer' } },
+                  embedding: {
+                    title: 'Embedding',
+                    type: 'array',
+                    items: { type: 'integer' },
+                  },
                 },
               },
             },
@@ -19312,7 +24349,11 @@ const TextEmbeddingsCreate = {
                 title: 'EmbeddingDataClass',
                 type: 'object',
                 properties: {
-                  embedding: { title: 'Embedding', type: 'array', items: { type: 'integer' } },
+                  embedding: {
+                    title: 'Embedding',
+                    type: 'array',
+                    items: { type: 'integer' },
+                  },
                 },
               },
             },
@@ -19343,7 +24384,11 @@ const TextEmbeddingsCreate = {
                 title: 'EmbeddingDataClass',
                 type: 'object',
                 properties: {
-                  embedding: { title: 'Embedding', type: 'array', items: { type: 'integer' } },
+                  embedding: {
+                    title: 'Embedding',
+                    type: 'array',
+                    items: { type: 'integer' },
+                  },
                 },
               },
             },
@@ -19375,7 +24420,12 @@ const TextEmbeddingsCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -19415,7 +24465,7 @@ const TextEmbeddingsCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextEntitySentimentCreate = {
   body: {
     type: 'object',
@@ -19461,7 +24511,8 @@ const TextEntitySentimentCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -19484,7 +24535,11 @@ const TextEntitySentimentCreate = {
                 title: 'Entity',
                 type: 'object',
                 properties: {
-                  type: { description: 'Recognized Entity type', title: 'Type', type: 'string' },
+                  type: {
+                    description: 'Recognized Entity type',
+                    title: 'Type',
+                    type: 'string',
+                  },
                   text: {
                     description: 'Text corresponding to the entity',
                     title: 'Text',
@@ -19496,8 +24551,16 @@ const TextEntitySentimentCreate = {
                     type: 'string',
                     description: '`Positive` `Negative` `Neutral` `Mixed`',
                   },
-                  begin_offset: { default: null, title: 'Begin Offset', type: 'integer' },
-                  end_offset: { default: null, title: 'End Offset', type: 'integer' },
+                  begin_offset: {
+                    default: null,
+                    title: 'Begin Offset',
+                    type: 'integer',
+                  },
+                  end_offset: {
+                    default: null,
+                    title: 'End Offset',
+                    type: 'integer',
+                  },
                 },
               },
             },
@@ -19528,7 +24591,11 @@ const TextEntitySentimentCreate = {
                 title: 'Entity',
                 type: 'object',
                 properties: {
-                  type: { description: 'Recognized Entity type', title: 'Type', type: 'string' },
+                  type: {
+                    description: 'Recognized Entity type',
+                    title: 'Type',
+                    type: 'string',
+                  },
                   text: {
                     description: 'Text corresponding to the entity',
                     title: 'Text',
@@ -19540,8 +24607,16 @@ const TextEntitySentimentCreate = {
                     type: 'string',
                     description: '`Positive` `Negative` `Neutral` `Mixed`',
                   },
-                  begin_offset: { default: null, title: 'Begin Offset', type: 'integer' },
-                  end_offset: { default: null, title: 'End Offset', type: 'integer' },
+                  begin_offset: {
+                    default: null,
+                    title: 'Begin Offset',
+                    type: 'integer',
+                  },
+                  end_offset: {
+                    default: null,
+                    title: 'End Offset',
+                    type: 'integer',
+                  },
                 },
               },
             },
@@ -19573,7 +24648,12 @@ const TextEntitySentimentCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -19613,7 +24693,7 @@ const TextEntitySentimentCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextGenerationCreate = {
   body: {
     type: 'object',
@@ -19767,7 +24847,12 @@ const TextGenerationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -19807,7 +24892,7 @@ const TextGenerationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextKeywordExtractionCreate = {
   body: {
     type: 'object',
@@ -19853,7 +24938,8 @@ const TextKeywordExtractionCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -20133,7 +25219,12 @@ const TextKeywordExtractionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -20173,7 +25264,7 @@ const TextKeywordExtractionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextModerationCreate = {
   body: {
     type: 'object',
@@ -20219,7 +25310,8 @@ const TextModerationCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -20375,7 +25467,12 @@ const TextModerationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -20415,7 +25512,7 @@ const TextModerationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextNamedEntityRecognitionCreate = {
   body: {
     type: 'object',
@@ -20425,7 +25522,9 @@ const TextNamedEntityRecognitionCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['amazon,google,openai,lettria,microsoft,neuralspace,ibm,oneai,tenstorrent'],
+        examples: [
+          'amazon,google,openai,lettria,microsoft,neuralspace,ibm,oneai,tenstorrent',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -20461,7 +25560,8 @@ const TextNamedEntityRecognitionCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -20815,7 +25915,12 @@ const TextNamedEntityRecognitionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -20855,7 +25960,7 @@ const TextNamedEntityRecognitionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextPlagiaDetectionCreate = {
   body: {
     type: 'object',
@@ -20894,7 +25999,8 @@ const TextPlagiaDetectionCreate = {
       text: {
         type: 'string',
         minLength: 1,
-        description: 'A text content on which a plagiarism detection analysis will be run',
+        description:
+          'A text content on which a plagiarism detection analysis will be run',
         examples: [
           "The Galaxy S23 launch may be far behind us, but Samsung likely has plenty more to announce in 2023.             That's if history repeats itself. Should Samsung stick to its annual routine, we can expect to see new             foldable phones and wearable devices in August. The company also previewed new designs for bendable phones and tablets             earlier this year, hinting that the company may be planning to expand beyond the Z Fold and Z Flip in the near future.             Though Samsung regularly releases new products across many categories, including TVs, home appliances and monitors,             I'm most interested in where its mobile devices are headed. Samsung is one of the world's largest smartphone manufacturers             by market share, meaning it has more influence than most other tech companies on the devices we carry in our pockets each day.             Wearables have also become a large part of how Samsung intends to differentiate its phones from those of other Android device makers.             It's a strategy to create a web of products that keep people hooked, much like Apple's range of devices.",
         ],
@@ -20930,14 +26036,25 @@ const TextPlagiaDetectionCreate = {
                     title: 'Candidates',
                     type: 'array',
                     items: {
-                      required: ['url', 'plagia_score', 'prediction', 'plagiarized_text'],
+                      required: [
+                        'url',
+                        'plagia_score',
+                        'prediction',
+                        'plagiarized_text',
+                      ],
                       title: 'PlagiaDetectionCandidate',
                       type: 'object',
                       properties: {
                         url: { title: 'Url', type: 'string' },
-                        plagia_score: { title: 'Plagia Score', type: 'integer' },
+                        plagia_score: {
+                          title: 'Plagia Score',
+                          type: 'integer',
+                        },
                         prediction: { title: 'Prediction', type: 'string' },
-                        plagiarized_text: { title: 'Plagiarized Text', type: 'string' },
+                        plagiarized_text: {
+                          title: 'Plagiarized Text',
+                          type: 'string',
+                        },
                       },
                     },
                   },
@@ -20972,7 +26089,12 @@ const TextPlagiaDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -21012,7 +26134,7 @@ const TextPlagiaDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextPromptOptimizationCreate = {
   body: {
     type: 'object',
@@ -21057,7 +26179,8 @@ const TextPromptOptimizationCreate = {
         ],
       },
       target_provider: {
-        description: '* `google` - google\n* `openai` - openai\n* `cohere` - cohere',
+        description:
+          '* `google` - google\n* `openai` - openai\n* `cohere` - cohere',
         enum: ['google', 'openai', 'cohere'],
         type: 'string',
         examples: ['google'],
@@ -21074,7 +26197,10 @@ const TextPromptOptimizationCreate = {
           title: 'textprompt_optimizationPromptOptimizationDataClass',
           type: 'object',
           properties: {
-            missing_information: { title: 'Missing Information', type: 'string' },
+            missing_information: {
+              title: 'Missing Information',
+              type: 'string',
+            },
             items: {
               title: 'Items',
               type: 'array',
@@ -21113,7 +26239,12 @@ const TextPromptOptimizationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -21153,7 +26284,7 @@ const TextPromptOptimizationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextQuestionAnswerCreate = {
   body: {
     type: 'object',
@@ -21237,7 +26368,13 @@ const TextQuestionAnswerCreate = {
           "List of question/answer pairs (eg: [['When was Barack Obama elected president?', 'in 2009.'],]",
       },
     },
-    required: ['examples', 'examples_context', 'providers', 'question', 'texts'],
+    required: [
+      'examples',
+      'examples_context',
+      'providers',
+      'question',
+      'texts',
+    ],
     $schema: 'http://json-schema.org/draft-04/schema#',
   },
   response: {
@@ -21248,7 +26385,11 @@ const TextQuestionAnswerCreate = {
           title: 'textquestion_answerQuestionAnswerDataClass',
           type: 'object',
           properties: {
-            answers: { title: 'Answers', type: 'array', items: { type: 'string' } },
+            answers: {
+              title: 'Answers',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -21268,7 +26409,11 @@ const TextQuestionAnswerCreate = {
           title: 'textquestion_answerQuestionAnswerDataClass',
           type: 'object',
           properties: {
-            answers: { title: 'Answers', type: 'array', items: { type: 'string' } },
+            answers: {
+              title: 'Answers',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -21288,7 +26433,11 @@ const TextQuestionAnswerCreate = {
           title: 'textquestion_answerQuestionAnswerDataClass',
           type: 'object',
           properties: {
-            answers: { title: 'Answers', type: 'array', items: { type: 'string' } },
+            answers: {
+              title: 'Answers',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -21308,7 +26457,11 @@ const TextQuestionAnswerCreate = {
           title: 'textquestion_answerQuestionAnswerDataClass',
           type: 'object',
           properties: {
-            answers: { title: 'Answers', type: 'array', items: { type: 'string' } },
+            answers: {
+              title: 'Answers',
+              type: 'array',
+              items: { type: 'string' },
+            },
             original_response: {
               default: null,
               description:
@@ -21337,7 +26490,12 @@ const TextQuestionAnswerCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -21377,7 +26535,7 @@ const TextQuestionAnswerCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextSearchCreate = {
   body: {
     type: 'object',
@@ -21425,7 +26583,12 @@ const TextSearchCreate = {
         description: 'A list of texts to search in.',
         minItems: 2,
       },
-      query: { type: 'string', minLength: 1, description: 'Your text query.', examples: ['Rome'] },
+      query: {
+        type: 'string',
+        minLength: 1,
+        description: 'Your text query.',
+        examples: ['Rome'],
+      },
     },
     required: ['providers', 'query', 'texts'],
     $schema: 'http://json-schema.org/draft-04/schema#',
@@ -21480,7 +26643,12 @@ const TextSearchCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -21520,7 +26688,7 @@ const TextSearchCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextSentimentAnalysisCreate = {
   body: {
     type: 'object',
@@ -21568,7 +26736,8 @@ const TextSentimentAnalysisCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -22219,7 +27388,12 @@ const TextSentimentAnalysisCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -22259,7 +27433,7 @@ const TextSentimentAnalysisCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextSpellCheckCreate = {
   body: {
     type: 'object',
@@ -22303,7 +27477,8 @@ const TextSpellCheckCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -22344,7 +27519,12 @@ const TextSpellCheckCreate = {
                       type: 'object',
                       properties: {
                         suggestion: { title: 'Suggestion', type: 'string' },
-                        score: { maximum: 1, minimum: 0, title: 'Score', type: 'integer' },
+                        score: {
+                          maximum: 1,
+                          minimum: 0,
+                          title: 'Score',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -22396,7 +27576,12 @@ const TextSpellCheckCreate = {
                       type: 'object',
                       properties: {
                         suggestion: { title: 'Suggestion', type: 'string' },
-                        score: { maximum: 1, minimum: 0, title: 'Score', type: 'integer' },
+                        score: {
+                          maximum: 1,
+                          minimum: 0,
+                          title: 'Score',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -22448,7 +27633,12 @@ const TextSpellCheckCreate = {
                       type: 'object',
                       properties: {
                         suggestion: { title: 'Suggestion', type: 'string' },
-                        score: { maximum: 1, minimum: 0, title: 'Score', type: 'integer' },
+                        score: {
+                          maximum: 1,
+                          minimum: 0,
+                          title: 'Score',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -22500,7 +27690,12 @@ const TextSpellCheckCreate = {
                       type: 'object',
                       properties: {
                         suggestion: { title: 'Suggestion', type: 'string' },
-                        score: { maximum: 1, minimum: 0, title: 'Score', type: 'integer' },
+                        score: {
+                          maximum: 1,
+                          minimum: 0,
+                          title: 'Score',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -22552,7 +27747,12 @@ const TextSpellCheckCreate = {
                       type: 'object',
                       properties: {
                         suggestion: { title: 'Suggestion', type: 'string' },
-                        score: { maximum: 1, minimum: 0, title: 'Score', type: 'integer' },
+                        score: {
+                          maximum: 1,
+                          minimum: 0,
+                          title: 'Score',
+                          type: 'integer',
+                        },
                       },
                     },
                   },
@@ -22587,7 +27787,12 @@ const TextSpellCheckCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -22627,7 +27832,7 @@ const TextSpellCheckCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextSummarizeCreate = {
   body: {
     type: 'object',
@@ -22673,7 +27878,8 @@ const TextSummarizeCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
       settings: {
@@ -22687,7 +27893,12 @@ const TextSummarizeCreate = {
         description:
           "A dictionnary or a json object to specify specific models to use for some providers. <br>                     It can be in the following format: {'google' : 'google_model', ibm': 'ibm_model'...}.\n                     **Caution**: setting models can be done only with `Content-Type` : `application/json`.\n                     ",
       },
-      output_sentences: { type: 'integer', minimum: 1, default: 1, examples: [3] },
+      output_sentences: {
+        type: 'integer',
+        minimum: 1,
+        default: 1,
+        examples: [3],
+      },
     },
     required: ['providers', 'text'],
     $schema: 'http://json-schema.org/draft-04/schema#',
@@ -22889,7 +28100,12 @@ const TextSummarizeCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -22929,7 +28145,7 @@ const TextSummarizeCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextSyntaxAnalysisCreate = {
   body: {
     type: 'object',
@@ -22975,7 +28191,8 @@ const TextSyntaxAnalysisCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -23002,7 +28219,11 @@ const TextSyntaxAnalysisCreate = {
                   importance: { title: 'Importance', type: 'integer' },
                   tag: { title: 'Tag', type: 'string' },
                   lemma: { title: 'Lemma', type: 'string' },
-                  others: { title: 'Others', type: 'object', additionalProperties: true },
+                  others: {
+                    title: 'Others',
+                    type: 'object',
+                    additionalProperties: true,
+                  },
                 },
               },
             },
@@ -23037,7 +28258,11 @@ const TextSyntaxAnalysisCreate = {
                   importance: { title: 'Importance', type: 'integer' },
                   tag: { title: 'Tag', type: 'string' },
                   lemma: { title: 'Lemma', type: 'string' },
-                  others: { title: 'Others', type: 'object', additionalProperties: true },
+                  others: {
+                    title: 'Others',
+                    type: 'object',
+                    additionalProperties: true,
+                  },
                 },
               },
             },
@@ -23072,7 +28297,11 @@ const TextSyntaxAnalysisCreate = {
                   importance: { title: 'Importance', type: 'integer' },
                   tag: { title: 'Tag', type: 'string' },
                   lemma: { title: 'Lemma', type: 'string' },
-                  others: { title: 'Others', type: 'object', additionalProperties: true },
+                  others: {
+                    title: 'Others',
+                    type: 'object',
+                    additionalProperties: true,
+                  },
                 },
               },
             },
@@ -23107,7 +28336,11 @@ const TextSyntaxAnalysisCreate = {
                   importance: { title: 'Importance', type: 'integer' },
                   tag: { title: 'Tag', type: 'string' },
                   lemma: { title: 'Lemma', type: 'string' },
-                  others: { title: 'Others', type: 'object', additionalProperties: true },
+                  others: {
+                    title: 'Others',
+                    type: 'object',
+                    additionalProperties: true,
+                  },
                 },
               },
             },
@@ -23142,7 +28375,11 @@ const TextSyntaxAnalysisCreate = {
                   importance: { title: 'Importance', type: 'integer' },
                   tag: { title: 'Tag', type: 'string' },
                   lemma: { title: 'Lemma', type: 'string' },
-                  others: { title: 'Others', type: 'object', additionalProperties: true },
+                  others: {
+                    title: 'Others',
+                    type: 'object',
+                    additionalProperties: true,
+                  },
                 },
               },
             },
@@ -23177,7 +28414,11 @@ const TextSyntaxAnalysisCreate = {
                   importance: { title: 'Importance', type: 'integer' },
                   tag: { title: 'Tag', type: 'string' },
                   lemma: { title: 'Lemma', type: 'string' },
-                  others: { title: 'Others', type: 'object', additionalProperties: true },
+                  others: {
+                    title: 'Others',
+                    type: 'object',
+                    additionalProperties: true,
+                  },
                 },
               },
             },
@@ -23209,7 +28450,12 @@ const TextSyntaxAnalysisCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -23249,7 +28495,7 @@ const TextSyntaxAnalysisCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TextTopicExtractionCreate = {
   body: {
     type: 'object',
@@ -23295,7 +28541,8 @@ const TextTopicExtractionCreate = {
       },
       language: {
         type: ['string', 'null'],
-        description: 'Language code for the language the input text is written in (eg: en, fr).',
+        description:
+          'Language code for the language the input text is written in (eg: en, fr).',
         examples: ['en'],
       },
     },
@@ -23479,7 +28726,12 @@ const TextTopicExtractionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -23519,7 +28771,7 @@ const TextTopicExtractionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TranslationAutomaticTranslationCreate = {
   body: {
     type: 'object',
@@ -23529,7 +28781,9 @@ const TranslationAutomaticTranslationCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['google,amazon,neuralspace,modernmt,phedone,deepl,openai,microsoft,ibm'],
+        examples: [
+          'google,amazon,neuralspace,modernmt,phedone,deepl,openai,microsoft,ibm',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -23583,7 +28837,8 @@ const TranslationAutomaticTranslationCreate = {
       properties: {
         modernmt: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23603,7 +28858,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         deepl: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23623,7 +28879,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         microsoft: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23643,7 +28900,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         phedone: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23663,7 +28921,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         openai: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23683,7 +28942,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         ibm: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23703,7 +28963,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         google: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23723,7 +28984,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         neuralspace: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23743,7 +29005,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         huggingface: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23763,7 +29026,8 @@ const TranslationAutomaticTranslationCreate = {
         },
         amazon: {
           required: ['text', 'status'],
-          title: 'translationautomatic_translationAutomaticTranslationDataClass',
+          title:
+            'translationautomatic_translationAutomaticTranslationDataClass',
           type: 'object',
           properties: {
             text: { title: 'Text', type: 'string' },
@@ -23795,7 +29059,12 @@ const TranslationAutomaticTranslationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -23835,7 +29104,7 @@ const TranslationAutomaticTranslationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TranslationDocumentTranslationCreate = {
   body: {
     type: 'object',
@@ -23908,7 +29177,10 @@ const TranslationDocumentTranslationCreate = {
           type: 'object',
           properties: {
             file: { title: 'File', type: 'string' },
-            document_resource_url: { title: 'Document Resource Url', type: 'string' },
+            document_resource_url: {
+              title: 'Document Resource Url',
+              type: 'string',
+            },
             original_response: {
               default: null,
               description:
@@ -23929,7 +29201,10 @@ const TranslationDocumentTranslationCreate = {
           type: 'object',
           properties: {
             file: { title: 'File', type: 'string' },
-            document_resource_url: { title: 'Document Resource Url', type: 'string' },
+            document_resource_url: {
+              title: 'Document Resource Url',
+              type: 'string',
+            },
             original_response: {
               default: null,
               description:
@@ -23958,7 +29233,12 @@ const TranslationDocumentTranslationCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -23998,7 +29278,7 @@ const TranslationDocumentTranslationCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const TranslationLanguageDetectionCreate = {
   body: {
     type: 'object',
@@ -24008,7 +29288,9 @@ const TranslationLanguageDetectionCreate = {
         minLength: 1,
         description:
           "It can be one (ex: **'amazon'** or **'google'**) or multiple provider(s) (ex: **'amazon,microsoft,google'**)             that the data will be redirected to in order to get the processed results.",
-        examples: ['google,neuralspace,oneai,modernmt,amazon,ibm,openai,microsoft'],
+        examples: [
+          'google,neuralspace,oneai,modernmt,amazon,ibm,openai,microsoft',
+        ],
       },
       fallback_providers: {
         type: 'string',
@@ -24360,7 +29642,12 @@ const TranslationLanguageDetectionCreate = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -24400,7 +29687,7 @@ const TranslationLanguageDetectionCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoExplicitContentDetectionAsyncCreate = {
   body: {
     type: 'object',
@@ -24463,7 +29750,7 @@ const VideoExplicitContentDetectionAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoExplicitContentDetectionAsyncRetrieve = {
   response: {
     '200': {
@@ -24486,7 +29773,14 @@ const VideoExplicitContentDetectionAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -24494,14 +29788,17 @@ const VideoExplicitContentDetectionAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoExplicitContentDetectionAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -24530,7 +29827,8 @@ const VideoExplicitContentDetectionAsyncRetrieve2 = {
           properties: {
             google: {
               required: ['id', 'final_status'],
-              title: 'videoexplicit_content_detection_asyncExplicitContentDetectionAsyncDataClass',
+              title:
+                'videoexplicit_content_detection_asyncExplicitContentDetectionAsyncDataClass',
               type: 'object',
               properties: {
                 moderation: {
@@ -24560,12 +29858,17 @@ const VideoExplicitContentDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
               required: ['id', 'final_status'],
-              title: 'videoexplicit_content_detection_asyncExplicitContentDetectionAsyncDataClass',
+              title:
+                'videoexplicit_content_detection_asyncExplicitContentDetectionAsyncDataClass',
               type: 'object',
               properties: {
                 moderation: {
@@ -24595,7 +29898,11 @@ const VideoExplicitContentDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -24620,7 +29927,12 @@ const VideoExplicitContentDetectionAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -24660,7 +29972,7 @@ const VideoExplicitContentDetectionAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoFaceDetectionAsyncCreate = {
   body: {
     type: 'object',
@@ -24723,7 +30035,7 @@ const VideoFaceDetectionAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoFaceDetectionAsyncRetrieve = {
   response: {
     '200': {
@@ -24746,7 +30058,14 @@ const VideoFaceDetectionAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -24754,14 +30073,17 @@ const VideoFaceDetectionAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoFaceDetectionAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -24797,7 +30119,12 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                   title: 'Faces',
                   type: 'array',
                   items: {
-                    required: ['offset', 'bounding_box', 'attributes', 'landmarks'],
+                    required: [
+                      'offset',
+                      'bounding_box',
+                      'attributes',
+                      'landmarks',
+                    ],
                     title: 'VideoFace',
                     type: 'object',
                     properties: {
@@ -24829,8 +30156,14 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                         type: 'object',
                         properties: {
                           headwear: { title: 'Headwear', type: 'integer' },
-                          frontal_gaze: { title: 'Frontal Gaze', type: 'integer' },
-                          eyes_visible: { title: 'Eyes Visible', type: 'integer' },
+                          frontal_gaze: {
+                            title: 'Frontal Gaze',
+                            type: 'integer',
+                          },
+                          eyes_visible: {
+                            title: 'Eyes Visible',
+                            type: 'integer',
+                          },
                           glasses: { title: 'Glasses', type: 'integer' },
                           mouth_open: { title: 'Mouth Open', type: 'integer' },
                           smiling: { title: 'Smiling', type: 'integer' },
@@ -24862,7 +30195,11 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                             type: 'array',
                             items: { type: 'integer' },
                           },
-                          nose: { title: 'Nose', type: 'array', items: { type: 'integer' } },
+                          nose: {
+                            title: 'Nose',
+                            type: 'array',
+                            items: { type: 'integer' },
+                          },
                           mouth_left: {
                             title: 'Mouth Left',
                             type: 'array',
@@ -24891,7 +30228,11 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -24903,7 +30244,12 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                   title: 'Faces',
                   type: 'array',
                   items: {
-                    required: ['offset', 'bounding_box', 'attributes', 'landmarks'],
+                    required: [
+                      'offset',
+                      'bounding_box',
+                      'attributes',
+                      'landmarks',
+                    ],
                     title: 'VideoFace',
                     type: 'object',
                     properties: {
@@ -24935,8 +30281,14 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                         type: 'object',
                         properties: {
                           headwear: { title: 'Headwear', type: 'integer' },
-                          frontal_gaze: { title: 'Frontal Gaze', type: 'integer' },
-                          eyes_visible: { title: 'Eyes Visible', type: 'integer' },
+                          frontal_gaze: {
+                            title: 'Frontal Gaze',
+                            type: 'integer',
+                          },
+                          eyes_visible: {
+                            title: 'Eyes Visible',
+                            type: 'integer',
+                          },
                           glasses: { title: 'Glasses', type: 'integer' },
                           mouth_open: { title: 'Mouth Open', type: 'integer' },
                           smiling: { title: 'Smiling', type: 'integer' },
@@ -24968,7 +30320,11 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                             type: 'array',
                             items: { type: 'integer' },
                           },
-                          nose: { title: 'Nose', type: 'array', items: { type: 'integer' } },
+                          nose: {
+                            title: 'Nose',
+                            type: 'array',
+                            items: { type: 'integer' },
+                          },
                           mouth_left: {
                             title: 'Mouth Left',
                             type: 'array',
@@ -24997,7 +30353,11 @@ const VideoFaceDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -25022,7 +30382,12 @@ const VideoFaceDetectionAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -25062,7 +30427,7 @@ const VideoFaceDetectionAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoLabelDetectionAsyncCreate = {
   body: {
     type: 'object',
@@ -25125,7 +30490,7 @@ const VideoLabelDetectionAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoLabelDetectionAsyncRetrieve = {
   response: {
     '200': {
@@ -25148,7 +30513,14 @@ const VideoLabelDetectionAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -25156,14 +30528,17 @@ const VideoLabelDetectionAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoLabelDetectionAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -25218,7 +30593,11 @@ const VideoLabelDetectionAsyncRetrieve2 = {
                           },
                         },
                       },
-                      category: { title: 'Category', type: 'array', items: { type: 'string' } },
+                      category: {
+                        title: 'Category',
+                        type: 'array',
+                        items: { type: 'string' },
+                      },
                       bounding_box: {
                         title: 'Bounding Box',
                         type: 'array',
@@ -25250,7 +30629,11 @@ const VideoLabelDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -25281,7 +30664,11 @@ const VideoLabelDetectionAsyncRetrieve2 = {
                           },
                         },
                       },
-                      category: { title: 'Category', type: 'array', items: { type: 'string' } },
+                      category: {
+                        title: 'Category',
+                        type: 'array',
+                        items: { type: 'string' },
+                      },
                       bounding_box: {
                         title: 'Bounding Box',
                         type: 'array',
@@ -25313,7 +30700,11 @@ const VideoLabelDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -25338,7 +30729,12 @@ const VideoLabelDetectionAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -25378,7 +30774,7 @@ const VideoLabelDetectionAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoLogoDetectionAsyncCreate = {
   body: {
     type: 'object',
@@ -25441,7 +30837,7 @@ const VideoLogoDetectionAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoLogoDetectionAsyncRetrieve = {
   response: {
     '200': {
@@ -25464,7 +30860,14 @@ const VideoLogoDetectionAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -25472,14 +30875,17 @@ const VideoLogoDetectionAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoLogoDetectionAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -25540,7 +30946,10 @@ const VideoLogoDetectionAsyncRetrieve2 = {
                                 width: { title: 'Width', type: 'integer' },
                               },
                             },
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                           },
                         },
                       },
@@ -25560,7 +30969,11 @@ const VideoLogoDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -25585,7 +30998,12 @@ const VideoLogoDetectionAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -25625,7 +31043,7 @@ const VideoLogoDetectionAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoObjectTrackingAsyncCreate = {
   body: {
     type: 'object',
@@ -25688,7 +31106,7 @@ const VideoObjectTrackingAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoObjectTrackingAsyncRetrieve = {
   response: {
     '200': {
@@ -25711,7 +31129,14 @@ const VideoObjectTrackingAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -25719,14 +31144,17 @@ const VideoObjectTrackingAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoObjectTrackingAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -25807,7 +31235,11 @@ const VideoObjectTrackingAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -25832,7 +31264,12 @@ const VideoObjectTrackingAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -25872,7 +31309,7 @@ const VideoObjectTrackingAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoPersonTrackingAsyncCreate = {
   body: {
     type: 'object',
@@ -25935,7 +31372,7 @@ const VideoPersonTrackingAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoPersonTrackingAsyncRetrieve = {
   response: {
     '200': {
@@ -25958,7 +31395,14 @@ const VideoPersonTrackingAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -25966,14 +31410,17 @@ const VideoPersonTrackingAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoPersonTrackingAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -26034,7 +31481,10 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                                     type: 'object',
                                     properties: {
                                       value: { title: 'Value', type: 'string' },
-                                      confidence: { title: 'Confidence', type: 'integer' },
+                                      confidence: {
+                                        title: 'Confidence',
+                                        type: 'integer',
+                                      },
                                     },
                                   },
                                 },
@@ -26047,7 +31497,10 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                                     type: 'object',
                                     properties: {
                                       value: { title: 'Value', type: 'string' },
-                                      confidence: { title: 'Confidence', type: 'integer' },
+                                      confidence: {
+                                        title: 'Confidence',
+                                        type: 'integer',
+                                      },
                                     },
                                   },
                                 },
@@ -26067,7 +31520,11 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                                   type: 'array',
                                   items: { type: 'integer' },
                                 },
-                                nose: { title: 'Nose', type: 'array', items: { type: 'integer' } },
+                                nose: {
+                                  title: 'Nose',
+                                  type: 'array',
+                                  items: { type: 'integer' },
+                                },
                                 ear_left: {
                                   title: 'Ear Left',
                                   type: 'array',
@@ -26165,8 +31622,14 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                               title: 'VideoPersonQuality',
                               type: 'object',
                               properties: {
-                                brightness: { title: 'Brightness', type: 'integer' },
-                                sharpness: { title: 'Sharpness', type: 'integer' },
+                                brightness: {
+                                  title: 'Brightness',
+                                  type: 'integer',
+                                },
+                                sharpness: {
+                                  title: 'Sharpness',
+                                  type: 'integer',
+                                },
                               },
                             },
                             bounding_box: {
@@ -26199,7 +31662,11 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -26236,7 +31703,10 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                                     type: 'object',
                                     properties: {
                                       value: { title: 'Value', type: 'string' },
-                                      confidence: { title: 'Confidence', type: 'integer' },
+                                      confidence: {
+                                        title: 'Confidence',
+                                        type: 'integer',
+                                      },
                                     },
                                   },
                                 },
@@ -26249,7 +31719,10 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                                     type: 'object',
                                     properties: {
                                       value: { title: 'Value', type: 'string' },
-                                      confidence: { title: 'Confidence', type: 'integer' },
+                                      confidence: {
+                                        title: 'Confidence',
+                                        type: 'integer',
+                                      },
                                     },
                                   },
                                 },
@@ -26269,7 +31742,11 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                                   type: 'array',
                                   items: { type: 'integer' },
                                 },
-                                nose: { title: 'Nose', type: 'array', items: { type: 'integer' } },
+                                nose: {
+                                  title: 'Nose',
+                                  type: 'array',
+                                  items: { type: 'integer' },
+                                },
                                 ear_left: {
                                   title: 'Ear Left',
                                   type: 'array',
@@ -26367,8 +31844,14 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                               title: 'VideoPersonQuality',
                               type: 'object',
                               properties: {
-                                brightness: { title: 'Brightness', type: 'integer' },
-                                sharpness: { title: 'Sharpness', type: 'integer' },
+                                brightness: {
+                                  title: 'Brightness',
+                                  type: 'integer',
+                                },
+                                sharpness: {
+                                  title: 'Sharpness',
+                                  type: 'integer',
+                                },
                               },
                             },
                             bounding_box: {
@@ -26401,7 +31884,11 @@ const VideoPersonTrackingAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -26426,7 +31913,12 @@ const VideoPersonTrackingAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -26466,7 +31958,7 @@ const VideoPersonTrackingAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoTextDetectionAsyncCreate = {
   body: {
     type: 'object',
@@ -26529,7 +32021,7 @@ const VideoTextDetectionAsyncCreate = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoTextDetectionAsyncRetrieve = {
   response: {
     '200': {
@@ -26552,7 +32044,14 @@ const VideoTextDetectionAsyncRetrieve = {
               },
               created_at: { type: 'string', format: 'date-time' },
             },
-            required: ['created_at', 'nb', 'nb_ok', 'providers', 'public_id', 'state'],
+            required: [
+              'created_at',
+              'nb',
+              'nb_ok',
+              'providers',
+              'public_id',
+              'state',
+            ],
           },
         },
       },
@@ -26560,14 +32059,17 @@ const VideoTextDetectionAsyncRetrieve = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 const VideoTextDetectionAsyncRetrieve2 = {
   metadata: {
     allOf: [
       {
         type: 'object',
         properties: {
-          public_id: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' },
+          public_id: {
+            type: 'string',
+            $schema: 'http://json-schema.org/draft-04/schema#',
+          },
         },
         required: ['public_id'],
       },
@@ -26616,7 +32118,10 @@ const VideoTextDetectionAsyncRetrieve2 = {
                           title: 'VideoTextFrames',
                           type: 'object',
                           properties: {
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                             timestamp: { title: 'Timestamp', type: 'integer' },
                             bounding_box: {
                               required: ['top', 'left', 'height', 'width'],
@@ -26648,7 +32153,11 @@ const VideoTextDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
             amazon: {
@@ -26673,7 +32182,10 @@ const VideoTextDetectionAsyncRetrieve2 = {
                           title: 'VideoTextFrames',
                           type: 'object',
                           properties: {
-                            confidence: { title: 'Confidence', type: 'integer' },
+                            confidence: {
+                              title: 'Confidence',
+                              type: 'integer',
+                            },
                             timestamp: { title: 'Timestamp', type: 'integer' },
                             bounding_box: {
                               required: ['top', 'left', 'height', 'width'],
@@ -26705,7 +32217,11 @@ const VideoTextDetectionAsyncRetrieve2 = {
                   type: 'string',
                   description: '`sucess` `fail`',
                 },
-                error: { title: 'Error', type: 'object', additionalProperties: true },
+                error: {
+                  title: 'Error',
+                  type: 'object',
+                  additionalProperties: true,
+                },
               },
             },
           },
@@ -26730,7 +32246,12 @@ const VideoTextDetectionAsyncRetrieve2 = {
             type: { type: 'string' },
             message: {
               type: 'object',
-              properties: { '<parameter_name>': { type: 'array', items: { type: 'string' } } },
+              properties: {
+                '<parameter_name>': {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
               required: ['<parameter_name>'],
             },
           },
@@ -26770,7 +32291,7 @@ const VideoTextDetectionAsyncRetrieve2 = {
       $schema: 'http://json-schema.org/draft-04/schema#',
     },
   },
-} as const;
+} as const
 export {
   AudioSpeechToTextAsyncCreate,
   AudioSpeechToTextAsyncRetrieve,
@@ -26861,4 +32382,4 @@ export {
   VideoTextDetectionAsyncCreate,
   VideoTextDetectionAsyncRetrieve,
   VideoTextDetectionAsyncRetrieve2,
-};
+}
