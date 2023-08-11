@@ -1,16 +1,10 @@
-'use strict';
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
-var oas_1 = __importDefault(require('oas'));
-var core_1 = __importDefault(require('api/dist/core'));
-var openapi_json_1 = __importDefault(require('./openapi.json'));
-var SDK = /** @class */ (function () {
-  function SDK() {
-    this.spec = oas_1.default.init(openapi_json_1.default);
-    this.core = new core_1.default(this.spec, 'edenai/2.0 (api/6.1.0)');
+import Oas from 'oas';
+import APICore from 'api/dist/core';
+import definition from './openapi.json';
+class SDK {
+  constructor() {
+    this.spec = Oas.init(definition);
+    this.core = new APICore(this.spec, 'edenai/2.0 (api/6.1.0)');
   }
   /**
    * Optionally configure various options that the SDK allows.
@@ -19,9 +13,9 @@ var SDK = /** @class */ (function () {
    * @param config.timeout Override the default `fetch` request timeout of 30 seconds. This number
    * should be represented in milliseconds.
    */
-  SDK.prototype.config = function (config) {
+  config(config) {
     this.core.setConfig(config);
-  };
+  }
   /**
    * If the API you're using requires authentication you can supply the required credentials
    * through this method and the library will magically determine how they should be used
@@ -43,15 +37,10 @@ var SDK = /** @class */ (function () {
    * @see {@link https://spec.openapis.org/oas/v3.1.0#fixed-fields-22}
    * @param values Your auth credentials for the API; can specify up to two strings or numbers.
    */
-  SDK.prototype.auth = function () {
-    var _a;
-    var values = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-      values[_i] = arguments[_i];
-    }
-    (_a = this.core).setAuth.apply(_a, values);
+  auth(...values) {
+    this.core.setAuth(...values);
     return this;
-  };
+  }
   /**
    * If the API you're using offers alternate server URLs, and server variables, you can tell
    * the SDK which one to use with this method. To use it you can supply either one of the
@@ -71,12 +60,9 @@ var SDK = /** @class */ (function () {
    * @param url Server URL
    * @param variables An object of variables to replace into the server URL.
    */
-  SDK.prototype.server = function (url, variables) {
-    if (variables === void 0) {
-      variables = {};
-    }
+  server(url, variables = {}) {
     this.core.setServer(url, variables);
-  };
+  }
   /**
    * Return paginated response of requests with their status and their
    * responses if the request succeeded or errror if failed
@@ -87,9 +73,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.BatchRetrieveResponse404>
    * @throws FetchError<500, types.BatchRetrieveResponse500>
    */
-  SDK.prototype.batch_retrieve = function (metadata) {
+  batch_retrieve(metadata) {
     return this.core.fetch('/{feature}/{subfeature}/batch/{name}/', 'get', metadata);
-  };
+  }
   /**
    * Launch a async Batch job, given a job name that will be used as its id.
    *
@@ -130,25 +116,25 @@ var SDK = /** @class */ (function () {
    * |------------|---------------|
    * |`text`|`generation`|
    * |`text`|`named_entity_recognition`|
-   * |`text`|`moderation`|
-   * |`text`|`embeddings`|
-   * |`text`|`summarize`|
-   * |`text`|`chat`|
    * |`text`|`sentiment_analysis`|
+   * |`text`|`summarize`|
+   * |`text`|`moderation`|
+   * |`text`|`chat`|
    * |`text`|`topic_extraction`|
+   * |`text`|`embeddings`|
    * |`image`|`object_detection`|
+   * |`image`|`explicit_content`|
    * |`text`|`anonymization`|
    * |`text`|`custom_classification`|
    * |`text`|`spell_check`|
    * |`translation`|`automatic_translation`|
-   * |`image`|`explicit_content`|
    * |`translation`|`language_detection`|
    * |`text`|`custom_named_entity_recognition`|
+   * |`audio`|`text_to_speech`|
+   * |`translation`|`document_translation`|
    * |`text`|`keyword_extraction`|
    * |`text`|`question_answer`|
-   * |`audio`|`text_to_speech`|
    * |`text`|`search`|
-   * |`translation`|`document_translation`|
    * |`text`|`code_generation`|
    * |`text`|`syntax_analysis`|
    * |`ocr`|`invoice_parser`|
@@ -156,12 +142,12 @@ var SDK = /** @class */ (function () {
    * |`ocr`|`receipt_parser`|
    * |`ocr`|`identity_parser`|
    * |`image`|`face_detection`|
+   * |`audio`|`speech_to_text_async`|
    * |`image`|`landmark_detection`|
    * |`image`|`logo_detection`|
    * |`image`|`anonymization`|
    * |`image`|`generation`|
    * |`video`|`text_detection_async`|
-   * |`audio`|`speech_to_text_async`|
    *
    * </details>
    *
@@ -173,9 +159,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.BatchCreateResponse404>
    * @throws FetchError<500, types.BatchCreateResponse500>
    */
-  SDK.prototype.batch_create = function (metadata) {
+  batch_create(metadata) {
     return this.core.fetch('/{feature}/{subfeature}/batch/{name}/', 'post', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -184,9 +170,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Speech to Text List Jobs
    */
-  SDK.prototype.audio_speech_to_text_async_retrieve = function () {
+  audio_speech_to_text_async_retrieve() {
     return this.core.fetch('/audio/speech_to_text_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -533,9 +519,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Speech to Text Launch Job
    */
-  SDK.prototype.audio_speech_to_text_async_create = function (body) {
+  audio_speech_to_text_async_create(body) {
     return this.core.fetch('/audio/speech_to_text_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -545,9 +531,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.AudioSpeechToTextAsyncRetrieve2Response404>
    * @throws FetchError<500, types.AudioSpeechToTextAsyncRetrieve2Response500>
    */
-  SDK.prototype.audio_speech_to_text_async_retrieve_2 = function (metadata) {
+  audio_speech_to_text_async_retrieve_2(metadata) {
     return this.core.fetch('/audio/speech_to_text_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -826,9 +812,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.AudioTextToSpeechCreateResponse404>
    * @throws FetchError<500, types.AudioTextToSpeechCreateResponse500>
    */
-  SDK.prototype.audio_text_to_speech_create = function (body) {
+  audio_text_to_speech_create(body) {
     return this.core.fetch('/audio/text_to_speech', 'post', body);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -837,9 +823,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Text To Speech list jobs
    */
-  SDK.prototype.audio_text_to_speech_async_retrieve = function () {
+  audio_text_to_speech_async_retrieve() {
     return this.core.fetch('/audio/text_to_speech_async', 'get');
-  };
+  }
   /**
    * <strong style='color: #ac3737'>No Provider Available</strong>
    *
@@ -1076,9 +1062,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Text to Speech launch job
    */
-  SDK.prototype.audio_text_to_speech_async_create = function (body) {
+  audio_text_to_speech_async_create(body) {
     return this.core.fetch('/audio/text_to_speech_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -1088,9 +1074,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.AudioTextToSpeechAsyncRetrieve2Response404>
    * @throws FetchError<500, types.AudioTextToSpeechAsyncRetrieve2Response500>
    */
-  SDK.prototype.audio_text_to_speech_async_retrieve_2 = function (metadata) {
+  audio_text_to_speech_async_retrieve_2(metadata) {
     return this.core.fetch('/audio/text_to_speech_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1112,9 +1098,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageAnonymizationCreateResponse404>
    * @throws FetchError<500, types.ImageAnonymizationCreateResponse500>
    */
-  SDK.prototype.image_anonymization_create = function (body) {
+  image_anonymization_create(body) {
     return this.core.fetch('/image/anonymization', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1142,9 +1128,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageExplicitContentCreateResponse404>
    * @throws FetchError<500, types.ImageExplicitContentCreateResponse500>
    */
-  SDK.prototype.image_explicit_content_create = function (body) {
+  image_explicit_content_create(body) {
     return this.core.fetch('/image/explicit_content', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1168,9 +1154,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageFaceCompareCreateResponse404>
    * @throws FetchError<500, types.ImageFaceCompareCreateResponse500>
    */
-  SDK.prototype.image_face_compare_create = function (body) {
+  image_face_compare_create(body) {
     return this.core.fetch('/image/face_compare', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1198,9 +1184,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageFaceDetectionCreateResponse404>
    * @throws FetchError<500, types.ImageFaceDetectionCreateResponse500>
    */
-  SDK.prototype.image_face_detection_create = function (body) {
+  image_face_detection_create(body) {
     return this.core.fetch('/image/face_detection', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1224,9 +1210,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageFaceRecognitionAddFaceCreateResponse404>
    * @throws FetchError<500, types.ImageFaceRecognitionAddFaceCreateResponse500>
    */
-  SDK.prototype.image_face_recognition_add_face_create = function (body) {
+  image_face_recognition_add_face_create(body) {
     return this.core.fetch('/image/face_recognition/add_face', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1250,9 +1236,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageFaceRecognitionDeleteFaceCreateResponse404>
    * @throws FetchError<500, types.ImageFaceRecognitionDeleteFaceCreateResponse500>
    */
-  SDK.prototype.image_face_recognition_delete_face_create = function (body) {
+  image_face_recognition_delete_face_create(body) {
     return this.core.fetch('/image/face_recognition/delete_face', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1276,9 +1262,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageFaceRecognitionListFacesRetrieveResponse404>
    * @throws FetchError<500, types.ImageFaceRecognitionListFacesRetrieveResponse500>
    */
-  SDK.prototype.image_face_recognition_list_faces_retrieve = function (metadata) {
+  image_face_recognition_list_faces_retrieve(metadata) {
     return this.core.fetch('/image/face_recognition/list_faces', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1302,9 +1288,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageFaceRecognitionRecognizeCreateResponse404>
    * @throws FetchError<500, types.ImageFaceRecognitionRecognizeCreateResponse500>
    */
-  SDK.prototype.image_face_recognition_recognize_create = function (body) {
+  image_face_recognition_recognize_create(body) {
     return this.core.fetch('/image/face_recognition/recognize', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1331,9 +1317,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageGenerationCreateResponse404>
    * @throws FetchError<500, types.ImageGenerationCreateResponse500>
    */
-  SDK.prototype.image_generation_create = function (body) {
+  image_generation_create(body) {
     return this.core.fetch('/image/generation', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1356,9 +1342,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageLandmarkDetectionCreateResponse404>
    * @throws FetchError<500, types.ImageLandmarkDetectionCreateResponse500>
    */
-  SDK.prototype.image_landmark_detection_create = function (body) {
+  image_landmark_detection_create(body) {
     return this.core.fetch('/image/landmark_detection', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1384,9 +1370,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageLogoDetectionCreateResponse404>
    * @throws FetchError<500, types.ImageLogoDetectionCreateResponse500>
    */
-  SDK.prototype.image_logo_detection_create = function (body) {
+  image_logo_detection_create(body) {
     return this.core.fetch('/image/logo_detection', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1413,9 +1399,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageObjectDetectionCreateResponse404>
    * @throws FetchError<500, types.ImageObjectDetectionCreateResponse500>
    */
-  SDK.prototype.image_object_detection_create = function (body) {
+  image_object_detection_create(body) {
     return this.core.fetch('/image/object_detection', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1437,9 +1423,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageSearchDeleteImageCreateResponse404>
    * @throws FetchError<500, types.ImageSearchDeleteImageCreateResponse500>
    */
-  SDK.prototype.image_search_delete_image_create = function (body) {
+  image_search_delete_image_create(body) {
     return this.core.fetch('/image/search/delete_image', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1461,9 +1447,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageSearchGetImageRetrieveResponse404>
    * @throws FetchError<500, types.ImageSearchGetImageRetrieveResponse500>
    */
-  SDK.prototype.image_search_get_image_retrieve = function (metadata) {
+  image_search_get_image_retrieve(metadata) {
     return this.core.fetch('/image/search/get_image', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1485,9 +1471,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageSearchGetImagesRetrieveResponse404>
    * @throws FetchError<500, types.ImageSearchGetImagesRetrieveResponse500>
    */
-  SDK.prototype.image_search_get_images_retrieve = function (metadata) {
+  image_search_get_images_retrieve(metadata) {
     return this.core.fetch('/image/search/get_images', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1509,9 +1495,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageSearchLaunchSimilarityCreateResponse404>
    * @throws FetchError<500, types.ImageSearchLaunchSimilarityCreateResponse500>
    */
-  SDK.prototype.image_search_launch_similarity_create = function (body) {
+  image_search_launch_similarity_create(body) {
     return this.core.fetch('/image/search/launch_similarity', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1533,9 +1519,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.ImageSearchUploadImageCreateResponse404>
    * @throws FetchError<500, types.ImageSearchUploadImageCreateResponse500>
    */
-  SDK.prototype.image_search_upload_image_create = function (body) {
+  image_search_upload_image_create(body) {
     return this.core.fetch('/image/search/upload_image', 'post', body);
-  };
+  }
   /**
    * List Provider and features relations : You can get a list of *all providers* for a
    * *feature* or *all features* for a *given provider*.
@@ -1558,9 +1544,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary List Providers Subfeatures
    */
-  SDK.prototype.info_provider_subfeatures_list = function (metadata) {
+  info_provider_subfeatures_list(metadata) {
     return this.core.fetch('/info/provider_subfeatures', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1583,9 +1569,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrBankCheckParsingCreateResponse404>
    * @throws FetchError<500, types.OcrBankCheckParsingCreateResponse500>
    */
-  SDK.prototype.ocr_bank_check_parsing_create = function (body) {
+  ocr_bank_check_parsing_create(body) {
     return this.core.fetch('/ocr/bank_check_parsing', 'post', body);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -1594,9 +1580,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Custom Document Parsing List Job
    */
-  SDK.prototype.ocr_custom_document_parsing_async_retrieve = function () {
+  ocr_custom_document_parsing_async_retrieve() {
     return this.core.fetch('/ocr/custom_document_parsing_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1629,9 +1615,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Custom Document Parsing Launch Job
    */
-  SDK.prototype.ocr_custom_document_parsing_async_create = function (body) {
+  ocr_custom_document_parsing_async_create(body) {
     return this.core.fetch('/ocr/custom_document_parsing_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -1641,9 +1627,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrCustomDocumentParsingAsyncRetrieve2Response404>
    * @throws FetchError<500, types.OcrCustomDocumentParsingAsyncRetrieve2Response500>
    */
-  SDK.prototype.ocr_custom_document_parsing_async_retrieve_2 = function (metadata) {
+  ocr_custom_document_parsing_async_retrieve_2(metadata) {
     return this.core.fetch('/ocr/custom_document_parsing_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1666,9 +1652,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrDataExtractionCreateResponse404>
    * @throws FetchError<500, types.OcrDataExtractionCreateResponse500>
    */
-  SDK.prototype.ocr_data_extraction_create = function (body) {
+  ocr_data_extraction_create(body) {
     return this.core.fetch('/ocr/data_extraction', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1724,9 +1710,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrIdentityParserCreateResponse404>
    * @throws FetchError<500, types.OcrIdentityParserCreateResponse500>
    */
-  SDK.prototype.ocr_identity_parser_create = function (body) {
+  ocr_identity_parser_create(body) {
     return this.core.fetch('/ocr/identity_parser', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -1796,9 +1782,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrInvoiceParserCreateResponse404>
    * @throws FetchError<500, types.OcrInvoiceParserCreateResponse500>
    */
-  SDK.prototype.ocr_invoice_parser_create = function (body) {
+  ocr_invoice_parser_create(body) {
     return this.core.fetch('/ocr/invoice_parser', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2058,9 +2044,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrOcrCreateResponse404>
    * @throws FetchError<500, types.OcrOcrCreateResponse500>
    */
-  SDK.prototype.ocr_ocr_create = function (body) {
+  ocr_ocr_create(body) {
     return this.core.fetch('/ocr/ocr', 'post', body);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -2069,9 +2055,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Ocr Async List Job
    */
-  SDK.prototype.ocr_ocr_async_retrieve = function () {
+  ocr_ocr_async_retrieve() {
     return this.core.fetch('/ocr/ocr_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2089,9 +2075,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Ocr Async Launch Job
    */
-  SDK.prototype.ocr_ocr_async_create = function (body) {
+  ocr_ocr_async_create(body) {
     return this.core.fetch('/ocr/ocr_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -2101,9 +2087,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrOcrAsyncRetrieve2Response404>
    * @throws FetchError<500, types.OcrOcrAsyncRetrieve2Response500>
    */
-  SDK.prototype.ocr_ocr_async_retrieve_2 = function (metadata) {
+  ocr_ocr_async_retrieve_2(metadata) {
     return this.core.fetch('/ocr/ocr_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -2112,9 +2098,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary OCR Tables List Job
    */
-  SDK.prototype.ocr_ocr_tables_async_retrieve = function () {
+  ocr_ocr_tables_async_retrieve() {
     return this.core.fetch('/ocr/ocr_tables_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2327,9 +2313,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary OCR Tables Launch Job
    */
-  SDK.prototype.ocr_ocr_tables_async_create = function (body) {
+  ocr_ocr_tables_async_create(body) {
     return this.core.fetch('/ocr/ocr_tables_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -2339,9 +2325,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrOcrTablesAsyncRetrieve2Response404>
    * @throws FetchError<500, types.OcrOcrTablesAsyncRetrieve2Response500>
    */
-  SDK.prototype.ocr_ocr_tables_async_retrieve_2 = function (metadata) {
+  ocr_ocr_tables_async_retrieve_2(metadata) {
     return this.core.fetch('/ocr/ocr_tables_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2419,9 +2405,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrReceiptParserCreateResponse404>
    * @throws FetchError<500, types.OcrReceiptParserCreateResponse500>
    */
-  SDK.prototype.ocr_receipt_parser_create = function (body) {
+  ocr_receipt_parser_create(body) {
     return this.core.fetch('/ocr/receipt_parser', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2466,9 +2452,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.OcrResumeParserCreateResponse404>
    * @throws FetchError<500, types.OcrResumeParserCreateResponse500>
    */
-  SDK.prototype.ocr_resume_parser_create = function (body) {
+  ocr_resume_parser_create(body) {
     return this.core.fetch('/ocr/resume_parser', 'post', body);
-  };
+  }
   /**
    * Workflow let you create a pipeline of subfeature by inputing an entry data, letting it
    * pass through all the subfeatures and retreiving the result
@@ -2542,9 +2528,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Launch a Workflow
    */
-  SDK.prototype.pipeline_create = function (body) {
+  pipeline_create(body) {
     return this.core.fetch('/pipeline/', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2577,9 +2563,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextAiDetectionCreateResponse404>
    * @throws FetchError<500, types.TextAiDetectionCreateResponse500>
    */
-  SDK.prototype.text_ai_detection_create = function (body) {
+  text_ai_detection_create(body) {
     return this.core.fetch('/text/ai_detection', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2647,9 +2633,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextAnonymizationCreateResponse404>
    * @throws FetchError<500, types.TextAnonymizationCreateResponse500>
    */
-  SDK.prototype.text_anonymization_create = function (body) {
+  text_anonymization_create(body) {
     return this.core.fetch('/text/anonymization', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2678,9 +2664,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextChatCreateResponse404>
    * @throws FetchError<500, types.TextChatCreateResponse500>
    */
-  SDK.prototype.text_chat_create = function (body) {
+  text_chat_create(body) {
     return this.core.fetch('/text/chat', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2703,9 +2689,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextCodeGenerationCreateResponse404>
    * @throws FetchError<500, types.TextCodeGenerationCreateResponse500>
    */
-  SDK.prototype.text_code_generation_create = function (body) {
+  text_code_generation_create(body) {
     return this.core.fetch('/text/code_generation', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2728,9 +2714,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextCustomClassificationCreateResponse404>
    * @throws FetchError<500, types.TextCustomClassificationCreateResponse500>
    */
-  SDK.prototype.text_custom_classification_create = function (body) {
+  text_custom_classification_create(body) {
     return this.core.fetch('/text/custom_classification', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2753,9 +2739,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextCustomNamedEntityRecognitionCreateResponse404>
    * @throws FetchError<500, types.TextCustomNamedEntityRecognitionCreateResponse500>
    */
-  SDK.prototype.text_custom_named_entity_recognition_create = function (body) {
+  text_custom_named_entity_recognition_create(body) {
     return this.core.fetch('/text/custom_named_entity_recognition', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2778,9 +2764,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextEmbeddingsCreateResponse404>
    * @throws FetchError<500, types.TextEmbeddingsCreateResponse500>
    */
-  SDK.prototype.text_embeddings_create = function (body) {
+  text_embeddings_create(body) {
     return this.core.fetch('/text/embeddings', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2815,9 +2801,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextEntitySentimentCreateResponse404>
    * @throws FetchError<500, types.TextEntitySentimentCreateResponse500>
    */
-  SDK.prototype.text_entity_sentiment_create = function (body) {
+  text_entity_sentiment_create(body) {
     return this.core.fetch('/text/entity_sentiment', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2852,9 +2838,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextGenerationCreateResponse404>
    * @throws FetchError<500, types.TextGenerationCreateResponse500>
    */
-  SDK.prototype.text_generation_create = function (body) {
+  text_generation_create(body) {
     return this.core.fetch('/text/generation', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -2939,9 +2925,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextKeywordExtractionCreateResponse404>
    * @throws FetchError<500, types.TextKeywordExtractionCreateResponse500>
    */
-  SDK.prototype.text_keyword_extraction_create = function (body) {
+  text_keyword_extraction_create(body) {
     return this.core.fetch('/text/keyword_extraction', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3120,9 +3106,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextModerationCreateResponse404>
    * @throws FetchError<500, types.TextModerationCreateResponse500>
    */
-  SDK.prototype.text_moderation_create = function (body) {
+  text_moderation_create(body) {
     return this.core.fetch('/text/moderation', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3264,9 +3250,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextNamedEntityRecognitionCreateResponse404>
    * @throws FetchError<500, types.TextNamedEntityRecognitionCreateResponse500>
    */
-  SDK.prototype.text_named_entity_recognition_create = function (body) {
+  text_named_entity_recognition_create(body) {
     return this.core.fetch('/text/named_entity_recognition', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3288,9 +3274,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextPlagiaDetectionCreateResponse404>
    * @throws FetchError<500, types.TextPlagiaDetectionCreateResponse500>
    */
-  SDK.prototype.text_plagia_detection_create = function (body) {
+  text_plagia_detection_create(body) {
     return this.core.fetch('/text/plagia_detection', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3312,9 +3298,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextPromptOptimizationCreateResponse404>
    * @throws FetchError<500, types.TextPromptOptimizationCreateResponse500>
    */
-  SDK.prototype.text_prompt_optimization_create = function (body) {
+  text_prompt_optimization_create(body) {
     return this.core.fetch('/text/prompt_optimization', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3338,9 +3324,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextQuestionAnswerCreateResponse404>
    * @throws FetchError<500, types.TextQuestionAnswerCreateResponse500>
    */
-  SDK.prototype.text_question_answer_create = function (body) {
+  text_question_answer_create(body) {
     return this.core.fetch('/text/question_answer', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3362,9 +3348,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextSearchCreateResponse404>
    * @throws FetchError<500, types.TextSearchCreateResponse500>
    */
-  SDK.prototype.text_search_create = function (body) {
+  text_search_create(body) {
     return this.core.fetch('/text/search', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3450,9 +3436,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextSentimentAnalysisCreateResponse404>
    * @throws FetchError<500, types.TextSentimentAnalysisCreateResponse500>
    */
-  SDK.prototype.text_sentiment_analysis_create = function (body) {
+  text_sentiment_analysis_create(body) {
     return this.core.fetch('/text/sentiment_analysis', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3614,9 +3600,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextSpellCheckCreateResponse404>
    * @throws FetchError<500, types.TextSpellCheckCreateResponse500>
    */
-  SDK.prototype.text_spell_check_create = function (body) {
+  text_spell_check_create(body) {
     return this.core.fetch('/text/spell_check', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3922,9 +3908,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextSummarizeCreateResponse404>
    * @throws FetchError<500, types.TextSummarizeCreateResponse500>
    */
-  SDK.prototype.text_summarize_create = function (body) {
+  text_summarize_create(body) {
     return this.core.fetch('/text/summarize', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -3996,9 +3982,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextSyntaxAnalysisCreateResponse404>
    * @throws FetchError<500, types.TextSyntaxAnalysisCreateResponse500>
    */
-  SDK.prototype.text_syntax_analysis_create = function (body) {
+  text_syntax_analysis_create(body) {
     return this.core.fetch('/text/syntax_analysis', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4054,9 +4040,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TextTopicExtractionCreateResponse404>
    * @throws FetchError<500, types.TextTopicExtractionCreateResponse500>
    */
-  SDK.prototype.text_topic_extraction_create = function (body) {
+  text_topic_extraction_create(body) {
     return this.core.fetch('/text/topic_extraction', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4438,9 +4424,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TranslationAutomaticTranslationCreateResponse404>
    * @throws FetchError<500, types.TranslationAutomaticTranslationCreateResponse500>
    */
-  SDK.prototype.translation_automatic_translation_create = function (body) {
+  translation_automatic_translation_create(body) {
     return this.core.fetch('/translation/automatic_translation', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4592,9 +4578,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TranslationDocumentTranslationCreateResponse404>
    * @throws FetchError<500, types.TranslationDocumentTranslationCreateResponse500>
    */
-  SDK.prototype.translation_document_translation_create = function (body) {
+  translation_document_translation_create(body) {
     return this.core.fetch('/translation/document_translation', 'post', body);
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4623,9 +4609,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.TranslationLanguageDetectionCreateResponse404>
    * @throws FetchError<500, types.TranslationLanguageDetectionCreateResponse500>
    */
-  SDK.prototype.translation_language_detection_create = function (body) {
+  translation_language_detection_create(body) {
     return this.core.fetch('/translation/language_detection', 'post', body);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4634,9 +4620,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Video Explicit Content Detection List Jobs
    */
-  SDK.prototype.video_explicit_content_detection_async_retrieve = function () {
+  video_explicit_content_detection_async_retrieve() {
     return this.core.fetch('/video/explicit_content_detection_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4655,9 +4641,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Video Explicit Content Detection Launch Job
    */
-  SDK.prototype.video_explicit_content_detection_async_create = function (body) {
+  video_explicit_content_detection_async_create(body) {
     return this.core.fetch('/video/explicit_content_detection_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4667,9 +4653,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoExplicitContentDetectionAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoExplicitContentDetectionAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_explicit_content_detection_async_retrieve_2 = function (metadata) {
+  video_explicit_content_detection_async_retrieve_2(metadata) {
     return this.core.fetch('/video/explicit_content_detection_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4678,9 +4664,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Face Detection List Jobs
    */
-  SDK.prototype.video_face_detection_async_retrieve = function () {
+  video_face_detection_async_retrieve() {
     return this.core.fetch('/video/face_detection_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4699,9 +4685,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Face Detection Launch Job
    */
-  SDK.prototype.video_face_detection_async_create = function (body) {
+  video_face_detection_async_create(body) {
     return this.core.fetch('/video/face_detection_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4711,9 +4697,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoFaceDetectionAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoFaceDetectionAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_face_detection_async_retrieve_2 = function (metadata) {
+  video_face_detection_async_retrieve_2(metadata) {
     return this.core.fetch('/video/face_detection_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4722,9 +4708,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Label Detection List Jobs
    */
-  SDK.prototype.video_label_detection_async_retrieve = function () {
+  video_label_detection_async_retrieve() {
     return this.core.fetch('/video/label_detection_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4743,9 +4729,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Label Detection Launch Job
    */
-  SDK.prototype.video_label_detection_async_create = function (body) {
+  video_label_detection_async_create(body) {
     return this.core.fetch('/video/label_detection_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4755,9 +4741,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoLabelDetectionAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoLabelDetectionAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_label_detection_async_retrieve_2 = function (metadata) {
+  video_label_detection_async_retrieve_2(metadata) {
     return this.core.fetch('/video/label_detection_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4766,9 +4752,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Video Logo Detection List Jobs
    */
-  SDK.prototype.video_logo_detection_async_retrieve = function () {
+  video_logo_detection_async_retrieve() {
     return this.core.fetch('/video/logo_detection_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4786,9 +4772,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Video Logo Detection Launch Job
    */
-  SDK.prototype.video_logo_detection_async_create = function (body) {
+  video_logo_detection_async_create(body) {
     return this.core.fetch('/video/logo_detection_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4798,9 +4784,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoLogoDetectionAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoLogoDetectionAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_logo_detection_async_retrieve_2 = function (metadata) {
+  video_logo_detection_async_retrieve_2(metadata) {
     return this.core.fetch('/video/logo_detection_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4809,9 +4795,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Video Object Tracking List Jobs
    */
-  SDK.prototype.video_object_tracking_async_retrieve = function () {
+  video_object_tracking_async_retrieve() {
     return this.core.fetch('/video/object_tracking_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4829,9 +4815,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Video Object Tracking Launch Job
    */
-  SDK.prototype.video_object_tracking_async_create = function (body) {
+  video_object_tracking_async_create(body) {
     return this.core.fetch('/video/object_tracking_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4841,9 +4827,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoObjectTrackingAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoObjectTrackingAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_object_tracking_async_retrieve_2 = function (metadata) {
+  video_object_tracking_async_retrieve_2(metadata) {
     return this.core.fetch('/video/object_tracking_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4852,9 +4838,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Person Tracking List Jobs
    */
-  SDK.prototype.video_person_tracking_async_retrieve = function () {
+  video_person_tracking_async_retrieve() {
     return this.core.fetch('/video/person_tracking_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4873,9 +4859,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Person Tracking Launch Job
    */
-  SDK.prototype.video_person_tracking_async_create = function (body) {
+  video_person_tracking_async_create(body) {
     return this.core.fetch('/video/person_tracking_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4885,9 +4871,9 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoPersonTrackingAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoPersonTrackingAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_person_tracking_async_retrieve_2 = function (metadata) {
+  video_person_tracking_async_retrieve_2(metadata) {
     return this.core.fetch('/video/person_tracking_async/{public_id}', 'get', metadata);
-  };
+  }
   /**
    * Get a list of all jobs launched for this feature. You'll then be able to use the ID of
    * each one to get its status and results.<br>
@@ -4896,9 +4882,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Text Detection List Jobs
    */
-  SDK.prototype.video_text_detection_async_retrieve = function () {
+  video_text_detection_async_retrieve() {
     return this.core.fetch('/video/text_detection_async', 'get');
-  };
+  }
   /**
    * <details><summary><strong style='color: #0072a3; cursor: pointer'>Available
    * Providers</strong></summary>
@@ -4917,9 +4903,9 @@ var SDK = /** @class */ (function () {
    *
    * @summary Text Detection Launch Job
    */
-  SDK.prototype.video_text_detection_async_create = function (body) {
+  video_text_detection_async_create(body) {
     return this.core.fetch('/video/text_detection_async', 'post', body);
-  };
+  }
   /**
    * Get the status and results of an async job given its ID.
    *
@@ -4929,12 +4915,11 @@ var SDK = /** @class */ (function () {
    * @throws FetchError<404, types.VideoTextDetectionAsyncRetrieve2Response404>
    * @throws FetchError<500, types.VideoTextDetectionAsyncRetrieve2Response500>
    */
-  SDK.prototype.video_text_detection_async_retrieve_2 = function (metadata) {
+  video_text_detection_async_retrieve_2(metadata) {
     return this.core.fetch('/video/text_detection_async/{public_id}', 'get', metadata);
-  };
-  return SDK;
-})();
-var createSDK = (function () {
+  }
+}
+const createSDK = (() => {
   return new SDK();
 })();
-module.exports = createSDK;
+export default createSDK;

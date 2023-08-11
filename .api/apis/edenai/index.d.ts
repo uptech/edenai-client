@@ -109,25 +109,25 @@ declare class SDK {
    * |------------|---------------|
    * |`text`|`generation`|
    * |`text`|`named_entity_recognition`|
-   * |`text`|`moderation`|
-   * |`text`|`embeddings`|
-   * |`text`|`summarize`|
-   * |`text`|`chat`|
    * |`text`|`sentiment_analysis`|
+   * |`text`|`summarize`|
+   * |`text`|`moderation`|
+   * |`text`|`chat`|
    * |`text`|`topic_extraction`|
+   * |`text`|`embeddings`|
    * |`image`|`object_detection`|
+   * |`image`|`explicit_content`|
    * |`text`|`anonymization`|
    * |`text`|`custom_classification`|
    * |`text`|`spell_check`|
    * |`translation`|`automatic_translation`|
-   * |`image`|`explicit_content`|
    * |`translation`|`language_detection`|
    * |`text`|`custom_named_entity_recognition`|
+   * |`audio`|`text_to_speech`|
+   * |`translation`|`document_translation`|
    * |`text`|`keyword_extraction`|
    * |`text`|`question_answer`|
-   * |`audio`|`text_to_speech`|
    * |`text`|`search`|
-   * |`translation`|`document_translation`|
    * |`text`|`code_generation`|
    * |`text`|`syntax_analysis`|
    * |`ocr`|`invoice_parser`|
@@ -135,12 +135,12 @@ declare class SDK {
    * |`ocr`|`receipt_parser`|
    * |`ocr`|`identity_parser`|
    * |`image`|`face_detection`|
+   * |`audio`|`speech_to_text_async`|
    * |`image`|`landmark_detection`|
    * |`image`|`logo_detection`|
    * |`image`|`anonymization`|
    * |`image`|`generation`|
    * |`video`|`text_detection_async`|
-   * |`audio`|`speech_to_text_async`|
    *
    * </details>
    *
@@ -4911,4 +4911,4 @@ declare class SDK {
   ): Promise<FetchResponse<200, types.VideoTextDetectionAsyncRetrieve2Response200>>;
 }
 declare const createSDK: SDK;
-export = createSDK;
+export default createSDK;

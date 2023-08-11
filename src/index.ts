@@ -1,1 +1,1 @@
-export { default } from '@api/edenai'
+export * from '@api/edenai'

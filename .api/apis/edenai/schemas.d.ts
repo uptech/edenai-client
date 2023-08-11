@@ -181,259 +181,91 @@ declare const AudioSpeechToTextAsyncRetrieve2: {
       readonly properties: {
         readonly results: {
           readonly properties: {
-            readonly gladia: {
-              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
-              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
-              readonly type: 'object';
-              readonly properties: {
-                readonly text: {
-                  readonly title: 'Text';
-                  readonly type: 'string';
-                };
-                readonly diarization: {
-                  readonly required: readonly ['total_speakers'];
-                  readonly title: 'SpeechDiarization';
-                  readonly type: 'object';
-                  readonly properties: {
-                    readonly total_speakers: {
-                      readonly title: 'Total Speakers';
-                      readonly type: 'integer';
-                    };
-                    readonly entries: {
-                      readonly title: 'Entries';
-                      readonly type: 'array';
-                      readonly items: {
-                        readonly required: readonly [
-                          'segment',
-                          'start_time',
-                          'end_time',
-                          'speaker',
-                          'confidence'
-                        ];
-                        readonly title: 'SpeechDiarizationEntry';
-                        readonly type: 'object';
-                        readonly properties: {
-                          readonly segment: {
-                            readonly title: 'Segment';
-                            readonly type: 'string';
-                          };
-                          readonly start_time: {
-                            readonly title: 'Start Time';
-                            readonly type: 'string';
-                          };
-                          readonly end_time: {
-                            readonly title: 'End Time';
-                            readonly type: 'string';
-                          };
-                          readonly speaker: {
-                            readonly title: 'Speaker';
-                            readonly type: 'integer';
-                          };
-                          readonly confidence: {
-                            readonly title: 'Confidence';
-                            readonly type: 'integer';
-                          };
-                        };
-                      };
-                    };
-                    readonly error_message: {
-                      readonly default: any;
-                      readonly title: 'Error Message';
-                      readonly type: 'string';
-                    };
-                  };
-                };
-                readonly original_response: {
-                  readonly default: any;
-                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-                  readonly title: 'Original Response';
-                };
-                readonly id: {
-                  readonly title: 'Id';
-                  readonly type: 'string';
-                };
-                readonly final_status: {
-                  readonly title: 'Final Status';
-                  readonly enum: readonly ['sucess', 'fail'];
-                  readonly type: 'string';
-                  readonly description: '`sucess` `fail`';
-                };
-                readonly error: {
-                  readonly title: 'Error';
-                  readonly type: 'object';
-                  readonly additionalProperties: true;
-                };
-              };
-            };
-            readonly revai: {
-              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
-              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
-              readonly type: 'object';
-              readonly properties: {
-                readonly text: {
-                  readonly title: 'Text';
-                  readonly type: 'string';
-                };
-                readonly diarization: {
-                  readonly required: readonly ['total_speakers'];
-                  readonly title: 'SpeechDiarization';
-                  readonly type: 'object';
-                  readonly properties: {
-                    readonly total_speakers: {
-                      readonly title: 'Total Speakers';
-                      readonly type: 'integer';
-                    };
-                    readonly entries: {
-                      readonly title: 'Entries';
-                      readonly type: 'array';
-                      readonly items: {
-                        readonly required: readonly [
-                          'segment',
-                          'start_time',
-                          'end_time',
-                          'speaker',
-                          'confidence'
-                        ];
-                        readonly title: 'SpeechDiarizationEntry';
-                        readonly type: 'object';
-                        readonly properties: {
-                          readonly segment: {
-                            readonly title: 'Segment';
-                            readonly type: 'string';
-                          };
-                          readonly start_time: {
-                            readonly title: 'Start Time';
-                            readonly type: 'string';
-                          };
-                          readonly end_time: {
-                            readonly title: 'End Time';
-                            readonly type: 'string';
-                          };
-                          readonly speaker: {
-                            readonly title: 'Speaker';
-                            readonly type: 'integer';
-                          };
-                          readonly confidence: {
-                            readonly title: 'Confidence';
-                            readonly type: 'integer';
-                          };
-                        };
-                      };
-                    };
-                    readonly error_message: {
-                      readonly default: any;
-                      readonly title: 'Error Message';
-                      readonly type: 'string';
-                    };
-                  };
-                };
-                readonly original_response: {
-                  readonly default: any;
-                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-                  readonly title: 'Original Response';
-                };
-                readonly id: {
-                  readonly title: 'Id';
-                  readonly type: 'string';
-                };
-                readonly final_status: {
-                  readonly title: 'Final Status';
-                  readonly enum: readonly ['sucess', 'fail'];
-                  readonly type: 'string';
-                  readonly description: '`sucess` `fail`';
-                };
-                readonly error: {
-                  readonly title: 'Error';
-                  readonly type: 'object';
-                  readonly additionalProperties: true;
-                };
-              };
-            };
-            readonly voxist: {
-              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
-              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
-              readonly type: 'object';
-              readonly properties: {
-                readonly text: {
-                  readonly title: 'Text';
-                  readonly type: 'string';
-                };
-                readonly diarization: {
-                  readonly required: readonly ['total_speakers'];
-                  readonly title: 'SpeechDiarization';
-                  readonly type: 'object';
-                  readonly properties: {
-                    readonly total_speakers: {
-                      readonly title: 'Total Speakers';
-                      readonly type: 'integer';
-                    };
-                    readonly entries: {
-                      readonly title: 'Entries';
-                      readonly type: 'array';
-                      readonly items: {
-                        readonly required: readonly [
-                          'segment',
-                          'start_time',
-                          'end_time',
-                          'speaker',
-                          'confidence'
-                        ];
-                        readonly title: 'SpeechDiarizationEntry';
-                        readonly type: 'object';
-                        readonly properties: {
-                          readonly segment: {
-                            readonly title: 'Segment';
-                            readonly type: 'string';
-                          };
-                          readonly start_time: {
-                            readonly title: 'Start Time';
-                            readonly type: 'string';
-                          };
-                          readonly end_time: {
-                            readonly title: 'End Time';
-                            readonly type: 'string';
-                          };
-                          readonly speaker: {
-                            readonly title: 'Speaker';
-                            readonly type: 'integer';
-                          };
-                          readonly confidence: {
-                            readonly title: 'Confidence';
-                            readonly type: 'integer';
-                          };
-                        };
-                      };
-                    };
-                    readonly error_message: {
-                      readonly default: any;
-                      readonly title: 'Error Message';
-                      readonly type: 'string';
-                    };
-                  };
-                };
-                readonly original_response: {
-                  readonly default: any;
-                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-                  readonly title: 'Original Response';
-                };
-                readonly id: {
-                  readonly title: 'Id';
-                  readonly type: 'string';
-                };
-                readonly final_status: {
-                  readonly title: 'Final Status';
-                  readonly enum: readonly ['sucess', 'fail'];
-                  readonly type: 'string';
-                  readonly description: '`sucess` `fail`';
-                };
-                readonly error: {
-                  readonly title: 'Error';
-                  readonly type: 'object';
-                  readonly additionalProperties: true;
-                };
-              };
-            };
             readonly symbl: {
+              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
+              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
+              readonly type: 'object';
+              readonly properties: {
+                readonly text: {
+                  readonly title: 'Text';
+                  readonly type: 'string';
+                };
+                readonly diarization: {
+                  readonly required: readonly ['total_speakers'];
+                  readonly title: 'SpeechDiarization';
+                  readonly type: 'object';
+                  readonly properties: {
+                    readonly total_speakers: {
+                      readonly title: 'Total Speakers';
+                      readonly type: 'integer';
+                    };
+                    readonly entries: {
+                      readonly title: 'Entries';
+                      readonly type: 'array';
+                      readonly items: {
+                        readonly required: readonly [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence'
+                        ];
+                        readonly title: 'SpeechDiarizationEntry';
+                        readonly type: 'object';
+                        readonly properties: {
+                          readonly segment: {
+                            readonly title: 'Segment';
+                            readonly type: 'string';
+                          };
+                          readonly start_time: {
+                            readonly title: 'Start Time';
+                            readonly type: 'string';
+                          };
+                          readonly end_time: {
+                            readonly title: 'End Time';
+                            readonly type: 'string';
+                          };
+                          readonly speaker: {
+                            readonly title: 'Speaker';
+                            readonly type: 'integer';
+                          };
+                          readonly confidence: {
+                            readonly title: 'Confidence';
+                            readonly type: 'integer';
+                          };
+                        };
+                      };
+                    };
+                    readonly error_message: {
+                      readonly default: any;
+                      readonly title: 'Error Message';
+                      readonly type: 'string';
+                    };
+                  };
+                };
+                readonly original_response: {
+                  readonly default: any;
+                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+                  readonly title: 'Original Response';
+                };
+                readonly id: {
+                  readonly title: 'Id';
+                  readonly type: 'string';
+                };
+                readonly final_status: {
+                  readonly title: 'Final Status';
+                  readonly enum: readonly ['sucess', 'fail'];
+                  readonly type: 'string';
+                  readonly description: '`sucess` `fail`';
+                };
+                readonly error: {
+                  readonly title: 'Error';
+                  readonly type: 'object';
+                  readonly additionalProperties: true;
+                };
+              };
+            };
+            readonly oneai: {
               readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
               readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
               readonly type: 'object';
@@ -601,7 +433,7 @@ declare const AudioSpeechToTextAsyncRetrieve2: {
                 };
               };
             };
-            readonly speechmatics: {
+            readonly faker: {
               readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
               readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
               readonly type: 'object';
@@ -853,90 +685,6 @@ declare const AudioSpeechToTextAsyncRetrieve2: {
                 };
               };
             };
-            readonly microsoft: {
-              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
-              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
-              readonly type: 'object';
-              readonly properties: {
-                readonly text: {
-                  readonly title: 'Text';
-                  readonly type: 'string';
-                };
-                readonly diarization: {
-                  readonly required: readonly ['total_speakers'];
-                  readonly title: 'SpeechDiarization';
-                  readonly type: 'object';
-                  readonly properties: {
-                    readonly total_speakers: {
-                      readonly title: 'Total Speakers';
-                      readonly type: 'integer';
-                    };
-                    readonly entries: {
-                      readonly title: 'Entries';
-                      readonly type: 'array';
-                      readonly items: {
-                        readonly required: readonly [
-                          'segment',
-                          'start_time',
-                          'end_time',
-                          'speaker',
-                          'confidence'
-                        ];
-                        readonly title: 'SpeechDiarizationEntry';
-                        readonly type: 'object';
-                        readonly properties: {
-                          readonly segment: {
-                            readonly title: 'Segment';
-                            readonly type: 'string';
-                          };
-                          readonly start_time: {
-                            readonly title: 'Start Time';
-                            readonly type: 'string';
-                          };
-                          readonly end_time: {
-                            readonly title: 'End Time';
-                            readonly type: 'string';
-                          };
-                          readonly speaker: {
-                            readonly title: 'Speaker';
-                            readonly type: 'integer';
-                          };
-                          readonly confidence: {
-                            readonly title: 'Confidence';
-                            readonly type: 'integer';
-                          };
-                        };
-                      };
-                    };
-                    readonly error_message: {
-                      readonly default: any;
-                      readonly title: 'Error Message';
-                      readonly type: 'string';
-                    };
-                  };
-                };
-                readonly original_response: {
-                  readonly default: any;
-                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-                  readonly title: 'Original Response';
-                };
-                readonly id: {
-                  readonly title: 'Id';
-                  readonly type: 'string';
-                };
-                readonly final_status: {
-                  readonly title: 'Final Status';
-                  readonly enum: readonly ['sucess', 'fail'];
-                  readonly type: 'string';
-                  readonly description: '`sucess` `fail`';
-                };
-                readonly error: {
-                  readonly title: 'Error';
-                  readonly type: 'object';
-                  readonly additionalProperties: true;
-                };
-              };
-            };
             readonly openai: {
               readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
               readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
@@ -1021,7 +769,175 @@ declare const AudioSpeechToTextAsyncRetrieve2: {
                 };
               };
             };
-            readonly faker: {
+            readonly neuralspace: {
+              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
+              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
+              readonly type: 'object';
+              readonly properties: {
+                readonly text: {
+                  readonly title: 'Text';
+                  readonly type: 'string';
+                };
+                readonly diarization: {
+                  readonly required: readonly ['total_speakers'];
+                  readonly title: 'SpeechDiarization';
+                  readonly type: 'object';
+                  readonly properties: {
+                    readonly total_speakers: {
+                      readonly title: 'Total Speakers';
+                      readonly type: 'integer';
+                    };
+                    readonly entries: {
+                      readonly title: 'Entries';
+                      readonly type: 'array';
+                      readonly items: {
+                        readonly required: readonly [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence'
+                        ];
+                        readonly title: 'SpeechDiarizationEntry';
+                        readonly type: 'object';
+                        readonly properties: {
+                          readonly segment: {
+                            readonly title: 'Segment';
+                            readonly type: 'string';
+                          };
+                          readonly start_time: {
+                            readonly title: 'Start Time';
+                            readonly type: 'string';
+                          };
+                          readonly end_time: {
+                            readonly title: 'End Time';
+                            readonly type: 'string';
+                          };
+                          readonly speaker: {
+                            readonly title: 'Speaker';
+                            readonly type: 'integer';
+                          };
+                          readonly confidence: {
+                            readonly title: 'Confidence';
+                            readonly type: 'integer';
+                          };
+                        };
+                      };
+                    };
+                    readonly error_message: {
+                      readonly default: any;
+                      readonly title: 'Error Message';
+                      readonly type: 'string';
+                    };
+                  };
+                };
+                readonly original_response: {
+                  readonly default: any;
+                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+                  readonly title: 'Original Response';
+                };
+                readonly id: {
+                  readonly title: 'Id';
+                  readonly type: 'string';
+                };
+                readonly final_status: {
+                  readonly title: 'Final Status';
+                  readonly enum: readonly ['sucess', 'fail'];
+                  readonly type: 'string';
+                  readonly description: '`sucess` `fail`';
+                };
+                readonly error: {
+                  readonly title: 'Error';
+                  readonly type: 'object';
+                  readonly additionalProperties: true;
+                };
+              };
+            };
+            readonly revai: {
+              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
+              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
+              readonly type: 'object';
+              readonly properties: {
+                readonly text: {
+                  readonly title: 'Text';
+                  readonly type: 'string';
+                };
+                readonly diarization: {
+                  readonly required: readonly ['total_speakers'];
+                  readonly title: 'SpeechDiarization';
+                  readonly type: 'object';
+                  readonly properties: {
+                    readonly total_speakers: {
+                      readonly title: 'Total Speakers';
+                      readonly type: 'integer';
+                    };
+                    readonly entries: {
+                      readonly title: 'Entries';
+                      readonly type: 'array';
+                      readonly items: {
+                        readonly required: readonly [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence'
+                        ];
+                        readonly title: 'SpeechDiarizationEntry';
+                        readonly type: 'object';
+                        readonly properties: {
+                          readonly segment: {
+                            readonly title: 'Segment';
+                            readonly type: 'string';
+                          };
+                          readonly start_time: {
+                            readonly title: 'Start Time';
+                            readonly type: 'string';
+                          };
+                          readonly end_time: {
+                            readonly title: 'End Time';
+                            readonly type: 'string';
+                          };
+                          readonly speaker: {
+                            readonly title: 'Speaker';
+                            readonly type: 'integer';
+                          };
+                          readonly confidence: {
+                            readonly title: 'Confidence';
+                            readonly type: 'integer';
+                          };
+                        };
+                      };
+                    };
+                    readonly error_message: {
+                      readonly default: any;
+                      readonly title: 'Error Message';
+                      readonly type: 'string';
+                    };
+                  };
+                };
+                readonly original_response: {
+                  readonly default: any;
+                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+                  readonly title: 'Original Response';
+                };
+                readonly id: {
+                  readonly title: 'Id';
+                  readonly type: 'string';
+                };
+                readonly final_status: {
+                  readonly title: 'Final Status';
+                  readonly enum: readonly ['sucess', 'fail'];
+                  readonly type: 'string';
+                  readonly description: '`sucess` `fail`';
+                };
+                readonly error: {
+                  readonly title: 'Error';
+                  readonly type: 'object';
+                  readonly additionalProperties: true;
+                };
+              };
+            };
+            readonly speechmatics: {
               readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
               readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
               readonly type: 'object';
@@ -1189,7 +1105,7 @@ declare const AudioSpeechToTextAsyncRetrieve2: {
                 };
               };
             };
-            readonly oneai: {
+            readonly voxist: {
               readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
               readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
               readonly type: 'object';
@@ -1357,7 +1273,91 @@ declare const AudioSpeechToTextAsyncRetrieve2: {
                 };
               };
             };
-            readonly neuralspace: {
+            readonly microsoft: {
+              readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
+              readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
+              readonly type: 'object';
+              readonly properties: {
+                readonly text: {
+                  readonly title: 'Text';
+                  readonly type: 'string';
+                };
+                readonly diarization: {
+                  readonly required: readonly ['total_speakers'];
+                  readonly title: 'SpeechDiarization';
+                  readonly type: 'object';
+                  readonly properties: {
+                    readonly total_speakers: {
+                      readonly title: 'Total Speakers';
+                      readonly type: 'integer';
+                    };
+                    readonly entries: {
+                      readonly title: 'Entries';
+                      readonly type: 'array';
+                      readonly items: {
+                        readonly required: readonly [
+                          'segment',
+                          'start_time',
+                          'end_time',
+                          'speaker',
+                          'confidence'
+                        ];
+                        readonly title: 'SpeechDiarizationEntry';
+                        readonly type: 'object';
+                        readonly properties: {
+                          readonly segment: {
+                            readonly title: 'Segment';
+                            readonly type: 'string';
+                          };
+                          readonly start_time: {
+                            readonly title: 'Start Time';
+                            readonly type: 'string';
+                          };
+                          readonly end_time: {
+                            readonly title: 'End Time';
+                            readonly type: 'string';
+                          };
+                          readonly speaker: {
+                            readonly title: 'Speaker';
+                            readonly type: 'integer';
+                          };
+                          readonly confidence: {
+                            readonly title: 'Confidence';
+                            readonly type: 'integer';
+                          };
+                        };
+                      };
+                    };
+                    readonly error_message: {
+                      readonly default: any;
+                      readonly title: 'Error Message';
+                      readonly type: 'string';
+                    };
+                  };
+                };
+                readonly original_response: {
+                  readonly default: any;
+                  readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+                  readonly title: 'Original Response';
+                };
+                readonly id: {
+                  readonly title: 'Id';
+                  readonly type: 'string';
+                };
+                readonly final_status: {
+                  readonly title: 'Final Status';
+                  readonly enum: readonly ['sucess', 'fail'];
+                  readonly type: 'string';
+                  readonly description: '`sucess` `fail`';
+                };
+                readonly error: {
+                  readonly title: 'Error';
+                  readonly type: 'object';
+                  readonly additionalProperties: true;
+                };
+              };
+            };
+            readonly gladia: {
               readonly required: readonly ['text', 'diarization', 'id', 'final_status'];
               readonly title: 'audiospeech_to_text_asyncSpeechToTextAsyncDataClass';
               readonly type: 'object';
@@ -2074,66 +2074,6 @@ declare const AudioTextToSpeechCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly lovoai: {
-          readonly required: readonly ['audio', 'voice_type', 'audio_resource_url', 'status'];
-          readonly title: 'audiotext_to_speechTextToSpeechDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly audio: {
-              readonly title: 'Audio';
-              readonly type: 'string';
-            };
-            readonly voice_type: {
-              readonly title: 'Voice Type';
-              readonly type: 'integer';
-            };
-            readonly audio_resource_url: {
-              readonly title: 'Audio Resource Url';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
-          readonly required: readonly ['audio', 'voice_type', 'audio_resource_url', 'status'];
-          readonly title: 'audiotext_to_speechTextToSpeechDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly audio: {
-              readonly title: 'Audio';
-              readonly type: 'string';
-            };
-            readonly voice_type: {
-              readonly title: 'Voice Type';
-              readonly type: 'integer';
-            };
-            readonly audio_resource_url: {
-              readonly title: 'Audio Resource Url';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly ibm: {
           readonly required: readonly ['audio', 'voice_type', 'audio_resource_url', 'status'];
           readonly title: 'audiotext_to_speechTextToSpeechDataClass';
@@ -2164,7 +2104,67 @@ declare const AudioTextToSpeechCreate: {
             };
           };
         };
+        readonly lovoai: {
+          readonly required: readonly ['audio', 'voice_type', 'audio_resource_url', 'status'];
+          readonly title: 'audiotext_to_speechTextToSpeechDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly audio: {
+              readonly title: 'Audio';
+              readonly type: 'string';
+            };
+            readonly voice_type: {
+              readonly title: 'Voice Type';
+              readonly type: 'integer';
+            };
+            readonly audio_resource_url: {
+              readonly title: 'Audio Resource Url';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly google: {
+          readonly required: readonly ['audio', 'voice_type', 'audio_resource_url', 'status'];
+          readonly title: 'audiotext_to_speechTextToSpeechDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly audio: {
+              readonly title: 'Audio';
+              readonly type: 'string';
+            };
+            readonly voice_type: {
+              readonly title: 'Voice Type';
+              readonly type: 'integer';
+            };
+            readonly audio_resource_url: {
+              readonly title: 'Audio Resource Url';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly microsoft: {
           readonly required: readonly ['audio', 'voice_type', 'audio_resource_url', 'status'];
           readonly title: 'audiotext_to_speechTextToSpeechDataClass';
           readonly type: 'object';
@@ -2949,6 +2949,88 @@ declare const ImageExplicitContentCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly picpurify: {
+          readonly required: readonly ['nsfw_likelihood', 'status'];
+          readonly title: 'imageexplicit_contentExplicitContentDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly nsfw_likelihood: {
+              readonly title: 'Nsfw Likelihood';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['label', 'likelihood'];
+                readonly title: 'ExplicitItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly label: {
+                    readonly title: 'Label';
+                    readonly type: 'string';
+                  };
+                  readonly likelihood: {
+                    readonly title: 'Likelihood';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly sentisight: {
+          readonly required: readonly ['nsfw_likelihood', 'status'];
+          readonly title: 'imageexplicit_contentExplicitContentDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly nsfw_likelihood: {
+              readonly title: 'Nsfw Likelihood';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['label', 'likelihood'];
+                readonly title: 'ExplicitItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly label: {
+                    readonly title: 'Label';
+                    readonly type: 'string';
+                  };
+                  readonly likelihood: {
+                    readonly title: 'Likelihood';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly clarifai: {
           readonly required: readonly ['nsfw_likelihood', 'status'];
           readonly title: 'imageexplicit_contentExplicitContentDataClass';
@@ -2990,7 +3072,7 @@ declare const ImageExplicitContentCreate: {
             };
           };
         };
-        readonly picpurify: {
+        readonly google: {
           readonly required: readonly ['nsfw_likelihood', 'status'];
           readonly title: 'imageexplicit_contentExplicitContentDataClass';
           readonly type: 'object';
@@ -3073,88 +3155,6 @@ declare const ImageExplicitContentCreate: {
           };
         };
         readonly api4ai: {
-          readonly required: readonly ['nsfw_likelihood', 'status'];
-          readonly title: 'imageexplicit_contentExplicitContentDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly nsfw_likelihood: {
-              readonly title: 'Nsfw Likelihood';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['label', 'likelihood'];
-                readonly title: 'ExplicitItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly label: {
-                    readonly title: 'Label';
-                    readonly type: 'string';
-                  };
-                  readonly likelihood: {
-                    readonly title: 'Likelihood';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
-          readonly required: readonly ['nsfw_likelihood', 'status'];
-          readonly title: 'imageexplicit_contentExplicitContentDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly nsfw_likelihood: {
-              readonly title: 'Nsfw Likelihood';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['label', 'likelihood'];
-                readonly title: 'ExplicitItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly label: {
-                    readonly title: 'Label';
-                    readonly type: 'string';
-                  };
-                  readonly likelihood: {
-                    readonly title: 'Likelihood';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly sentisight: {
           readonly required: readonly ['nsfw_likelihood', 'status'];
           readonly title: 'imageexplicit_contentExplicitContentDataClass';
           readonly type: 'object';
@@ -3723,2855 +3723,7 @@ declare const ImageFaceDetectionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly clarifai: {
-          readonly required: readonly ['status'];
-          readonly title: 'imageface_detectionFaceDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'confidence',
-                  'landmarks',
-                  'emotions',
-                  'poses',
-                  'age',
-                  'gender',
-                  'bounding_box',
-                  'hair',
-                  'facial_hair',
-                  'quality',
-                  'makeup',
-                  'accessories',
-                  'occlusions',
-                  'features'
-                ];
-                readonly title: 'FaceItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                  readonly landmarks: {
-                    readonly title: 'FaceLandmarks';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly left_eye: {
-                        readonly title: 'Left Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_top: {
-                        readonly title: 'Left Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_right: {
-                        readonly title: 'Left Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_bottom: {
-                        readonly title: 'Left Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_left: {
-                        readonly title: 'Left Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye: {
-                        readonly title: 'Right Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_top: {
-                        readonly title: 'Right Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_right: {
-                        readonly title: 'Right Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_bottom: {
-                        readonly title: 'Right Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_left: {
-                        readonly title: 'Right Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_left: {
-                        readonly title: 'Left Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_right: {
-                        readonly title: 'Left Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_top: {
-                        readonly title: 'Left Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_left: {
-                        readonly title: 'Right Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_right: {
-                        readonly title: 'Right Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_pupil: {
-                        readonly title: 'Left Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_pupil: {
-                        readonly title: 'Right Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_tip: {
-                        readonly title: 'Nose Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_right: {
-                        readonly title: 'Nose Bottom Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_left: {
-                        readonly title: 'Nose Bottom Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_left: {
-                        readonly title: 'Mouth Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_right: {
-                        readonly title: 'Mouth Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_top: {
-                        readonly title: 'Right Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly midpoint_between_eyes: {
-                        readonly title: 'Midpoint Between Eyes';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_center: {
-                        readonly title: 'Nose Bottom Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_out_tip: {
-                        readonly title: 'Nose Left Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_top: {
-                        readonly title: 'Nose Left Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_out_tip: {
-                        readonly title: 'Nose Right Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_top: {
-                        readonly title: 'Nose Right Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_left: {
-                        readonly title: 'Nose Root Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_right: {
-                        readonly title: 'Nose Root Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip: {
-                        readonly title: 'Upper Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip: {
-                        readonly title: 'Under Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_bottom: {
-                        readonly title: 'Under Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_top: {
-                        readonly title: 'Under Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_bottom: {
-                        readonly title: 'Upper Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_top: {
-                        readonly title: 'Upper Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_center: {
-                        readonly title: 'Mouth Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_top: {
-                        readonly title: 'Mouth Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_bottom: {
-                        readonly title: 'Mouth Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_ear_tragion: {
-                        readonly title: 'Left Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_ear_tragion: {
-                        readonly title: 'Right Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly forehead_glabella: {
-                        readonly title: 'Forehead Glabella';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_gnathion: {
-                        readonly title: 'Chin Gnathion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_left_gonion: {
-                        readonly title: 'Chin Left Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_right_gonion: {
-                        readonly title: 'Chin Right Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_left: {
-                        readonly title: 'Upper Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_left: {
-                        readonly title: 'Mid Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_right: {
-                        readonly title: 'Mid Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_right: {
-                        readonly title: 'Upper Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_cheek_center: {
-                        readonly title: 'Left Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_cheek_center: {
-                        readonly title: 'Right Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly emotions: {
-                    readonly required: readonly [
-                      'joy',
-                      'sorrow',
-                      'anger',
-                      'surprise',
-                      'disgust',
-                      'fear',
-                      'confusion',
-                      'calm',
-                      'unknown',
-                      'neutral',
-                      'contempt'
-                    ];
-                    readonly title: 'FaceEmotions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly joy: {
-                        readonly title: 'Joy';
-                        readonly type: 'integer';
-                      };
-                      readonly sorrow: {
-                        readonly title: 'Sorrow';
-                        readonly type: 'integer';
-                      };
-                      readonly anger: {
-                        readonly title: 'Anger';
-                        readonly type: 'integer';
-                      };
-                      readonly surprise: {
-                        readonly title: 'Surprise';
-                        readonly type: 'integer';
-                      };
-                      readonly disgust: {
-                        readonly title: 'Disgust';
-                        readonly type: 'integer';
-                      };
-                      readonly fear: {
-                        readonly title: 'Fear';
-                        readonly type: 'integer';
-                      };
-                      readonly confusion: {
-                        readonly title: 'Confusion';
-                        readonly type: 'integer';
-                      };
-                      readonly calm: {
-                        readonly title: 'Calm';
-                        readonly type: 'integer';
-                      };
-                      readonly unknown: {
-                        readonly title: 'Unknown';
-                        readonly type: 'integer';
-                      };
-                      readonly neutral: {
-                        readonly title: 'Neutral';
-                        readonly type: 'integer';
-                      };
-                      readonly contempt: {
-                        readonly title: 'Contempt';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly poses: {
-                    readonly required: readonly ['pitch', 'roll', 'yaw'];
-                    readonly title: 'FacePoses';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly pitch: {
-                        readonly title: 'Pitch';
-                        readonly type: 'integer';
-                      };
-                      readonly roll: {
-                        readonly title: 'Roll';
-                        readonly type: 'integer';
-                      };
-                      readonly yaw: {
-                        readonly title: 'Yaw';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly age: {
-                    readonly title: 'Age';
-                    readonly type: 'integer';
-                  };
-                  readonly gender: {
-                    readonly title: 'Gender';
-                    readonly type: 'string';
-                  };
-                  readonly bounding_box: {
-                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
-                    readonly title: 'FaceBoundingBox';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly x_min: {
-                        readonly title: 'X Min';
-                        readonly type: 'integer';
-                      };
-                      readonly x_max: {
-                        readonly title: 'X Max';
-                        readonly type: 'integer';
-                      };
-                      readonly y_min: {
-                        readonly title: 'Y Min';
-                        readonly type: 'integer';
-                      };
-                      readonly y_max: {
-                        readonly title: 'Y Max';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly hair: {
-                    readonly required: readonly ['bald', 'invisible'];
-                    readonly title: 'FaceHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly hair_color: {
-                        readonly title: 'Hair Color';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly required: readonly ['color', 'confidence'];
-                          readonly title: 'FaceHairColor';
-                          readonly type: 'object';
-                          readonly properties: {
-                            readonly color: {
-                              readonly title: 'Color';
-                              readonly type: 'string';
-                            };
-                            readonly confidence: {
-                              readonly title: 'Confidence';
-                              readonly type: 'integer';
-                            };
-                          };
-                        };
-                      };
-                      readonly bald: {
-                        readonly title: 'Bald';
-                        readonly type: 'integer';
-                      };
-                      readonly invisible: {
-                        readonly title: 'Invisible';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly facial_hair: {
-                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
-                    readonly title: 'FaceFacialHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly moustache: {
-                        readonly title: 'Moustache';
-                        readonly type: 'integer';
-                      };
-                      readonly beard: {
-                        readonly title: 'Beard';
-                        readonly type: 'integer';
-                      };
-                      readonly sideburns: {
-                        readonly title: 'Sideburns';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly quality: {
-                    readonly required: readonly [
-                      'noise',
-                      'exposure',
-                      'blur',
-                      'brightness',
-                      'sharpness'
-                    ];
-                    readonly title: 'FaceQuality';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly noise: {
-                        readonly title: 'Noise';
-                        readonly type: 'integer';
-                      };
-                      readonly exposure: {
-                        readonly title: 'Exposure';
-                        readonly type: 'integer';
-                      };
-                      readonly blur: {
-                        readonly title: 'Blur';
-                        readonly type: 'integer';
-                      };
-                      readonly brightness: {
-                        readonly title: 'Brightness';
-                        readonly type: 'integer';
-                      };
-                      readonly sharpness: {
-                        readonly title: 'Sharpness';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly makeup: {
-                    readonly required: readonly ['eye_make', 'lip_make'];
-                    readonly title: 'FaceMakeup';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_make: {
-                        readonly title: 'Eye Make';
-                        readonly type: 'boolean';
-                      };
-                      readonly lip_make: {
-                        readonly title: 'Lip Make';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly accessories: {
-                    readonly required: readonly [
-                      'sunglasses',
-                      'reading_glasses',
-                      'swimming_goggles',
-                      'face_mask',
-                      'eyeglasses',
-                      'headwear'
-                    ];
-                    readonly title: 'FaceAccessories';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly sunglasses: {
-                        readonly title: 'Sunglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly reading_glasses: {
-                        readonly title: 'Reading Glasses';
-                        readonly type: 'integer';
-                      };
-                      readonly swimming_goggles: {
-                        readonly title: 'Swimming Goggles';
-                        readonly type: 'integer';
-                      };
-                      readonly face_mask: {
-                        readonly title: 'Face Mask';
-                        readonly type: 'integer';
-                      };
-                      readonly eyeglasses: {
-                        readonly title: 'Eyeglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly headwear: {
-                        readonly title: 'Headwear';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly occlusions: {
-                    readonly required: readonly [
-                      'eye_occluded',
-                      'forehead_occluded',
-                      'mouth_occluded'
-                    ];
-                    readonly title: 'FaceOcclusions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_occluded: {
-                        readonly title: 'Eye Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly forehead_occluded: {
-                        readonly title: 'Forehead Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly mouth_occluded: {
-                        readonly title: 'Mouth Occluded';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly features: {
-                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
-                    readonly title: 'FaceFeatures';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eyes_open: {
-                        readonly title: 'Eyes Open';
-                        readonly type: 'integer';
-                      };
-                      readonly smile: {
-                        readonly title: 'Smile';
-                        readonly type: 'integer';
-                      };
-                      readonly mouth_open: {
-                        readonly title: 'Mouth Open';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly picpurify: {
-          readonly required: readonly ['status'];
-          readonly title: 'imageface_detectionFaceDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'confidence',
-                  'landmarks',
-                  'emotions',
-                  'poses',
-                  'age',
-                  'gender',
-                  'bounding_box',
-                  'hair',
-                  'facial_hair',
-                  'quality',
-                  'makeup',
-                  'accessories',
-                  'occlusions',
-                  'features'
-                ];
-                readonly title: 'FaceItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                  readonly landmarks: {
-                    readonly title: 'FaceLandmarks';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly left_eye: {
-                        readonly title: 'Left Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_top: {
-                        readonly title: 'Left Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_right: {
-                        readonly title: 'Left Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_bottom: {
-                        readonly title: 'Left Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_left: {
-                        readonly title: 'Left Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye: {
-                        readonly title: 'Right Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_top: {
-                        readonly title: 'Right Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_right: {
-                        readonly title: 'Right Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_bottom: {
-                        readonly title: 'Right Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_left: {
-                        readonly title: 'Right Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_left: {
-                        readonly title: 'Left Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_right: {
-                        readonly title: 'Left Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_top: {
-                        readonly title: 'Left Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_left: {
-                        readonly title: 'Right Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_right: {
-                        readonly title: 'Right Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_pupil: {
-                        readonly title: 'Left Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_pupil: {
-                        readonly title: 'Right Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_tip: {
-                        readonly title: 'Nose Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_right: {
-                        readonly title: 'Nose Bottom Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_left: {
-                        readonly title: 'Nose Bottom Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_left: {
-                        readonly title: 'Mouth Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_right: {
-                        readonly title: 'Mouth Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_top: {
-                        readonly title: 'Right Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly midpoint_between_eyes: {
-                        readonly title: 'Midpoint Between Eyes';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_center: {
-                        readonly title: 'Nose Bottom Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_out_tip: {
-                        readonly title: 'Nose Left Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_top: {
-                        readonly title: 'Nose Left Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_out_tip: {
-                        readonly title: 'Nose Right Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_top: {
-                        readonly title: 'Nose Right Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_left: {
-                        readonly title: 'Nose Root Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_right: {
-                        readonly title: 'Nose Root Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip: {
-                        readonly title: 'Upper Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip: {
-                        readonly title: 'Under Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_bottom: {
-                        readonly title: 'Under Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_top: {
-                        readonly title: 'Under Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_bottom: {
-                        readonly title: 'Upper Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_top: {
-                        readonly title: 'Upper Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_center: {
-                        readonly title: 'Mouth Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_top: {
-                        readonly title: 'Mouth Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_bottom: {
-                        readonly title: 'Mouth Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_ear_tragion: {
-                        readonly title: 'Left Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_ear_tragion: {
-                        readonly title: 'Right Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly forehead_glabella: {
-                        readonly title: 'Forehead Glabella';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_gnathion: {
-                        readonly title: 'Chin Gnathion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_left_gonion: {
-                        readonly title: 'Chin Left Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_right_gonion: {
-                        readonly title: 'Chin Right Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_left: {
-                        readonly title: 'Upper Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_left: {
-                        readonly title: 'Mid Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_right: {
-                        readonly title: 'Mid Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_right: {
-                        readonly title: 'Upper Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_cheek_center: {
-                        readonly title: 'Left Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_cheek_center: {
-                        readonly title: 'Right Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly emotions: {
-                    readonly required: readonly [
-                      'joy',
-                      'sorrow',
-                      'anger',
-                      'surprise',
-                      'disgust',
-                      'fear',
-                      'confusion',
-                      'calm',
-                      'unknown',
-                      'neutral',
-                      'contempt'
-                    ];
-                    readonly title: 'FaceEmotions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly joy: {
-                        readonly title: 'Joy';
-                        readonly type: 'integer';
-                      };
-                      readonly sorrow: {
-                        readonly title: 'Sorrow';
-                        readonly type: 'integer';
-                      };
-                      readonly anger: {
-                        readonly title: 'Anger';
-                        readonly type: 'integer';
-                      };
-                      readonly surprise: {
-                        readonly title: 'Surprise';
-                        readonly type: 'integer';
-                      };
-                      readonly disgust: {
-                        readonly title: 'Disgust';
-                        readonly type: 'integer';
-                      };
-                      readonly fear: {
-                        readonly title: 'Fear';
-                        readonly type: 'integer';
-                      };
-                      readonly confusion: {
-                        readonly title: 'Confusion';
-                        readonly type: 'integer';
-                      };
-                      readonly calm: {
-                        readonly title: 'Calm';
-                        readonly type: 'integer';
-                      };
-                      readonly unknown: {
-                        readonly title: 'Unknown';
-                        readonly type: 'integer';
-                      };
-                      readonly neutral: {
-                        readonly title: 'Neutral';
-                        readonly type: 'integer';
-                      };
-                      readonly contempt: {
-                        readonly title: 'Contempt';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly poses: {
-                    readonly required: readonly ['pitch', 'roll', 'yaw'];
-                    readonly title: 'FacePoses';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly pitch: {
-                        readonly title: 'Pitch';
-                        readonly type: 'integer';
-                      };
-                      readonly roll: {
-                        readonly title: 'Roll';
-                        readonly type: 'integer';
-                      };
-                      readonly yaw: {
-                        readonly title: 'Yaw';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly age: {
-                    readonly title: 'Age';
-                    readonly type: 'integer';
-                  };
-                  readonly gender: {
-                    readonly title: 'Gender';
-                    readonly type: 'string';
-                  };
-                  readonly bounding_box: {
-                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
-                    readonly title: 'FaceBoundingBox';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly x_min: {
-                        readonly title: 'X Min';
-                        readonly type: 'integer';
-                      };
-                      readonly x_max: {
-                        readonly title: 'X Max';
-                        readonly type: 'integer';
-                      };
-                      readonly y_min: {
-                        readonly title: 'Y Min';
-                        readonly type: 'integer';
-                      };
-                      readonly y_max: {
-                        readonly title: 'Y Max';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly hair: {
-                    readonly required: readonly ['bald', 'invisible'];
-                    readonly title: 'FaceHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly hair_color: {
-                        readonly title: 'Hair Color';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly required: readonly ['color', 'confidence'];
-                          readonly title: 'FaceHairColor';
-                          readonly type: 'object';
-                          readonly properties: {
-                            readonly color: {
-                              readonly title: 'Color';
-                              readonly type: 'string';
-                            };
-                            readonly confidence: {
-                              readonly title: 'Confidence';
-                              readonly type: 'integer';
-                            };
-                          };
-                        };
-                      };
-                      readonly bald: {
-                        readonly title: 'Bald';
-                        readonly type: 'integer';
-                      };
-                      readonly invisible: {
-                        readonly title: 'Invisible';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly facial_hair: {
-                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
-                    readonly title: 'FaceFacialHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly moustache: {
-                        readonly title: 'Moustache';
-                        readonly type: 'integer';
-                      };
-                      readonly beard: {
-                        readonly title: 'Beard';
-                        readonly type: 'integer';
-                      };
-                      readonly sideburns: {
-                        readonly title: 'Sideburns';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly quality: {
-                    readonly required: readonly [
-                      'noise',
-                      'exposure',
-                      'blur',
-                      'brightness',
-                      'sharpness'
-                    ];
-                    readonly title: 'FaceQuality';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly noise: {
-                        readonly title: 'Noise';
-                        readonly type: 'integer';
-                      };
-                      readonly exposure: {
-                        readonly title: 'Exposure';
-                        readonly type: 'integer';
-                      };
-                      readonly blur: {
-                        readonly title: 'Blur';
-                        readonly type: 'integer';
-                      };
-                      readonly brightness: {
-                        readonly title: 'Brightness';
-                        readonly type: 'integer';
-                      };
-                      readonly sharpness: {
-                        readonly title: 'Sharpness';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly makeup: {
-                    readonly required: readonly ['eye_make', 'lip_make'];
-                    readonly title: 'FaceMakeup';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_make: {
-                        readonly title: 'Eye Make';
-                        readonly type: 'boolean';
-                      };
-                      readonly lip_make: {
-                        readonly title: 'Lip Make';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly accessories: {
-                    readonly required: readonly [
-                      'sunglasses',
-                      'reading_glasses',
-                      'swimming_goggles',
-                      'face_mask',
-                      'eyeglasses',
-                      'headwear'
-                    ];
-                    readonly title: 'FaceAccessories';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly sunglasses: {
-                        readonly title: 'Sunglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly reading_glasses: {
-                        readonly title: 'Reading Glasses';
-                        readonly type: 'integer';
-                      };
-                      readonly swimming_goggles: {
-                        readonly title: 'Swimming Goggles';
-                        readonly type: 'integer';
-                      };
-                      readonly face_mask: {
-                        readonly title: 'Face Mask';
-                        readonly type: 'integer';
-                      };
-                      readonly eyeglasses: {
-                        readonly title: 'Eyeglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly headwear: {
-                        readonly title: 'Headwear';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly occlusions: {
-                    readonly required: readonly [
-                      'eye_occluded',
-                      'forehead_occluded',
-                      'mouth_occluded'
-                    ];
-                    readonly title: 'FaceOcclusions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_occluded: {
-                        readonly title: 'Eye Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly forehead_occluded: {
-                        readonly title: 'Forehead Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly mouth_occluded: {
-                        readonly title: 'Mouth Occluded';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly features: {
-                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
-                    readonly title: 'FaceFeatures';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eyes_open: {
-                        readonly title: 'Eyes Open';
-                        readonly type: 'integer';
-                      };
-                      readonly smile: {
-                        readonly title: 'Smile';
-                        readonly type: 'integer';
-                      };
-                      readonly mouth_open: {
-                        readonly title: 'Mouth Open';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
-          readonly required: readonly ['status'];
-          readonly title: 'imageface_detectionFaceDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'confidence',
-                  'landmarks',
-                  'emotions',
-                  'poses',
-                  'age',
-                  'gender',
-                  'bounding_box',
-                  'hair',
-                  'facial_hair',
-                  'quality',
-                  'makeup',
-                  'accessories',
-                  'occlusions',
-                  'features'
-                ];
-                readonly title: 'FaceItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                  readonly landmarks: {
-                    readonly title: 'FaceLandmarks';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly left_eye: {
-                        readonly title: 'Left Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_top: {
-                        readonly title: 'Left Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_right: {
-                        readonly title: 'Left Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_bottom: {
-                        readonly title: 'Left Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_left: {
-                        readonly title: 'Left Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye: {
-                        readonly title: 'Right Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_top: {
-                        readonly title: 'Right Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_right: {
-                        readonly title: 'Right Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_bottom: {
-                        readonly title: 'Right Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_left: {
-                        readonly title: 'Right Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_left: {
-                        readonly title: 'Left Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_right: {
-                        readonly title: 'Left Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_top: {
-                        readonly title: 'Left Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_left: {
-                        readonly title: 'Right Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_right: {
-                        readonly title: 'Right Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_pupil: {
-                        readonly title: 'Left Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_pupil: {
-                        readonly title: 'Right Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_tip: {
-                        readonly title: 'Nose Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_right: {
-                        readonly title: 'Nose Bottom Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_left: {
-                        readonly title: 'Nose Bottom Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_left: {
-                        readonly title: 'Mouth Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_right: {
-                        readonly title: 'Mouth Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_top: {
-                        readonly title: 'Right Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly midpoint_between_eyes: {
-                        readonly title: 'Midpoint Between Eyes';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_center: {
-                        readonly title: 'Nose Bottom Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_out_tip: {
-                        readonly title: 'Nose Left Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_top: {
-                        readonly title: 'Nose Left Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_out_tip: {
-                        readonly title: 'Nose Right Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_top: {
-                        readonly title: 'Nose Right Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_left: {
-                        readonly title: 'Nose Root Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_right: {
-                        readonly title: 'Nose Root Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip: {
-                        readonly title: 'Upper Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip: {
-                        readonly title: 'Under Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_bottom: {
-                        readonly title: 'Under Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_top: {
-                        readonly title: 'Under Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_bottom: {
-                        readonly title: 'Upper Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_top: {
-                        readonly title: 'Upper Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_center: {
-                        readonly title: 'Mouth Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_top: {
-                        readonly title: 'Mouth Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_bottom: {
-                        readonly title: 'Mouth Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_ear_tragion: {
-                        readonly title: 'Left Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_ear_tragion: {
-                        readonly title: 'Right Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly forehead_glabella: {
-                        readonly title: 'Forehead Glabella';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_gnathion: {
-                        readonly title: 'Chin Gnathion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_left_gonion: {
-                        readonly title: 'Chin Left Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_right_gonion: {
-                        readonly title: 'Chin Right Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_left: {
-                        readonly title: 'Upper Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_left: {
-                        readonly title: 'Mid Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_right: {
-                        readonly title: 'Mid Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_right: {
-                        readonly title: 'Upper Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_cheek_center: {
-                        readonly title: 'Left Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_cheek_center: {
-                        readonly title: 'Right Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly emotions: {
-                    readonly required: readonly [
-                      'joy',
-                      'sorrow',
-                      'anger',
-                      'surprise',
-                      'disgust',
-                      'fear',
-                      'confusion',
-                      'calm',
-                      'unknown',
-                      'neutral',
-                      'contempt'
-                    ];
-                    readonly title: 'FaceEmotions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly joy: {
-                        readonly title: 'Joy';
-                        readonly type: 'integer';
-                      };
-                      readonly sorrow: {
-                        readonly title: 'Sorrow';
-                        readonly type: 'integer';
-                      };
-                      readonly anger: {
-                        readonly title: 'Anger';
-                        readonly type: 'integer';
-                      };
-                      readonly surprise: {
-                        readonly title: 'Surprise';
-                        readonly type: 'integer';
-                      };
-                      readonly disgust: {
-                        readonly title: 'Disgust';
-                        readonly type: 'integer';
-                      };
-                      readonly fear: {
-                        readonly title: 'Fear';
-                        readonly type: 'integer';
-                      };
-                      readonly confusion: {
-                        readonly title: 'Confusion';
-                        readonly type: 'integer';
-                      };
-                      readonly calm: {
-                        readonly title: 'Calm';
-                        readonly type: 'integer';
-                      };
-                      readonly unknown: {
-                        readonly title: 'Unknown';
-                        readonly type: 'integer';
-                      };
-                      readonly neutral: {
-                        readonly title: 'Neutral';
-                        readonly type: 'integer';
-                      };
-                      readonly contempt: {
-                        readonly title: 'Contempt';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly poses: {
-                    readonly required: readonly ['pitch', 'roll', 'yaw'];
-                    readonly title: 'FacePoses';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly pitch: {
-                        readonly title: 'Pitch';
-                        readonly type: 'integer';
-                      };
-                      readonly roll: {
-                        readonly title: 'Roll';
-                        readonly type: 'integer';
-                      };
-                      readonly yaw: {
-                        readonly title: 'Yaw';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly age: {
-                    readonly title: 'Age';
-                    readonly type: 'integer';
-                  };
-                  readonly gender: {
-                    readonly title: 'Gender';
-                    readonly type: 'string';
-                  };
-                  readonly bounding_box: {
-                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
-                    readonly title: 'FaceBoundingBox';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly x_min: {
-                        readonly title: 'X Min';
-                        readonly type: 'integer';
-                      };
-                      readonly x_max: {
-                        readonly title: 'X Max';
-                        readonly type: 'integer';
-                      };
-                      readonly y_min: {
-                        readonly title: 'Y Min';
-                        readonly type: 'integer';
-                      };
-                      readonly y_max: {
-                        readonly title: 'Y Max';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly hair: {
-                    readonly required: readonly ['bald', 'invisible'];
-                    readonly title: 'FaceHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly hair_color: {
-                        readonly title: 'Hair Color';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly required: readonly ['color', 'confidence'];
-                          readonly title: 'FaceHairColor';
-                          readonly type: 'object';
-                          readonly properties: {
-                            readonly color: {
-                              readonly title: 'Color';
-                              readonly type: 'string';
-                            };
-                            readonly confidence: {
-                              readonly title: 'Confidence';
-                              readonly type: 'integer';
-                            };
-                          };
-                        };
-                      };
-                      readonly bald: {
-                        readonly title: 'Bald';
-                        readonly type: 'integer';
-                      };
-                      readonly invisible: {
-                        readonly title: 'Invisible';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly facial_hair: {
-                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
-                    readonly title: 'FaceFacialHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly moustache: {
-                        readonly title: 'Moustache';
-                        readonly type: 'integer';
-                      };
-                      readonly beard: {
-                        readonly title: 'Beard';
-                        readonly type: 'integer';
-                      };
-                      readonly sideburns: {
-                        readonly title: 'Sideburns';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly quality: {
-                    readonly required: readonly [
-                      'noise',
-                      'exposure',
-                      'blur',
-                      'brightness',
-                      'sharpness'
-                    ];
-                    readonly title: 'FaceQuality';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly noise: {
-                        readonly title: 'Noise';
-                        readonly type: 'integer';
-                      };
-                      readonly exposure: {
-                        readonly title: 'Exposure';
-                        readonly type: 'integer';
-                      };
-                      readonly blur: {
-                        readonly title: 'Blur';
-                        readonly type: 'integer';
-                      };
-                      readonly brightness: {
-                        readonly title: 'Brightness';
-                        readonly type: 'integer';
-                      };
-                      readonly sharpness: {
-                        readonly title: 'Sharpness';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly makeup: {
-                    readonly required: readonly ['eye_make', 'lip_make'];
-                    readonly title: 'FaceMakeup';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_make: {
-                        readonly title: 'Eye Make';
-                        readonly type: 'boolean';
-                      };
-                      readonly lip_make: {
-                        readonly title: 'Lip Make';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly accessories: {
-                    readonly required: readonly [
-                      'sunglasses',
-                      'reading_glasses',
-                      'swimming_goggles',
-                      'face_mask',
-                      'eyeglasses',
-                      'headwear'
-                    ];
-                    readonly title: 'FaceAccessories';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly sunglasses: {
-                        readonly title: 'Sunglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly reading_glasses: {
-                        readonly title: 'Reading Glasses';
-                        readonly type: 'integer';
-                      };
-                      readonly swimming_goggles: {
-                        readonly title: 'Swimming Goggles';
-                        readonly type: 'integer';
-                      };
-                      readonly face_mask: {
-                        readonly title: 'Face Mask';
-                        readonly type: 'integer';
-                      };
-                      readonly eyeglasses: {
-                        readonly title: 'Eyeglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly headwear: {
-                        readonly title: 'Headwear';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly occlusions: {
-                    readonly required: readonly [
-                      'eye_occluded',
-                      'forehead_occluded',
-                      'mouth_occluded'
-                    ];
-                    readonly title: 'FaceOcclusions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_occluded: {
-                        readonly title: 'Eye Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly forehead_occluded: {
-                        readonly title: 'Forehead Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly mouth_occluded: {
-                        readonly title: 'Mouth Occluded';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly features: {
-                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
-                    readonly title: 'FaceFeatures';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eyes_open: {
-                        readonly title: 'Eyes Open';
-                        readonly type: 'integer';
-                      };
-                      readonly smile: {
-                        readonly title: 'Smile';
-                        readonly type: 'integer';
-                      };
-                      readonly mouth_open: {
-                        readonly title: 'Mouth Open';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly api4ai: {
-          readonly required: readonly ['status'];
-          readonly title: 'imageface_detectionFaceDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'confidence',
-                  'landmarks',
-                  'emotions',
-                  'poses',
-                  'age',
-                  'gender',
-                  'bounding_box',
-                  'hair',
-                  'facial_hair',
-                  'quality',
-                  'makeup',
-                  'accessories',
-                  'occlusions',
-                  'features'
-                ];
-                readonly title: 'FaceItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                  readonly landmarks: {
-                    readonly title: 'FaceLandmarks';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly left_eye: {
-                        readonly title: 'Left Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_top: {
-                        readonly title: 'Left Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_right: {
-                        readonly title: 'Left Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_bottom: {
-                        readonly title: 'Left Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eye_left: {
-                        readonly title: 'Left Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye: {
-                        readonly title: 'Right Eye';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_top: {
-                        readonly title: 'Right Eye Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_right: {
-                        readonly title: 'Right Eye Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_bottom: {
-                        readonly title: 'Right Eye Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eye_left: {
-                        readonly title: 'Right Eye Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_left: {
-                        readonly title: 'Left Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_right: {
-                        readonly title: 'Left Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_eyebrow_top: {
-                        readonly title: 'Left Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_left: {
-                        readonly title: 'Right Eyebrow Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_right: {
-                        readonly title: 'Right Eyebrow Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_pupil: {
-                        readonly title: 'Left Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_pupil: {
-                        readonly title: 'Right Pupil';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_tip: {
-                        readonly title: 'Nose Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_right: {
-                        readonly title: 'Nose Bottom Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_left: {
-                        readonly title: 'Nose Bottom Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_left: {
-                        readonly title: 'Mouth Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_right: {
-                        readonly title: 'Mouth Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_eyebrow_top: {
-                        readonly title: 'Right Eyebrow Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly midpoint_between_eyes: {
-                        readonly title: 'Midpoint Between Eyes';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_bottom_center: {
-                        readonly title: 'Nose Bottom Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_out_tip: {
-                        readonly title: 'Nose Left Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_left_alar_top: {
-                        readonly title: 'Nose Left Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_out_tip: {
-                        readonly title: 'Nose Right Alar Out Tip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_right_alar_top: {
-                        readonly title: 'Nose Right Alar Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_left: {
-                        readonly title: 'Nose Root Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly nose_root_right: {
-                        readonly title: 'Nose Root Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip: {
-                        readonly title: 'Upper Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip: {
-                        readonly title: 'Under Lip';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_bottom: {
-                        readonly title: 'Under Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly under_lip_top: {
-                        readonly title: 'Under Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_bottom: {
-                        readonly title: 'Upper Lip Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_lip_top: {
-                        readonly title: 'Upper Lip Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_center: {
-                        readonly title: 'Mouth Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_top: {
-                        readonly title: 'Mouth Top';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mouth_bottom: {
-                        readonly title: 'Mouth Bottom';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_ear_tragion: {
-                        readonly title: 'Left Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_ear_tragion: {
-                        readonly title: 'Right Ear Tragion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly forehead_glabella: {
-                        readonly title: 'Forehead Glabella';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_gnathion: {
-                        readonly title: 'Chin Gnathion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_left_gonion: {
-                        readonly title: 'Chin Left Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly chin_right_gonion: {
-                        readonly title: 'Chin Right Gonion';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_left: {
-                        readonly title: 'Upper Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_left: {
-                        readonly title: 'Mid Jawline Left';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly mid_jawline_right: {
-                        readonly title: 'Mid Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly upper_jawline_right: {
-                        readonly title: 'Upper Jawline Right';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly left_cheek_center: {
-                        readonly title: 'Left Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                      readonly right_cheek_center: {
-                        readonly title: 'Right Cheek Center';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly emotions: {
-                    readonly required: readonly [
-                      'joy',
-                      'sorrow',
-                      'anger',
-                      'surprise',
-                      'disgust',
-                      'fear',
-                      'confusion',
-                      'calm',
-                      'unknown',
-                      'neutral',
-                      'contempt'
-                    ];
-                    readonly title: 'FaceEmotions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly joy: {
-                        readonly title: 'Joy';
-                        readonly type: 'integer';
-                      };
-                      readonly sorrow: {
-                        readonly title: 'Sorrow';
-                        readonly type: 'integer';
-                      };
-                      readonly anger: {
-                        readonly title: 'Anger';
-                        readonly type: 'integer';
-                      };
-                      readonly surprise: {
-                        readonly title: 'Surprise';
-                        readonly type: 'integer';
-                      };
-                      readonly disgust: {
-                        readonly title: 'Disgust';
-                        readonly type: 'integer';
-                      };
-                      readonly fear: {
-                        readonly title: 'Fear';
-                        readonly type: 'integer';
-                      };
-                      readonly confusion: {
-                        readonly title: 'Confusion';
-                        readonly type: 'integer';
-                      };
-                      readonly calm: {
-                        readonly title: 'Calm';
-                        readonly type: 'integer';
-                      };
-                      readonly unknown: {
-                        readonly title: 'Unknown';
-                        readonly type: 'integer';
-                      };
-                      readonly neutral: {
-                        readonly title: 'Neutral';
-                        readonly type: 'integer';
-                      };
-                      readonly contempt: {
-                        readonly title: 'Contempt';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly poses: {
-                    readonly required: readonly ['pitch', 'roll', 'yaw'];
-                    readonly title: 'FacePoses';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly pitch: {
-                        readonly title: 'Pitch';
-                        readonly type: 'integer';
-                      };
-                      readonly roll: {
-                        readonly title: 'Roll';
-                        readonly type: 'integer';
-                      };
-                      readonly yaw: {
-                        readonly title: 'Yaw';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly age: {
-                    readonly title: 'Age';
-                    readonly type: 'integer';
-                  };
-                  readonly gender: {
-                    readonly title: 'Gender';
-                    readonly type: 'string';
-                  };
-                  readonly bounding_box: {
-                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
-                    readonly title: 'FaceBoundingBox';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly x_min: {
-                        readonly title: 'X Min';
-                        readonly type: 'integer';
-                      };
-                      readonly x_max: {
-                        readonly title: 'X Max';
-                        readonly type: 'integer';
-                      };
-                      readonly y_min: {
-                        readonly title: 'Y Min';
-                        readonly type: 'integer';
-                      };
-                      readonly y_max: {
-                        readonly title: 'Y Max';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly hair: {
-                    readonly required: readonly ['bald', 'invisible'];
-                    readonly title: 'FaceHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly hair_color: {
-                        readonly title: 'Hair Color';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly required: readonly ['color', 'confidence'];
-                          readonly title: 'FaceHairColor';
-                          readonly type: 'object';
-                          readonly properties: {
-                            readonly color: {
-                              readonly title: 'Color';
-                              readonly type: 'string';
-                            };
-                            readonly confidence: {
-                              readonly title: 'Confidence';
-                              readonly type: 'integer';
-                            };
-                          };
-                        };
-                      };
-                      readonly bald: {
-                        readonly title: 'Bald';
-                        readonly type: 'integer';
-                      };
-                      readonly invisible: {
-                        readonly title: 'Invisible';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly facial_hair: {
-                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
-                    readonly title: 'FaceFacialHair';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly moustache: {
-                        readonly title: 'Moustache';
-                        readonly type: 'integer';
-                      };
-                      readonly beard: {
-                        readonly title: 'Beard';
-                        readonly type: 'integer';
-                      };
-                      readonly sideburns: {
-                        readonly title: 'Sideburns';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly quality: {
-                    readonly required: readonly [
-                      'noise',
-                      'exposure',
-                      'blur',
-                      'brightness',
-                      'sharpness'
-                    ];
-                    readonly title: 'FaceQuality';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly noise: {
-                        readonly title: 'Noise';
-                        readonly type: 'integer';
-                      };
-                      readonly exposure: {
-                        readonly title: 'Exposure';
-                        readonly type: 'integer';
-                      };
-                      readonly blur: {
-                        readonly title: 'Blur';
-                        readonly type: 'integer';
-                      };
-                      readonly brightness: {
-                        readonly title: 'Brightness';
-                        readonly type: 'integer';
-                      };
-                      readonly sharpness: {
-                        readonly title: 'Sharpness';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly makeup: {
-                    readonly required: readonly ['eye_make', 'lip_make'];
-                    readonly title: 'FaceMakeup';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_make: {
-                        readonly title: 'Eye Make';
-                        readonly type: 'boolean';
-                      };
-                      readonly lip_make: {
-                        readonly title: 'Lip Make';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly accessories: {
-                    readonly required: readonly [
-                      'sunglasses',
-                      'reading_glasses',
-                      'swimming_goggles',
-                      'face_mask',
-                      'eyeglasses',
-                      'headwear'
-                    ];
-                    readonly title: 'FaceAccessories';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly sunglasses: {
-                        readonly title: 'Sunglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly reading_glasses: {
-                        readonly title: 'Reading Glasses';
-                        readonly type: 'integer';
-                      };
-                      readonly swimming_goggles: {
-                        readonly title: 'Swimming Goggles';
-                        readonly type: 'integer';
-                      };
-                      readonly face_mask: {
-                        readonly title: 'Face Mask';
-                        readonly type: 'integer';
-                      };
-                      readonly eyeglasses: {
-                        readonly title: 'Eyeglasses';
-                        readonly type: 'integer';
-                      };
-                      readonly headwear: {
-                        readonly title: 'Headwear';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly occlusions: {
-                    readonly required: readonly [
-                      'eye_occluded',
-                      'forehead_occluded',
-                      'mouth_occluded'
-                    ];
-                    readonly title: 'FaceOcclusions';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eye_occluded: {
-                        readonly title: 'Eye Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly forehead_occluded: {
-                        readonly title: 'Forehead Occluded';
-                        readonly type: 'boolean';
-                      };
-                      readonly mouth_occluded: {
-                        readonly title: 'Mouth Occluded';
-                        readonly type: 'boolean';
-                      };
-                    };
-                  };
-                  readonly features: {
-                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
-                    readonly title: 'FaceFeatures';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly eyes_open: {
-                        readonly title: 'Eyes Open';
-                        readonly type: 'integer';
-                      };
-                      readonly smile: {
-                        readonly title: 'Smile';
-                        readonly type: 'integer';
-                      };
-                      readonly mouth_open: {
-                        readonly title: 'Mouth Open';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'imageface_detectionFaceDetectionDataClass';
           readonly type: 'object';
@@ -7284,6 +4436,2854 @@ declare const ImageFaceDetectionCreate: {
           };
         };
         readonly skybiometry: {
+          readonly required: readonly ['status'];
+          readonly title: 'imageface_detectionFaceDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'confidence',
+                  'landmarks',
+                  'emotions',
+                  'poses',
+                  'age',
+                  'gender',
+                  'bounding_box',
+                  'hair',
+                  'facial_hair',
+                  'quality',
+                  'makeup',
+                  'accessories',
+                  'occlusions',
+                  'features'
+                ];
+                readonly title: 'FaceItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                  readonly landmarks: {
+                    readonly title: 'FaceLandmarks';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly left_eye: {
+                        readonly title: 'Left Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_top: {
+                        readonly title: 'Left Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_right: {
+                        readonly title: 'Left Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_bottom: {
+                        readonly title: 'Left Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_left: {
+                        readonly title: 'Left Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye: {
+                        readonly title: 'Right Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_top: {
+                        readonly title: 'Right Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_right: {
+                        readonly title: 'Right Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_bottom: {
+                        readonly title: 'Right Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_left: {
+                        readonly title: 'Right Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_left: {
+                        readonly title: 'Left Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_right: {
+                        readonly title: 'Left Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_top: {
+                        readonly title: 'Left Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_left: {
+                        readonly title: 'Right Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_right: {
+                        readonly title: 'Right Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_pupil: {
+                        readonly title: 'Left Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_pupil: {
+                        readonly title: 'Right Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_tip: {
+                        readonly title: 'Nose Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_right: {
+                        readonly title: 'Nose Bottom Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_left: {
+                        readonly title: 'Nose Bottom Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_left: {
+                        readonly title: 'Mouth Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_right: {
+                        readonly title: 'Mouth Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_top: {
+                        readonly title: 'Right Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly midpoint_between_eyes: {
+                        readonly title: 'Midpoint Between Eyes';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_center: {
+                        readonly title: 'Nose Bottom Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_out_tip: {
+                        readonly title: 'Nose Left Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_top: {
+                        readonly title: 'Nose Left Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_out_tip: {
+                        readonly title: 'Nose Right Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_top: {
+                        readonly title: 'Nose Right Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_left: {
+                        readonly title: 'Nose Root Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_right: {
+                        readonly title: 'Nose Root Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip: {
+                        readonly title: 'Upper Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip: {
+                        readonly title: 'Under Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_bottom: {
+                        readonly title: 'Under Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_top: {
+                        readonly title: 'Under Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_bottom: {
+                        readonly title: 'Upper Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_top: {
+                        readonly title: 'Upper Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_center: {
+                        readonly title: 'Mouth Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_top: {
+                        readonly title: 'Mouth Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_bottom: {
+                        readonly title: 'Mouth Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_ear_tragion: {
+                        readonly title: 'Left Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_ear_tragion: {
+                        readonly title: 'Right Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly forehead_glabella: {
+                        readonly title: 'Forehead Glabella';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_gnathion: {
+                        readonly title: 'Chin Gnathion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_left_gonion: {
+                        readonly title: 'Chin Left Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_right_gonion: {
+                        readonly title: 'Chin Right Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_left: {
+                        readonly title: 'Upper Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_left: {
+                        readonly title: 'Mid Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_right: {
+                        readonly title: 'Mid Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_right: {
+                        readonly title: 'Upper Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_cheek_center: {
+                        readonly title: 'Left Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_cheek_center: {
+                        readonly title: 'Right Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly emotions: {
+                    readonly required: readonly [
+                      'joy',
+                      'sorrow',
+                      'anger',
+                      'surprise',
+                      'disgust',
+                      'fear',
+                      'confusion',
+                      'calm',
+                      'unknown',
+                      'neutral',
+                      'contempt'
+                    ];
+                    readonly title: 'FaceEmotions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly joy: {
+                        readonly title: 'Joy';
+                        readonly type: 'integer';
+                      };
+                      readonly sorrow: {
+                        readonly title: 'Sorrow';
+                        readonly type: 'integer';
+                      };
+                      readonly anger: {
+                        readonly title: 'Anger';
+                        readonly type: 'integer';
+                      };
+                      readonly surprise: {
+                        readonly title: 'Surprise';
+                        readonly type: 'integer';
+                      };
+                      readonly disgust: {
+                        readonly title: 'Disgust';
+                        readonly type: 'integer';
+                      };
+                      readonly fear: {
+                        readonly title: 'Fear';
+                        readonly type: 'integer';
+                      };
+                      readonly confusion: {
+                        readonly title: 'Confusion';
+                        readonly type: 'integer';
+                      };
+                      readonly calm: {
+                        readonly title: 'Calm';
+                        readonly type: 'integer';
+                      };
+                      readonly unknown: {
+                        readonly title: 'Unknown';
+                        readonly type: 'integer';
+                      };
+                      readonly neutral: {
+                        readonly title: 'Neutral';
+                        readonly type: 'integer';
+                      };
+                      readonly contempt: {
+                        readonly title: 'Contempt';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly poses: {
+                    readonly required: readonly ['pitch', 'roll', 'yaw'];
+                    readonly title: 'FacePoses';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly pitch: {
+                        readonly title: 'Pitch';
+                        readonly type: 'integer';
+                      };
+                      readonly roll: {
+                        readonly title: 'Roll';
+                        readonly type: 'integer';
+                      };
+                      readonly yaw: {
+                        readonly title: 'Yaw';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly age: {
+                    readonly title: 'Age';
+                    readonly type: 'integer';
+                  };
+                  readonly gender: {
+                    readonly title: 'Gender';
+                    readonly type: 'string';
+                  };
+                  readonly bounding_box: {
+                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
+                    readonly title: 'FaceBoundingBox';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly x_min: {
+                        readonly title: 'X Min';
+                        readonly type: 'integer';
+                      };
+                      readonly x_max: {
+                        readonly title: 'X Max';
+                        readonly type: 'integer';
+                      };
+                      readonly y_min: {
+                        readonly title: 'Y Min';
+                        readonly type: 'integer';
+                      };
+                      readonly y_max: {
+                        readonly title: 'Y Max';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly hair: {
+                    readonly required: readonly ['bald', 'invisible'];
+                    readonly title: 'FaceHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly hair_color: {
+                        readonly title: 'Hair Color';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly required: readonly ['color', 'confidence'];
+                          readonly title: 'FaceHairColor';
+                          readonly type: 'object';
+                          readonly properties: {
+                            readonly color: {
+                              readonly title: 'Color';
+                              readonly type: 'string';
+                            };
+                            readonly confidence: {
+                              readonly title: 'Confidence';
+                              readonly type: 'integer';
+                            };
+                          };
+                        };
+                      };
+                      readonly bald: {
+                        readonly title: 'Bald';
+                        readonly type: 'integer';
+                      };
+                      readonly invisible: {
+                        readonly title: 'Invisible';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly facial_hair: {
+                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
+                    readonly title: 'FaceFacialHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly moustache: {
+                        readonly title: 'Moustache';
+                        readonly type: 'integer';
+                      };
+                      readonly beard: {
+                        readonly title: 'Beard';
+                        readonly type: 'integer';
+                      };
+                      readonly sideburns: {
+                        readonly title: 'Sideburns';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly quality: {
+                    readonly required: readonly [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness'
+                    ];
+                    readonly title: 'FaceQuality';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly noise: {
+                        readonly title: 'Noise';
+                        readonly type: 'integer';
+                      };
+                      readonly exposure: {
+                        readonly title: 'Exposure';
+                        readonly type: 'integer';
+                      };
+                      readonly blur: {
+                        readonly title: 'Blur';
+                        readonly type: 'integer';
+                      };
+                      readonly brightness: {
+                        readonly title: 'Brightness';
+                        readonly type: 'integer';
+                      };
+                      readonly sharpness: {
+                        readonly title: 'Sharpness';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly makeup: {
+                    readonly required: readonly ['eye_make', 'lip_make'];
+                    readonly title: 'FaceMakeup';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_make: {
+                        readonly title: 'Eye Make';
+                        readonly type: 'boolean';
+                      };
+                      readonly lip_make: {
+                        readonly title: 'Lip Make';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly accessories: {
+                    readonly required: readonly [
+                      'sunglasses',
+                      'reading_glasses',
+                      'swimming_goggles',
+                      'face_mask',
+                      'eyeglasses',
+                      'headwear'
+                    ];
+                    readonly title: 'FaceAccessories';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly sunglasses: {
+                        readonly title: 'Sunglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly reading_glasses: {
+                        readonly title: 'Reading Glasses';
+                        readonly type: 'integer';
+                      };
+                      readonly swimming_goggles: {
+                        readonly title: 'Swimming Goggles';
+                        readonly type: 'integer';
+                      };
+                      readonly face_mask: {
+                        readonly title: 'Face Mask';
+                        readonly type: 'integer';
+                      };
+                      readonly eyeglasses: {
+                        readonly title: 'Eyeglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly headwear: {
+                        readonly title: 'Headwear';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly occlusions: {
+                    readonly required: readonly [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded'
+                    ];
+                    readonly title: 'FaceOcclusions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_occluded: {
+                        readonly title: 'Eye Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly forehead_occluded: {
+                        readonly title: 'Forehead Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly mouth_occluded: {
+                        readonly title: 'Mouth Occluded';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly features: {
+                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
+                    readonly title: 'FaceFeatures';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eyes_open: {
+                        readonly title: 'Eyes Open';
+                        readonly type: 'integer';
+                      };
+                      readonly smile: {
+                        readonly title: 'Smile';
+                        readonly type: 'integer';
+                      };
+                      readonly mouth_open: {
+                        readonly title: 'Mouth Open';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly clarifai: {
+          readonly required: readonly ['status'];
+          readonly title: 'imageface_detectionFaceDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'confidence',
+                  'landmarks',
+                  'emotions',
+                  'poses',
+                  'age',
+                  'gender',
+                  'bounding_box',
+                  'hair',
+                  'facial_hair',
+                  'quality',
+                  'makeup',
+                  'accessories',
+                  'occlusions',
+                  'features'
+                ];
+                readonly title: 'FaceItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                  readonly landmarks: {
+                    readonly title: 'FaceLandmarks';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly left_eye: {
+                        readonly title: 'Left Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_top: {
+                        readonly title: 'Left Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_right: {
+                        readonly title: 'Left Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_bottom: {
+                        readonly title: 'Left Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_left: {
+                        readonly title: 'Left Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye: {
+                        readonly title: 'Right Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_top: {
+                        readonly title: 'Right Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_right: {
+                        readonly title: 'Right Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_bottom: {
+                        readonly title: 'Right Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_left: {
+                        readonly title: 'Right Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_left: {
+                        readonly title: 'Left Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_right: {
+                        readonly title: 'Left Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_top: {
+                        readonly title: 'Left Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_left: {
+                        readonly title: 'Right Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_right: {
+                        readonly title: 'Right Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_pupil: {
+                        readonly title: 'Left Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_pupil: {
+                        readonly title: 'Right Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_tip: {
+                        readonly title: 'Nose Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_right: {
+                        readonly title: 'Nose Bottom Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_left: {
+                        readonly title: 'Nose Bottom Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_left: {
+                        readonly title: 'Mouth Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_right: {
+                        readonly title: 'Mouth Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_top: {
+                        readonly title: 'Right Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly midpoint_between_eyes: {
+                        readonly title: 'Midpoint Between Eyes';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_center: {
+                        readonly title: 'Nose Bottom Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_out_tip: {
+                        readonly title: 'Nose Left Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_top: {
+                        readonly title: 'Nose Left Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_out_tip: {
+                        readonly title: 'Nose Right Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_top: {
+                        readonly title: 'Nose Right Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_left: {
+                        readonly title: 'Nose Root Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_right: {
+                        readonly title: 'Nose Root Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip: {
+                        readonly title: 'Upper Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip: {
+                        readonly title: 'Under Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_bottom: {
+                        readonly title: 'Under Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_top: {
+                        readonly title: 'Under Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_bottom: {
+                        readonly title: 'Upper Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_top: {
+                        readonly title: 'Upper Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_center: {
+                        readonly title: 'Mouth Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_top: {
+                        readonly title: 'Mouth Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_bottom: {
+                        readonly title: 'Mouth Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_ear_tragion: {
+                        readonly title: 'Left Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_ear_tragion: {
+                        readonly title: 'Right Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly forehead_glabella: {
+                        readonly title: 'Forehead Glabella';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_gnathion: {
+                        readonly title: 'Chin Gnathion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_left_gonion: {
+                        readonly title: 'Chin Left Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_right_gonion: {
+                        readonly title: 'Chin Right Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_left: {
+                        readonly title: 'Upper Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_left: {
+                        readonly title: 'Mid Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_right: {
+                        readonly title: 'Mid Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_right: {
+                        readonly title: 'Upper Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_cheek_center: {
+                        readonly title: 'Left Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_cheek_center: {
+                        readonly title: 'Right Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly emotions: {
+                    readonly required: readonly [
+                      'joy',
+                      'sorrow',
+                      'anger',
+                      'surprise',
+                      'disgust',
+                      'fear',
+                      'confusion',
+                      'calm',
+                      'unknown',
+                      'neutral',
+                      'contempt'
+                    ];
+                    readonly title: 'FaceEmotions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly joy: {
+                        readonly title: 'Joy';
+                        readonly type: 'integer';
+                      };
+                      readonly sorrow: {
+                        readonly title: 'Sorrow';
+                        readonly type: 'integer';
+                      };
+                      readonly anger: {
+                        readonly title: 'Anger';
+                        readonly type: 'integer';
+                      };
+                      readonly surprise: {
+                        readonly title: 'Surprise';
+                        readonly type: 'integer';
+                      };
+                      readonly disgust: {
+                        readonly title: 'Disgust';
+                        readonly type: 'integer';
+                      };
+                      readonly fear: {
+                        readonly title: 'Fear';
+                        readonly type: 'integer';
+                      };
+                      readonly confusion: {
+                        readonly title: 'Confusion';
+                        readonly type: 'integer';
+                      };
+                      readonly calm: {
+                        readonly title: 'Calm';
+                        readonly type: 'integer';
+                      };
+                      readonly unknown: {
+                        readonly title: 'Unknown';
+                        readonly type: 'integer';
+                      };
+                      readonly neutral: {
+                        readonly title: 'Neutral';
+                        readonly type: 'integer';
+                      };
+                      readonly contempt: {
+                        readonly title: 'Contempt';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly poses: {
+                    readonly required: readonly ['pitch', 'roll', 'yaw'];
+                    readonly title: 'FacePoses';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly pitch: {
+                        readonly title: 'Pitch';
+                        readonly type: 'integer';
+                      };
+                      readonly roll: {
+                        readonly title: 'Roll';
+                        readonly type: 'integer';
+                      };
+                      readonly yaw: {
+                        readonly title: 'Yaw';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly age: {
+                    readonly title: 'Age';
+                    readonly type: 'integer';
+                  };
+                  readonly gender: {
+                    readonly title: 'Gender';
+                    readonly type: 'string';
+                  };
+                  readonly bounding_box: {
+                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
+                    readonly title: 'FaceBoundingBox';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly x_min: {
+                        readonly title: 'X Min';
+                        readonly type: 'integer';
+                      };
+                      readonly x_max: {
+                        readonly title: 'X Max';
+                        readonly type: 'integer';
+                      };
+                      readonly y_min: {
+                        readonly title: 'Y Min';
+                        readonly type: 'integer';
+                      };
+                      readonly y_max: {
+                        readonly title: 'Y Max';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly hair: {
+                    readonly required: readonly ['bald', 'invisible'];
+                    readonly title: 'FaceHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly hair_color: {
+                        readonly title: 'Hair Color';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly required: readonly ['color', 'confidence'];
+                          readonly title: 'FaceHairColor';
+                          readonly type: 'object';
+                          readonly properties: {
+                            readonly color: {
+                              readonly title: 'Color';
+                              readonly type: 'string';
+                            };
+                            readonly confidence: {
+                              readonly title: 'Confidence';
+                              readonly type: 'integer';
+                            };
+                          };
+                        };
+                      };
+                      readonly bald: {
+                        readonly title: 'Bald';
+                        readonly type: 'integer';
+                      };
+                      readonly invisible: {
+                        readonly title: 'Invisible';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly facial_hair: {
+                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
+                    readonly title: 'FaceFacialHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly moustache: {
+                        readonly title: 'Moustache';
+                        readonly type: 'integer';
+                      };
+                      readonly beard: {
+                        readonly title: 'Beard';
+                        readonly type: 'integer';
+                      };
+                      readonly sideburns: {
+                        readonly title: 'Sideburns';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly quality: {
+                    readonly required: readonly [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness'
+                    ];
+                    readonly title: 'FaceQuality';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly noise: {
+                        readonly title: 'Noise';
+                        readonly type: 'integer';
+                      };
+                      readonly exposure: {
+                        readonly title: 'Exposure';
+                        readonly type: 'integer';
+                      };
+                      readonly blur: {
+                        readonly title: 'Blur';
+                        readonly type: 'integer';
+                      };
+                      readonly brightness: {
+                        readonly title: 'Brightness';
+                        readonly type: 'integer';
+                      };
+                      readonly sharpness: {
+                        readonly title: 'Sharpness';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly makeup: {
+                    readonly required: readonly ['eye_make', 'lip_make'];
+                    readonly title: 'FaceMakeup';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_make: {
+                        readonly title: 'Eye Make';
+                        readonly type: 'boolean';
+                      };
+                      readonly lip_make: {
+                        readonly title: 'Lip Make';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly accessories: {
+                    readonly required: readonly [
+                      'sunglasses',
+                      'reading_glasses',
+                      'swimming_goggles',
+                      'face_mask',
+                      'eyeglasses',
+                      'headwear'
+                    ];
+                    readonly title: 'FaceAccessories';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly sunglasses: {
+                        readonly title: 'Sunglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly reading_glasses: {
+                        readonly title: 'Reading Glasses';
+                        readonly type: 'integer';
+                      };
+                      readonly swimming_goggles: {
+                        readonly title: 'Swimming Goggles';
+                        readonly type: 'integer';
+                      };
+                      readonly face_mask: {
+                        readonly title: 'Face Mask';
+                        readonly type: 'integer';
+                      };
+                      readonly eyeglasses: {
+                        readonly title: 'Eyeglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly headwear: {
+                        readonly title: 'Headwear';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly occlusions: {
+                    readonly required: readonly [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded'
+                    ];
+                    readonly title: 'FaceOcclusions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_occluded: {
+                        readonly title: 'Eye Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly forehead_occluded: {
+                        readonly title: 'Forehead Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly mouth_occluded: {
+                        readonly title: 'Mouth Occluded';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly features: {
+                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
+                    readonly title: 'FaceFeatures';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eyes_open: {
+                        readonly title: 'Eyes Open';
+                        readonly type: 'integer';
+                      };
+                      readonly smile: {
+                        readonly title: 'Smile';
+                        readonly type: 'integer';
+                      };
+                      readonly mouth_open: {
+                        readonly title: 'Mouth Open';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly google: {
+          readonly required: readonly ['status'];
+          readonly title: 'imageface_detectionFaceDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'confidence',
+                  'landmarks',
+                  'emotions',
+                  'poses',
+                  'age',
+                  'gender',
+                  'bounding_box',
+                  'hair',
+                  'facial_hair',
+                  'quality',
+                  'makeup',
+                  'accessories',
+                  'occlusions',
+                  'features'
+                ];
+                readonly title: 'FaceItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                  readonly landmarks: {
+                    readonly title: 'FaceLandmarks';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly left_eye: {
+                        readonly title: 'Left Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_top: {
+                        readonly title: 'Left Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_right: {
+                        readonly title: 'Left Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_bottom: {
+                        readonly title: 'Left Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_left: {
+                        readonly title: 'Left Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye: {
+                        readonly title: 'Right Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_top: {
+                        readonly title: 'Right Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_right: {
+                        readonly title: 'Right Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_bottom: {
+                        readonly title: 'Right Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_left: {
+                        readonly title: 'Right Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_left: {
+                        readonly title: 'Left Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_right: {
+                        readonly title: 'Left Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_top: {
+                        readonly title: 'Left Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_left: {
+                        readonly title: 'Right Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_right: {
+                        readonly title: 'Right Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_pupil: {
+                        readonly title: 'Left Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_pupil: {
+                        readonly title: 'Right Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_tip: {
+                        readonly title: 'Nose Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_right: {
+                        readonly title: 'Nose Bottom Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_left: {
+                        readonly title: 'Nose Bottom Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_left: {
+                        readonly title: 'Mouth Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_right: {
+                        readonly title: 'Mouth Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_top: {
+                        readonly title: 'Right Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly midpoint_between_eyes: {
+                        readonly title: 'Midpoint Between Eyes';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_center: {
+                        readonly title: 'Nose Bottom Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_out_tip: {
+                        readonly title: 'Nose Left Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_top: {
+                        readonly title: 'Nose Left Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_out_tip: {
+                        readonly title: 'Nose Right Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_top: {
+                        readonly title: 'Nose Right Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_left: {
+                        readonly title: 'Nose Root Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_right: {
+                        readonly title: 'Nose Root Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip: {
+                        readonly title: 'Upper Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip: {
+                        readonly title: 'Under Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_bottom: {
+                        readonly title: 'Under Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_top: {
+                        readonly title: 'Under Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_bottom: {
+                        readonly title: 'Upper Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_top: {
+                        readonly title: 'Upper Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_center: {
+                        readonly title: 'Mouth Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_top: {
+                        readonly title: 'Mouth Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_bottom: {
+                        readonly title: 'Mouth Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_ear_tragion: {
+                        readonly title: 'Left Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_ear_tragion: {
+                        readonly title: 'Right Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly forehead_glabella: {
+                        readonly title: 'Forehead Glabella';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_gnathion: {
+                        readonly title: 'Chin Gnathion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_left_gonion: {
+                        readonly title: 'Chin Left Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_right_gonion: {
+                        readonly title: 'Chin Right Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_left: {
+                        readonly title: 'Upper Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_left: {
+                        readonly title: 'Mid Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_right: {
+                        readonly title: 'Mid Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_right: {
+                        readonly title: 'Upper Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_cheek_center: {
+                        readonly title: 'Left Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_cheek_center: {
+                        readonly title: 'Right Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly emotions: {
+                    readonly required: readonly [
+                      'joy',
+                      'sorrow',
+                      'anger',
+                      'surprise',
+                      'disgust',
+                      'fear',
+                      'confusion',
+                      'calm',
+                      'unknown',
+                      'neutral',
+                      'contempt'
+                    ];
+                    readonly title: 'FaceEmotions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly joy: {
+                        readonly title: 'Joy';
+                        readonly type: 'integer';
+                      };
+                      readonly sorrow: {
+                        readonly title: 'Sorrow';
+                        readonly type: 'integer';
+                      };
+                      readonly anger: {
+                        readonly title: 'Anger';
+                        readonly type: 'integer';
+                      };
+                      readonly surprise: {
+                        readonly title: 'Surprise';
+                        readonly type: 'integer';
+                      };
+                      readonly disgust: {
+                        readonly title: 'Disgust';
+                        readonly type: 'integer';
+                      };
+                      readonly fear: {
+                        readonly title: 'Fear';
+                        readonly type: 'integer';
+                      };
+                      readonly confusion: {
+                        readonly title: 'Confusion';
+                        readonly type: 'integer';
+                      };
+                      readonly calm: {
+                        readonly title: 'Calm';
+                        readonly type: 'integer';
+                      };
+                      readonly unknown: {
+                        readonly title: 'Unknown';
+                        readonly type: 'integer';
+                      };
+                      readonly neutral: {
+                        readonly title: 'Neutral';
+                        readonly type: 'integer';
+                      };
+                      readonly contempt: {
+                        readonly title: 'Contempt';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly poses: {
+                    readonly required: readonly ['pitch', 'roll', 'yaw'];
+                    readonly title: 'FacePoses';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly pitch: {
+                        readonly title: 'Pitch';
+                        readonly type: 'integer';
+                      };
+                      readonly roll: {
+                        readonly title: 'Roll';
+                        readonly type: 'integer';
+                      };
+                      readonly yaw: {
+                        readonly title: 'Yaw';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly age: {
+                    readonly title: 'Age';
+                    readonly type: 'integer';
+                  };
+                  readonly gender: {
+                    readonly title: 'Gender';
+                    readonly type: 'string';
+                  };
+                  readonly bounding_box: {
+                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
+                    readonly title: 'FaceBoundingBox';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly x_min: {
+                        readonly title: 'X Min';
+                        readonly type: 'integer';
+                      };
+                      readonly x_max: {
+                        readonly title: 'X Max';
+                        readonly type: 'integer';
+                      };
+                      readonly y_min: {
+                        readonly title: 'Y Min';
+                        readonly type: 'integer';
+                      };
+                      readonly y_max: {
+                        readonly title: 'Y Max';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly hair: {
+                    readonly required: readonly ['bald', 'invisible'];
+                    readonly title: 'FaceHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly hair_color: {
+                        readonly title: 'Hair Color';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly required: readonly ['color', 'confidence'];
+                          readonly title: 'FaceHairColor';
+                          readonly type: 'object';
+                          readonly properties: {
+                            readonly color: {
+                              readonly title: 'Color';
+                              readonly type: 'string';
+                            };
+                            readonly confidence: {
+                              readonly title: 'Confidence';
+                              readonly type: 'integer';
+                            };
+                          };
+                        };
+                      };
+                      readonly bald: {
+                        readonly title: 'Bald';
+                        readonly type: 'integer';
+                      };
+                      readonly invisible: {
+                        readonly title: 'Invisible';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly facial_hair: {
+                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
+                    readonly title: 'FaceFacialHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly moustache: {
+                        readonly title: 'Moustache';
+                        readonly type: 'integer';
+                      };
+                      readonly beard: {
+                        readonly title: 'Beard';
+                        readonly type: 'integer';
+                      };
+                      readonly sideburns: {
+                        readonly title: 'Sideburns';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly quality: {
+                    readonly required: readonly [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness'
+                    ];
+                    readonly title: 'FaceQuality';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly noise: {
+                        readonly title: 'Noise';
+                        readonly type: 'integer';
+                      };
+                      readonly exposure: {
+                        readonly title: 'Exposure';
+                        readonly type: 'integer';
+                      };
+                      readonly blur: {
+                        readonly title: 'Blur';
+                        readonly type: 'integer';
+                      };
+                      readonly brightness: {
+                        readonly title: 'Brightness';
+                        readonly type: 'integer';
+                      };
+                      readonly sharpness: {
+                        readonly title: 'Sharpness';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly makeup: {
+                    readonly required: readonly ['eye_make', 'lip_make'];
+                    readonly title: 'FaceMakeup';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_make: {
+                        readonly title: 'Eye Make';
+                        readonly type: 'boolean';
+                      };
+                      readonly lip_make: {
+                        readonly title: 'Lip Make';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly accessories: {
+                    readonly required: readonly [
+                      'sunglasses',
+                      'reading_glasses',
+                      'swimming_goggles',
+                      'face_mask',
+                      'eyeglasses',
+                      'headwear'
+                    ];
+                    readonly title: 'FaceAccessories';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly sunglasses: {
+                        readonly title: 'Sunglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly reading_glasses: {
+                        readonly title: 'Reading Glasses';
+                        readonly type: 'integer';
+                      };
+                      readonly swimming_goggles: {
+                        readonly title: 'Swimming Goggles';
+                        readonly type: 'integer';
+                      };
+                      readonly face_mask: {
+                        readonly title: 'Face Mask';
+                        readonly type: 'integer';
+                      };
+                      readonly eyeglasses: {
+                        readonly title: 'Eyeglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly headwear: {
+                        readonly title: 'Headwear';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly occlusions: {
+                    readonly required: readonly [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded'
+                    ];
+                    readonly title: 'FaceOcclusions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_occluded: {
+                        readonly title: 'Eye Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly forehead_occluded: {
+                        readonly title: 'Forehead Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly mouth_occluded: {
+                        readonly title: 'Mouth Occluded';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly features: {
+                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
+                    readonly title: 'FaceFeatures';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eyes_open: {
+                        readonly title: 'Eyes Open';
+                        readonly type: 'integer';
+                      };
+                      readonly smile: {
+                        readonly title: 'Smile';
+                        readonly type: 'integer';
+                      };
+                      readonly mouth_open: {
+                        readonly title: 'Mouth Open';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly microsoft: {
+          readonly required: readonly ['status'];
+          readonly title: 'imageface_detectionFaceDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'confidence',
+                  'landmarks',
+                  'emotions',
+                  'poses',
+                  'age',
+                  'gender',
+                  'bounding_box',
+                  'hair',
+                  'facial_hair',
+                  'quality',
+                  'makeup',
+                  'accessories',
+                  'occlusions',
+                  'features'
+                ];
+                readonly title: 'FaceItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                  readonly landmarks: {
+                    readonly title: 'FaceLandmarks';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly left_eye: {
+                        readonly title: 'Left Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_top: {
+                        readonly title: 'Left Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_right: {
+                        readonly title: 'Left Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_bottom: {
+                        readonly title: 'Left Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eye_left: {
+                        readonly title: 'Left Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye: {
+                        readonly title: 'Right Eye';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_top: {
+                        readonly title: 'Right Eye Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_right: {
+                        readonly title: 'Right Eye Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_bottom: {
+                        readonly title: 'Right Eye Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eye_left: {
+                        readonly title: 'Right Eye Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_left: {
+                        readonly title: 'Left Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_right: {
+                        readonly title: 'Left Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_eyebrow_top: {
+                        readonly title: 'Left Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_left: {
+                        readonly title: 'Right Eyebrow Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_right: {
+                        readonly title: 'Right Eyebrow Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_pupil: {
+                        readonly title: 'Left Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_pupil: {
+                        readonly title: 'Right Pupil';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_tip: {
+                        readonly title: 'Nose Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_right: {
+                        readonly title: 'Nose Bottom Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_left: {
+                        readonly title: 'Nose Bottom Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_left: {
+                        readonly title: 'Mouth Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_right: {
+                        readonly title: 'Mouth Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_eyebrow_top: {
+                        readonly title: 'Right Eyebrow Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly midpoint_between_eyes: {
+                        readonly title: 'Midpoint Between Eyes';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_bottom_center: {
+                        readonly title: 'Nose Bottom Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_out_tip: {
+                        readonly title: 'Nose Left Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_left_alar_top: {
+                        readonly title: 'Nose Left Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_out_tip: {
+                        readonly title: 'Nose Right Alar Out Tip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_right_alar_top: {
+                        readonly title: 'Nose Right Alar Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_left: {
+                        readonly title: 'Nose Root Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly nose_root_right: {
+                        readonly title: 'Nose Root Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip: {
+                        readonly title: 'Upper Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip: {
+                        readonly title: 'Under Lip';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_bottom: {
+                        readonly title: 'Under Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly under_lip_top: {
+                        readonly title: 'Under Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_bottom: {
+                        readonly title: 'Upper Lip Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_lip_top: {
+                        readonly title: 'Upper Lip Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_center: {
+                        readonly title: 'Mouth Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_top: {
+                        readonly title: 'Mouth Top';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mouth_bottom: {
+                        readonly title: 'Mouth Bottom';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_ear_tragion: {
+                        readonly title: 'Left Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_ear_tragion: {
+                        readonly title: 'Right Ear Tragion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly forehead_glabella: {
+                        readonly title: 'Forehead Glabella';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_gnathion: {
+                        readonly title: 'Chin Gnathion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_left_gonion: {
+                        readonly title: 'Chin Left Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly chin_right_gonion: {
+                        readonly title: 'Chin Right Gonion';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_left: {
+                        readonly title: 'Upper Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_left: {
+                        readonly title: 'Mid Jawline Left';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly mid_jawline_right: {
+                        readonly title: 'Mid Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly upper_jawline_right: {
+                        readonly title: 'Upper Jawline Right';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly left_cheek_center: {
+                        readonly title: 'Left Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                      readonly right_cheek_center: {
+                        readonly title: 'Right Cheek Center';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly emotions: {
+                    readonly required: readonly [
+                      'joy',
+                      'sorrow',
+                      'anger',
+                      'surprise',
+                      'disgust',
+                      'fear',
+                      'confusion',
+                      'calm',
+                      'unknown',
+                      'neutral',
+                      'contempt'
+                    ];
+                    readonly title: 'FaceEmotions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly joy: {
+                        readonly title: 'Joy';
+                        readonly type: 'integer';
+                      };
+                      readonly sorrow: {
+                        readonly title: 'Sorrow';
+                        readonly type: 'integer';
+                      };
+                      readonly anger: {
+                        readonly title: 'Anger';
+                        readonly type: 'integer';
+                      };
+                      readonly surprise: {
+                        readonly title: 'Surprise';
+                        readonly type: 'integer';
+                      };
+                      readonly disgust: {
+                        readonly title: 'Disgust';
+                        readonly type: 'integer';
+                      };
+                      readonly fear: {
+                        readonly title: 'Fear';
+                        readonly type: 'integer';
+                      };
+                      readonly confusion: {
+                        readonly title: 'Confusion';
+                        readonly type: 'integer';
+                      };
+                      readonly calm: {
+                        readonly title: 'Calm';
+                        readonly type: 'integer';
+                      };
+                      readonly unknown: {
+                        readonly title: 'Unknown';
+                        readonly type: 'integer';
+                      };
+                      readonly neutral: {
+                        readonly title: 'Neutral';
+                        readonly type: 'integer';
+                      };
+                      readonly contempt: {
+                        readonly title: 'Contempt';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly poses: {
+                    readonly required: readonly ['pitch', 'roll', 'yaw'];
+                    readonly title: 'FacePoses';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly pitch: {
+                        readonly title: 'Pitch';
+                        readonly type: 'integer';
+                      };
+                      readonly roll: {
+                        readonly title: 'Roll';
+                        readonly type: 'integer';
+                      };
+                      readonly yaw: {
+                        readonly title: 'Yaw';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly age: {
+                    readonly title: 'Age';
+                    readonly type: 'integer';
+                  };
+                  readonly gender: {
+                    readonly title: 'Gender';
+                    readonly type: 'string';
+                  };
+                  readonly bounding_box: {
+                    readonly required: readonly ['x_min', 'x_max', 'y_min', 'y_max'];
+                    readonly title: 'FaceBoundingBox';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly x_min: {
+                        readonly title: 'X Min';
+                        readonly type: 'integer';
+                      };
+                      readonly x_max: {
+                        readonly title: 'X Max';
+                        readonly type: 'integer';
+                      };
+                      readonly y_min: {
+                        readonly title: 'Y Min';
+                        readonly type: 'integer';
+                      };
+                      readonly y_max: {
+                        readonly title: 'Y Max';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly hair: {
+                    readonly required: readonly ['bald', 'invisible'];
+                    readonly title: 'FaceHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly hair_color: {
+                        readonly title: 'Hair Color';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly required: readonly ['color', 'confidence'];
+                          readonly title: 'FaceHairColor';
+                          readonly type: 'object';
+                          readonly properties: {
+                            readonly color: {
+                              readonly title: 'Color';
+                              readonly type: 'string';
+                            };
+                            readonly confidence: {
+                              readonly title: 'Confidence';
+                              readonly type: 'integer';
+                            };
+                          };
+                        };
+                      };
+                      readonly bald: {
+                        readonly title: 'Bald';
+                        readonly type: 'integer';
+                      };
+                      readonly invisible: {
+                        readonly title: 'Invisible';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly facial_hair: {
+                    readonly required: readonly ['moustache', 'beard', 'sideburns'];
+                    readonly title: 'FaceFacialHair';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly moustache: {
+                        readonly title: 'Moustache';
+                        readonly type: 'integer';
+                      };
+                      readonly beard: {
+                        readonly title: 'Beard';
+                        readonly type: 'integer';
+                      };
+                      readonly sideburns: {
+                        readonly title: 'Sideburns';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly quality: {
+                    readonly required: readonly [
+                      'noise',
+                      'exposure',
+                      'blur',
+                      'brightness',
+                      'sharpness'
+                    ];
+                    readonly title: 'FaceQuality';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly noise: {
+                        readonly title: 'Noise';
+                        readonly type: 'integer';
+                      };
+                      readonly exposure: {
+                        readonly title: 'Exposure';
+                        readonly type: 'integer';
+                      };
+                      readonly blur: {
+                        readonly title: 'Blur';
+                        readonly type: 'integer';
+                      };
+                      readonly brightness: {
+                        readonly title: 'Brightness';
+                        readonly type: 'integer';
+                      };
+                      readonly sharpness: {
+                        readonly title: 'Sharpness';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly makeup: {
+                    readonly required: readonly ['eye_make', 'lip_make'];
+                    readonly title: 'FaceMakeup';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_make: {
+                        readonly title: 'Eye Make';
+                        readonly type: 'boolean';
+                      };
+                      readonly lip_make: {
+                        readonly title: 'Lip Make';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly accessories: {
+                    readonly required: readonly [
+                      'sunglasses',
+                      'reading_glasses',
+                      'swimming_goggles',
+                      'face_mask',
+                      'eyeglasses',
+                      'headwear'
+                    ];
+                    readonly title: 'FaceAccessories';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly sunglasses: {
+                        readonly title: 'Sunglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly reading_glasses: {
+                        readonly title: 'Reading Glasses';
+                        readonly type: 'integer';
+                      };
+                      readonly swimming_goggles: {
+                        readonly title: 'Swimming Goggles';
+                        readonly type: 'integer';
+                      };
+                      readonly face_mask: {
+                        readonly title: 'Face Mask';
+                        readonly type: 'integer';
+                      };
+                      readonly eyeglasses: {
+                        readonly title: 'Eyeglasses';
+                        readonly type: 'integer';
+                      };
+                      readonly headwear: {
+                        readonly title: 'Headwear';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly occlusions: {
+                    readonly required: readonly [
+                      'eye_occluded',
+                      'forehead_occluded',
+                      'mouth_occluded'
+                    ];
+                    readonly title: 'FaceOcclusions';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eye_occluded: {
+                        readonly title: 'Eye Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly forehead_occluded: {
+                        readonly title: 'Forehead Occluded';
+                        readonly type: 'boolean';
+                      };
+                      readonly mouth_occluded: {
+                        readonly title: 'Mouth Occluded';
+                        readonly type: 'boolean';
+                      };
+                    };
+                  };
+                  readonly features: {
+                    readonly required: readonly ['eyes_open', 'smile', 'mouth_open'];
+                    readonly title: 'FaceFeatures';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly eyes_open: {
+                        readonly title: 'Eyes Open';
+                        readonly type: 'integer';
+                      };
+                      readonly smile: {
+                        readonly title: 'Smile';
+                        readonly type: 'integer';
+                      };
+                      readonly mouth_open: {
+                        readonly title: 'Mouth Open';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly api4ai: {
           readonly required: readonly ['status'];
           readonly title: 'imageface_detectionFaceDetectionDataClass';
           readonly type: 'object';
@@ -9743,7 +9743,7 @@ declare const ImageFaceRecognitionDeleteFaceCreate: {
         readonly type: 'string';
         readonly minLength: 1;
         readonly description: 'ID of face to delete';
-        readonly examples: readonly ['249061cf-0062-47b8-94f6-ae8f8e98badb'];
+        readonly examples: readonly ['ec654036-acd9-472c-9306-f02ff11b1f3b'];
       };
     };
     readonly required: readonly ['face_id', 'providers'];
@@ -10916,6 +10916,69 @@ declare const ImageLogoDetectionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly smartclick: {
+          readonly required: readonly ['status'];
+          readonly title: 'imagelogo_detectionLogoDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['bounding_poly', 'description', 'score'];
+                readonly title: 'LogoItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly bounding_poly: {
+                    readonly required: readonly ['vertices'];
+                    readonly title: 'LogoBoundingPoly';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly vertices: {
+                        readonly title: 'Vertices';
+                        readonly type: 'array';
+                        readonly items: {
+                          readonly required: readonly ['x', 'y'];
+                          readonly title: 'LogoVertice';
+                          readonly type: 'object';
+                          readonly properties: {
+                            readonly x: {
+                              readonly title: 'X';
+                              readonly type: 'integer';
+                            };
+                            readonly y: {
+                              readonly title: 'Y';
+                              readonly type: 'integer';
+                            };
+                          };
+                        };
+                      };
+                    };
+                  };
+                  readonly description: {
+                    readonly title: 'Description';
+                    readonly type: 'string';
+                  };
+                  readonly score: {
+                    readonly title: 'Score';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly clarifai: {
           readonly required: readonly ['status'];
           readonly title: 'imagelogo_detectionLogoDetectionDataClass';
@@ -10979,7 +11042,7 @@ declare const ImageLogoDetectionCreate: {
             };
           };
         };
-        readonly smartclick: {
+        readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'imagelogo_detectionLogoDetectionDataClass';
           readonly type: 'object';
@@ -11106,69 +11169,6 @@ declare const ImageLogoDetectionCreate: {
           };
         };
         readonly api4ai: {
-          readonly required: readonly ['status'];
-          readonly title: 'imagelogo_detectionLogoDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['bounding_poly', 'description', 'score'];
-                readonly title: 'LogoItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly bounding_poly: {
-                    readonly required: readonly ['vertices'];
-                    readonly title: 'LogoBoundingPoly';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly vertices: {
-                        readonly title: 'Vertices';
-                        readonly type: 'array';
-                        readonly items: {
-                          readonly required: readonly ['x', 'y'];
-                          readonly title: 'LogoVertice';
-                          readonly type: 'object';
-                          readonly properties: {
-                            readonly x: {
-                              readonly title: 'X';
-                              readonly type: 'integer';
-                            };
-                            readonly y: {
-                              readonly title: 'Y';
-                              readonly type: 'integer';
-                            };
-                          };
-                        };
-                      };
-                    };
-                  };
-                  readonly description: {
-                    readonly title: 'Description';
-                    readonly type: 'string';
-                  };
-                  readonly score: {
-                    readonly title: 'Score';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'imagelogo_detectionLogoDetectionDataClass';
           readonly type: 'object';
@@ -11373,7 +11373,127 @@ declare const ImageObjectDetectionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly sentisight: {
+          readonly required: readonly ['status'];
+          readonly title: 'imageobject_detectionObjectDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max'
+                ];
+                readonly title: 'ObjectItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly label: {
+                    readonly title: 'Label';
+                    readonly type: 'string';
+                  };
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                  readonly x_min: {
+                    readonly title: 'X Min';
+                    readonly type: 'integer';
+                  };
+                  readonly x_max: {
+                    readonly title: 'X Max';
+                    readonly type: 'integer';
+                  };
+                  readonly y_min: {
+                    readonly title: 'Y Min';
+                    readonly type: 'integer';
+                  };
+                  readonly y_max: {
+                    readonly title: 'Y Max';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly clarifai: {
+          readonly required: readonly ['status'];
+          readonly title: 'imageobject_detectionObjectDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'label',
+                  'confidence',
+                  'x_min',
+                  'x_max',
+                  'y_min',
+                  'y_max'
+                ];
+                readonly title: 'ObjectItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly label: {
+                    readonly title: 'Label';
+                    readonly type: 'string';
+                  };
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                  readonly x_min: {
+                    readonly title: 'X Min';
+                    readonly type: 'integer';
+                  };
+                  readonly x_max: {
+                    readonly title: 'X Max';
+                    readonly type: 'integer';
+                  };
+                  readonly y_min: {
+                    readonly title: 'Y Min';
+                    readonly type: 'integer';
+                  };
+                  readonly y_max: {
+                    readonly title: 'Y Max';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'imageobject_detectionObjectDetectionDataClass';
           readonly type: 'object';
@@ -11494,126 +11614,6 @@ declare const ImageObjectDetectionCreate: {
           };
         };
         readonly api4ai: {
-          readonly required: readonly ['status'];
-          readonly title: 'imageobject_detectionObjectDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'label',
-                  'confidence',
-                  'x_min',
-                  'x_max',
-                  'y_min',
-                  'y_max'
-                ];
-                readonly title: 'ObjectItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly label: {
-                    readonly title: 'Label';
-                    readonly type: 'string';
-                  };
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                  readonly x_min: {
-                    readonly title: 'X Min';
-                    readonly type: 'integer';
-                  };
-                  readonly x_max: {
-                    readonly title: 'X Max';
-                    readonly type: 'integer';
-                  };
-                  readonly y_min: {
-                    readonly title: 'Y Min';
-                    readonly type: 'integer';
-                  };
-                  readonly y_max: {
-                    readonly title: 'Y Max';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
-          readonly required: readonly ['status'];
-          readonly title: 'imageobject_detectionObjectDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'label',
-                  'confidence',
-                  'x_min',
-                  'x_max',
-                  'y_min',
-                  'y_max'
-                ];
-                readonly title: 'ObjectItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly label: {
-                    readonly title: 'Label';
-                    readonly type: 'string';
-                  };
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                  readonly x_min: {
-                    readonly title: 'X Min';
-                    readonly type: 'integer';
-                  };
-                  readonly x_max: {
-                    readonly title: 'X Max';
-                    readonly type: 'integer';
-                  };
-                  readonly y_min: {
-                    readonly title: 'Y Min';
-                    readonly type: 'integer';
-                  };
-                  readonly y_max: {
-                    readonly title: 'Y Max';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly sentisight: {
           readonly required: readonly ['status'];
           readonly title: 'imageobject_detectionObjectDetectionDataClass';
           readonly type: 'object';
@@ -14342,341 +14342,6 @@ declare const OcrIdentityParserCreate: {
             };
           };
         };
-        readonly base64: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocridentity_parserIdentityParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly [
-                  'last_name',
-                  'birth_place',
-                  'birth_date',
-                  'issuance_date',
-                  'expire_date',
-                  'document_id',
-                  'issuing_state',
-                  'address',
-                  'age',
-                  'country',
-                  'document_type',
-                  'gender',
-                  'mrz',
-                  'nationality'
-                ];
-                readonly title: 'InfosIdentityParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly last_name: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly given_names: {
-                    readonly title: 'Given Names';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemIdentityParserDataClass';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly default: any;
-                          readonly title: 'Value';
-                          readonly type: 'string';
-                        };
-                        readonly confidence: {
-                          readonly default: any;
-                          readonly title: 'Confidence';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly birth_place: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly birth_date: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly issuance_date: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly expire_date: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly document_id: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly issuing_state: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly address: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly age: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly country: {
-                    readonly required: readonly ['name', 'alpha2', 'alpha3', 'confidence'];
-                    readonly title: 'Country';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly name: {
-                        readonly title: 'Name';
-                        readonly type: 'string';
-                      };
-                      readonly alpha2: {
-                        readonly title: 'Alpha2';
-                        readonly type: 'string';
-                      };
-                      readonly alpha3: {
-                        readonly title: 'Alpha3';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly document_type: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly gender: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly image_id: {
-                    readonly title: 'Image Id';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemIdentityParserDataClass';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly default: any;
-                          readonly title: 'Value';
-                          readonly type: 'string';
-                        };
-                        readonly confidence: {
-                          readonly default: any;
-                          readonly title: 'Confidence';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly image_signature: {
-                    readonly title: 'Image Signature';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemIdentityParserDataClass';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly default: any;
-                          readonly title: 'Value';
-                          readonly type: 'string';
-                        };
-                        readonly confidence: {
-                          readonly default: any;
-                          readonly title: 'Confidence';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly mrz: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                  readonly nationality: {
-                    readonly title: 'ItemIdentityParserDataClass';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly value: {
-                        readonly default: any;
-                        readonly title: 'Value';
-                        readonly type: 'string';
-                      };
-                      readonly confidence: {
-                        readonly default: any;
-                        readonly title: 'Confidence';
-                        readonly type: 'integer';
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly microsoft: {
           readonly required: readonly ['status'];
           readonly title: 'ocridentity_parserIdentityParserDataClass';
@@ -15013,6 +14678,341 @@ declare const OcrIdentityParserCreate: {
           };
         };
         readonly klippa: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocridentity_parserIdentityParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly [
+                  'last_name',
+                  'birth_place',
+                  'birth_date',
+                  'issuance_date',
+                  'expire_date',
+                  'document_id',
+                  'issuing_state',
+                  'address',
+                  'age',
+                  'country',
+                  'document_type',
+                  'gender',
+                  'mrz',
+                  'nationality'
+                ];
+                readonly title: 'InfosIdentityParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly last_name: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly given_names: {
+                    readonly title: 'Given Names';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemIdentityParserDataClass';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly default: any;
+                          readonly title: 'Value';
+                          readonly type: 'string';
+                        };
+                        readonly confidence: {
+                          readonly default: any;
+                          readonly title: 'Confidence';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly birth_place: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly birth_date: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly issuance_date: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly expire_date: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly document_id: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly issuing_state: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly address: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly age: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly country: {
+                    readonly required: readonly ['name', 'alpha2', 'alpha3', 'confidence'];
+                    readonly title: 'Country';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly name: {
+                        readonly title: 'Name';
+                        readonly type: 'string';
+                      };
+                      readonly alpha2: {
+                        readonly title: 'Alpha2';
+                        readonly type: 'string';
+                      };
+                      readonly alpha3: {
+                        readonly title: 'Alpha3';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly document_type: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly gender: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly image_id: {
+                    readonly title: 'Image Id';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemIdentityParserDataClass';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly default: any;
+                          readonly title: 'Value';
+                          readonly type: 'string';
+                        };
+                        readonly confidence: {
+                          readonly default: any;
+                          readonly title: 'Confidence';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly image_signature: {
+                    readonly title: 'Image Signature';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemIdentityParserDataClass';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly default: any;
+                          readonly title: 'Value';
+                          readonly type: 'string';
+                        };
+                        readonly confidence: {
+                          readonly default: any;
+                          readonly title: 'Confidence';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly mrz: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                  readonly nationality: {
+                    readonly title: 'ItemIdentityParserDataClass';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly value: {
+                        readonly default: any;
+                        readonly title: 'Value';
+                        readonly type: 'string';
+                      };
+                      readonly confidence: {
+                        readonly default: any;
+                        readonly title: 'Confidence';
+                        readonly type: 'integer';
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly base64: {
           readonly required: readonly ['status'];
           readonly title: 'ocridentity_parserIdentityParserDataClass';
           readonly type: 'object';
@@ -16155,6 +16155,850 @@ declare const OcrInvoiceParserCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly dataleon: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosInvoiceParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly customer_information: {
+                    readonly required: readonly [
+                      'customer_name',
+                      'customer_address',
+                      'customer_email',
+                      'customer_id',
+                      'customer_tax_id',
+                      'customer_mailing_address',
+                      'customer_billing_address',
+                      'customer_shipping_address',
+                      'customer_service_address',
+                      'customer_remittance_address',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'CustomerInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_address: {
+                        readonly title: 'Customer Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_email: {
+                        readonly title: 'Customer Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_id: {
+                        readonly title: 'Customer Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_tax_id: {
+                        readonly title: 'Customer Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_mailing_address: {
+                        readonly title: 'Customer Mailing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_billing_address: {
+                        readonly title: 'Customer Billing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_shipping_address: {
+                        readonly title: 'Customer Shipping Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_service_address: {
+                        readonly title: 'Customer Service Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_remittance_address: {
+                        readonly title: 'Customer Remittance Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly required: readonly [
+                      'merchant_name',
+                      'merchant_address',
+                      'merchant_phone',
+                      'merchant_email',
+                      'merchant_fax',
+                      'merchant_website',
+                      'merchant_tax_id',
+                      'merchant_siret',
+                      'merchant_siren',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'MerchantInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_address: {
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_phone: {
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_email: {
+                        readonly title: 'Merchant Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_fax: {
+                        readonly title: 'Merchant Fax';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_website: {
+                        readonly title: 'Merchant Website';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_tax_id: {
+                        readonly title: 'Merchant Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siret: {
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siren: {
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly gratuity: {
+                    readonly default: any;
+                    readonly title: 'Gratuity';
+                    readonly type: 'integer';
+                  };
+                  readonly amount_due: {
+                    readonly default: any;
+                    readonly title: 'Amount Due';
+                    readonly type: 'integer';
+                  };
+                  readonly previous_unpaid_balance: {
+                    readonly default: any;
+                    readonly title: 'Previous Unpaid Balance';
+                    readonly type: 'integer';
+                  };
+                  readonly discount: {
+                    readonly default: any;
+                    readonly title: 'Discount';
+                    readonly type: 'integer';
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'rate'];
+                      readonly title: 'TaxesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly service_charge: {
+                    readonly default: any;
+                    readonly title: 'Service Charge';
+                    readonly type: 'integer';
+                  };
+                  readonly payment_term: {
+                    readonly default: any;
+                    readonly title: 'Payment Term';
+                    readonly type: 'string';
+                  };
+                  readonly purchase_order: {
+                    readonly default: any;
+                    readonly title: 'Purchase Order';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_date: {
+                    readonly default: any;
+                    readonly title: 'Service Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_due_date: {
+                    readonly default: any;
+                    readonly title: 'Service Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly po_number: {
+                    readonly default: any;
+                    readonly title: 'Po Number';
+                    readonly type: 'string';
+                  };
+                  readonly locale: {
+                    readonly required: readonly ['currency', 'language'];
+                    readonly title: 'LocaleInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly language: {
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly bank_informations: {
+                    readonly required: readonly [
+                      'account_number',
+                      'iban',
+                      'bsb',
+                      'sort_code',
+                      'vat_number',
+                      'rooting_number',
+                      'swift'
+                    ];
+                    readonly title: 'BankInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly account_number: {
+                        readonly title: 'Account Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly iban: {
+                        readonly title: 'Iban';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly bsb: {
+                        readonly title: 'Bsb';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly sort_code: {
+                        readonly title: 'Sort Code';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly rooting_number: {
+                        readonly title: 'Rooting Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly swift: {
+                        readonly title: 'Swift';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLinesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                        readonly discount: {
+                          readonly default: any;
+                          readonly title: 'Discount';
+                          readonly type: 'integer';
+                        };
+                        readonly product_code: {
+                          readonly default: any;
+                          readonly title: 'Product Code';
+                          readonly type: 'string';
+                        };
+                        readonly date_item: {
+                          readonly default: any;
+                          readonly title: 'Date Item';
+                          readonly type: 'string';
+                        };
+                        readonly tax_item: {
+                          readonly default: any;
+                          readonly title: 'Tax Item';
+                          readonly type: 'integer';
+                        };
+                        readonly tax_rate: {
+                          readonly default: any;
+                          readonly title: 'Tax Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly rossum: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosInvoiceParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly customer_information: {
+                    readonly required: readonly [
+                      'customer_name',
+                      'customer_address',
+                      'customer_email',
+                      'customer_id',
+                      'customer_tax_id',
+                      'customer_mailing_address',
+                      'customer_billing_address',
+                      'customer_shipping_address',
+                      'customer_service_address',
+                      'customer_remittance_address',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'CustomerInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_address: {
+                        readonly title: 'Customer Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_email: {
+                        readonly title: 'Customer Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_id: {
+                        readonly title: 'Customer Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_tax_id: {
+                        readonly title: 'Customer Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_mailing_address: {
+                        readonly title: 'Customer Mailing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_billing_address: {
+                        readonly title: 'Customer Billing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_shipping_address: {
+                        readonly title: 'Customer Shipping Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_service_address: {
+                        readonly title: 'Customer Service Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_remittance_address: {
+                        readonly title: 'Customer Remittance Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly required: readonly [
+                      'merchant_name',
+                      'merchant_address',
+                      'merchant_phone',
+                      'merchant_email',
+                      'merchant_fax',
+                      'merchant_website',
+                      'merchant_tax_id',
+                      'merchant_siret',
+                      'merchant_siren',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'MerchantInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_address: {
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_phone: {
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_email: {
+                        readonly title: 'Merchant Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_fax: {
+                        readonly title: 'Merchant Fax';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_website: {
+                        readonly title: 'Merchant Website';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_tax_id: {
+                        readonly title: 'Merchant Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siret: {
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siren: {
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly gratuity: {
+                    readonly default: any;
+                    readonly title: 'Gratuity';
+                    readonly type: 'integer';
+                  };
+                  readonly amount_due: {
+                    readonly default: any;
+                    readonly title: 'Amount Due';
+                    readonly type: 'integer';
+                  };
+                  readonly previous_unpaid_balance: {
+                    readonly default: any;
+                    readonly title: 'Previous Unpaid Balance';
+                    readonly type: 'integer';
+                  };
+                  readonly discount: {
+                    readonly default: any;
+                    readonly title: 'Discount';
+                    readonly type: 'integer';
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'rate'];
+                      readonly title: 'TaxesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly service_charge: {
+                    readonly default: any;
+                    readonly title: 'Service Charge';
+                    readonly type: 'integer';
+                  };
+                  readonly payment_term: {
+                    readonly default: any;
+                    readonly title: 'Payment Term';
+                    readonly type: 'string';
+                  };
+                  readonly purchase_order: {
+                    readonly default: any;
+                    readonly title: 'Purchase Order';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_date: {
+                    readonly default: any;
+                    readonly title: 'Service Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_due_date: {
+                    readonly default: any;
+                    readonly title: 'Service Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly po_number: {
+                    readonly default: any;
+                    readonly title: 'Po Number';
+                    readonly type: 'string';
+                  };
+                  readonly locale: {
+                    readonly required: readonly ['currency', 'language'];
+                    readonly title: 'LocaleInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly language: {
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly bank_informations: {
+                    readonly required: readonly [
+                      'account_number',
+                      'iban',
+                      'bsb',
+                      'sort_code',
+                      'vat_number',
+                      'rooting_number',
+                      'swift'
+                    ];
+                    readonly title: 'BankInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly account_number: {
+                        readonly title: 'Account Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly iban: {
+                        readonly title: 'Iban';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly bsb: {
+                        readonly title: 'Bsb';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly sort_code: {
+                        readonly title: 'Sort Code';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly rooting_number: {
+                        readonly title: 'Rooting Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly swift: {
+                        readonly title: 'Swift';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLinesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                        readonly discount: {
+                          readonly default: any;
+                          readonly title: 'Discount';
+                          readonly type: 'integer';
+                        };
+                        readonly product_code: {
+                          readonly default: any;
+                          readonly title: 'Product Code';
+                          readonly type: 'string';
+                        };
+                        readonly date_item: {
+                          readonly default: any;
+                          readonly title: 'Date Item';
+                          readonly type: 'string';
+                        };
+                        readonly tax_item: {
+                          readonly default: any;
+                          readonly title: 'Tax Item';
+                          readonly type: 'integer';
+                        };
+                        readonly tax_rate: {
+                          readonly default: any;
+                          readonly title: 'Tax Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly affinda: {
           readonly required: readonly ['status'];
           readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
@@ -16999,1695 +17843,7 @@ declare const OcrInvoiceParserCreate: {
             };
           };
         };
-        readonly base64: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosInvoiceParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly customer_information: {
-                    readonly required: readonly [
-                      'customer_name',
-                      'customer_address',
-                      'customer_email',
-                      'customer_id',
-                      'customer_tax_id',
-                      'customer_mailing_address',
-                      'customer_billing_address',
-                      'customer_shipping_address',
-                      'customer_service_address',
-                      'customer_remittance_address',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'CustomerInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_address: {
-                        readonly title: 'Customer Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_email: {
-                        readonly title: 'Customer Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_id: {
-                        readonly title: 'Customer Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_tax_id: {
-                        readonly title: 'Customer Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_mailing_address: {
-                        readonly title: 'Customer Mailing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_billing_address: {
-                        readonly title: 'Customer Billing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_shipping_address: {
-                        readonly title: 'Customer Shipping Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_service_address: {
-                        readonly title: 'Customer Service Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_remittance_address: {
-                        readonly title: 'Customer Remittance Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly required: readonly [
-                      'merchant_name',
-                      'merchant_address',
-                      'merchant_phone',
-                      'merchant_email',
-                      'merchant_fax',
-                      'merchant_website',
-                      'merchant_tax_id',
-                      'merchant_siret',
-                      'merchant_siren',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'MerchantInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_address: {
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_phone: {
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_email: {
-                        readonly title: 'Merchant Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_fax: {
-                        readonly title: 'Merchant Fax';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_website: {
-                        readonly title: 'Merchant Website';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_tax_id: {
-                        readonly title: 'Merchant Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siret: {
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siren: {
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly gratuity: {
-                    readonly default: any;
-                    readonly title: 'Gratuity';
-                    readonly type: 'integer';
-                  };
-                  readonly amount_due: {
-                    readonly default: any;
-                    readonly title: 'Amount Due';
-                    readonly type: 'integer';
-                  };
-                  readonly previous_unpaid_balance: {
-                    readonly default: any;
-                    readonly title: 'Previous Unpaid Balance';
-                    readonly type: 'integer';
-                  };
-                  readonly discount: {
-                    readonly default: any;
-                    readonly title: 'Discount';
-                    readonly type: 'integer';
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'rate'];
-                      readonly title: 'TaxesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly service_charge: {
-                    readonly default: any;
-                    readonly title: 'Service Charge';
-                    readonly type: 'integer';
-                  };
-                  readonly payment_term: {
-                    readonly default: any;
-                    readonly title: 'Payment Term';
-                    readonly type: 'string';
-                  };
-                  readonly purchase_order: {
-                    readonly default: any;
-                    readonly title: 'Purchase Order';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_date: {
-                    readonly default: any;
-                    readonly title: 'Service Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_due_date: {
-                    readonly default: any;
-                    readonly title: 'Service Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly po_number: {
-                    readonly default: any;
-                    readonly title: 'Po Number';
-                    readonly type: 'string';
-                  };
-                  readonly locale: {
-                    readonly required: readonly ['currency', 'language'];
-                    readonly title: 'LocaleInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly language: {
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly bank_informations: {
-                    readonly required: readonly [
-                      'account_number',
-                      'iban',
-                      'bsb',
-                      'sort_code',
-                      'vat_number',
-                      'rooting_number',
-                      'swift'
-                    ];
-                    readonly title: 'BankInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly account_number: {
-                        readonly title: 'Account Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly iban: {
-                        readonly title: 'Iban';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly bsb: {
-                        readonly title: 'Bsb';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly sort_code: {
-                        readonly title: 'Sort Code';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly rooting_number: {
-                        readonly title: 'Rooting Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly swift: {
-                        readonly title: 'Swift';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLinesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                        readonly discount: {
-                          readonly default: any;
-                          readonly title: 'Discount';
-                          readonly type: 'integer';
-                        };
-                        readonly product_code: {
-                          readonly default: any;
-                          readonly title: 'Product Code';
-                          readonly type: 'string';
-                        };
-                        readonly date_item: {
-                          readonly default: any;
-                          readonly title: 'Date Item';
-                          readonly type: 'string';
-                        };
-                        readonly tax_item: {
-                          readonly default: any;
-                          readonly title: 'Tax Item';
-                          readonly type: 'integer';
-                        };
-                        readonly tax_rate: {
-                          readonly default: any;
-                          readonly title: 'Tax Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly mindee: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosInvoiceParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly customer_information: {
-                    readonly required: readonly [
-                      'customer_name',
-                      'customer_address',
-                      'customer_email',
-                      'customer_id',
-                      'customer_tax_id',
-                      'customer_mailing_address',
-                      'customer_billing_address',
-                      'customer_shipping_address',
-                      'customer_service_address',
-                      'customer_remittance_address',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'CustomerInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_address: {
-                        readonly title: 'Customer Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_email: {
-                        readonly title: 'Customer Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_id: {
-                        readonly title: 'Customer Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_tax_id: {
-                        readonly title: 'Customer Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_mailing_address: {
-                        readonly title: 'Customer Mailing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_billing_address: {
-                        readonly title: 'Customer Billing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_shipping_address: {
-                        readonly title: 'Customer Shipping Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_service_address: {
-                        readonly title: 'Customer Service Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_remittance_address: {
-                        readonly title: 'Customer Remittance Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly required: readonly [
-                      'merchant_name',
-                      'merchant_address',
-                      'merchant_phone',
-                      'merchant_email',
-                      'merchant_fax',
-                      'merchant_website',
-                      'merchant_tax_id',
-                      'merchant_siret',
-                      'merchant_siren',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'MerchantInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_address: {
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_phone: {
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_email: {
-                        readonly title: 'Merchant Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_fax: {
-                        readonly title: 'Merchant Fax';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_website: {
-                        readonly title: 'Merchant Website';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_tax_id: {
-                        readonly title: 'Merchant Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siret: {
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siren: {
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly gratuity: {
-                    readonly default: any;
-                    readonly title: 'Gratuity';
-                    readonly type: 'integer';
-                  };
-                  readonly amount_due: {
-                    readonly default: any;
-                    readonly title: 'Amount Due';
-                    readonly type: 'integer';
-                  };
-                  readonly previous_unpaid_balance: {
-                    readonly default: any;
-                    readonly title: 'Previous Unpaid Balance';
-                    readonly type: 'integer';
-                  };
-                  readonly discount: {
-                    readonly default: any;
-                    readonly title: 'Discount';
-                    readonly type: 'integer';
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'rate'];
-                      readonly title: 'TaxesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly service_charge: {
-                    readonly default: any;
-                    readonly title: 'Service Charge';
-                    readonly type: 'integer';
-                  };
-                  readonly payment_term: {
-                    readonly default: any;
-                    readonly title: 'Payment Term';
-                    readonly type: 'string';
-                  };
-                  readonly purchase_order: {
-                    readonly default: any;
-                    readonly title: 'Purchase Order';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_date: {
-                    readonly default: any;
-                    readonly title: 'Service Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_due_date: {
-                    readonly default: any;
-                    readonly title: 'Service Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly po_number: {
-                    readonly default: any;
-                    readonly title: 'Po Number';
-                    readonly type: 'string';
-                  };
-                  readonly locale: {
-                    readonly required: readonly ['currency', 'language'];
-                    readonly title: 'LocaleInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly language: {
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly bank_informations: {
-                    readonly required: readonly [
-                      'account_number',
-                      'iban',
-                      'bsb',
-                      'sort_code',
-                      'vat_number',
-                      'rooting_number',
-                      'swift'
-                    ];
-                    readonly title: 'BankInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly account_number: {
-                        readonly title: 'Account Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly iban: {
-                        readonly title: 'Iban';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly bsb: {
-                        readonly title: 'Bsb';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly sort_code: {
-                        readonly title: 'Sort Code';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly rooting_number: {
-                        readonly title: 'Rooting Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly swift: {
-                        readonly title: 'Swift';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLinesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                        readonly discount: {
-                          readonly default: any;
-                          readonly title: 'Discount';
-                          readonly type: 'integer';
-                        };
-                        readonly product_code: {
-                          readonly default: any;
-                          readonly title: 'Product Code';
-                          readonly type: 'string';
-                        };
-                        readonly date_item: {
-                          readonly default: any;
-                          readonly title: 'Date Item';
-                          readonly type: 'string';
-                        };
-                        readonly tax_item: {
-                          readonly default: any;
-                          readonly title: 'Tax Item';
-                          readonly type: 'integer';
-                        };
-                        readonly tax_rate: {
-                          readonly default: any;
-                          readonly title: 'Tax Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly rossum: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosInvoiceParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly customer_information: {
-                    readonly required: readonly [
-                      'customer_name',
-                      'customer_address',
-                      'customer_email',
-                      'customer_id',
-                      'customer_tax_id',
-                      'customer_mailing_address',
-                      'customer_billing_address',
-                      'customer_shipping_address',
-                      'customer_service_address',
-                      'customer_remittance_address',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'CustomerInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_address: {
-                        readonly title: 'Customer Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_email: {
-                        readonly title: 'Customer Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_id: {
-                        readonly title: 'Customer Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_tax_id: {
-                        readonly title: 'Customer Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_mailing_address: {
-                        readonly title: 'Customer Mailing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_billing_address: {
-                        readonly title: 'Customer Billing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_shipping_address: {
-                        readonly title: 'Customer Shipping Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_service_address: {
-                        readonly title: 'Customer Service Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_remittance_address: {
-                        readonly title: 'Customer Remittance Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly required: readonly [
-                      'merchant_name',
-                      'merchant_address',
-                      'merchant_phone',
-                      'merchant_email',
-                      'merchant_fax',
-                      'merchant_website',
-                      'merchant_tax_id',
-                      'merchant_siret',
-                      'merchant_siren',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'MerchantInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_address: {
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_phone: {
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_email: {
-                        readonly title: 'Merchant Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_fax: {
-                        readonly title: 'Merchant Fax';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_website: {
-                        readonly title: 'Merchant Website';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_tax_id: {
-                        readonly title: 'Merchant Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siret: {
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siren: {
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly gratuity: {
-                    readonly default: any;
-                    readonly title: 'Gratuity';
-                    readonly type: 'integer';
-                  };
-                  readonly amount_due: {
-                    readonly default: any;
-                    readonly title: 'Amount Due';
-                    readonly type: 'integer';
-                  };
-                  readonly previous_unpaid_balance: {
-                    readonly default: any;
-                    readonly title: 'Previous Unpaid Balance';
-                    readonly type: 'integer';
-                  };
-                  readonly discount: {
-                    readonly default: any;
-                    readonly title: 'Discount';
-                    readonly type: 'integer';
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'rate'];
-                      readonly title: 'TaxesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly service_charge: {
-                    readonly default: any;
-                    readonly title: 'Service Charge';
-                    readonly type: 'integer';
-                  };
-                  readonly payment_term: {
-                    readonly default: any;
-                    readonly title: 'Payment Term';
-                    readonly type: 'string';
-                  };
-                  readonly purchase_order: {
-                    readonly default: any;
-                    readonly title: 'Purchase Order';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_date: {
-                    readonly default: any;
-                    readonly title: 'Service Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_due_date: {
-                    readonly default: any;
-                    readonly title: 'Service Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly po_number: {
-                    readonly default: any;
-                    readonly title: 'Po Number';
-                    readonly type: 'string';
-                  };
-                  readonly locale: {
-                    readonly required: readonly ['currency', 'language'];
-                    readonly title: 'LocaleInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly language: {
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly bank_informations: {
-                    readonly required: readonly [
-                      'account_number',
-                      'iban',
-                      'bsb',
-                      'sort_code',
-                      'vat_number',
-                      'rooting_number',
-                      'swift'
-                    ];
-                    readonly title: 'BankInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly account_number: {
-                        readonly title: 'Account Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly iban: {
-                        readonly title: 'Iban';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly bsb: {
-                        readonly title: 'Bsb';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly sort_code: {
-                        readonly title: 'Sort Code';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly rooting_number: {
-                        readonly title: 'Rooting Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly swift: {
-                        readonly title: 'Swift';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLinesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                        readonly discount: {
-                          readonly default: any;
-                          readonly title: 'Discount';
-                          readonly type: 'integer';
-                        };
-                        readonly product_code: {
-                          readonly default: any;
-                          readonly title: 'Product Code';
-                          readonly type: 'string';
-                        };
-                        readonly date_item: {
-                          readonly default: any;
-                          readonly title: 'Date Item';
-                          readonly type: 'string';
-                        };
-                        readonly tax_item: {
-                          readonly default: any;
-                          readonly title: 'Tax Item';
-                          readonly type: 'integer';
-                        };
-                        readonly tax_rate: {
-                          readonly default: any;
-                          readonly title: 'Tax Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosInvoiceParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly customer_information: {
-                    readonly required: readonly [
-                      'customer_name',
-                      'customer_address',
-                      'customer_email',
-                      'customer_id',
-                      'customer_tax_id',
-                      'customer_mailing_address',
-                      'customer_billing_address',
-                      'customer_shipping_address',
-                      'customer_service_address',
-                      'customer_remittance_address',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'CustomerInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_address: {
-                        readonly title: 'Customer Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_email: {
-                        readonly title: 'Customer Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_id: {
-                        readonly title: 'Customer Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_tax_id: {
-                        readonly title: 'Customer Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_mailing_address: {
-                        readonly title: 'Customer Mailing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_billing_address: {
-                        readonly title: 'Customer Billing Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_shipping_address: {
-                        readonly title: 'Customer Shipping Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_service_address: {
-                        readonly title: 'Customer Service Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly customer_remittance_address: {
-                        readonly title: 'Customer Remittance Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly required: readonly [
-                      'merchant_name',
-                      'merchant_address',
-                      'merchant_phone',
-                      'merchant_email',
-                      'merchant_fax',
-                      'merchant_website',
-                      'merchant_tax_id',
-                      'merchant_siret',
-                      'merchant_siren',
-                      'abn_number',
-                      'gst_number',
-                      'pan_number',
-                      'vat_number'
-                    ];
-                    readonly title: 'MerchantInformationInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_address: {
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_phone: {
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_email: {
-                        readonly title: 'Merchant Email';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_fax: {
-                        readonly title: 'Merchant Fax';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_website: {
-                        readonly title: 'Merchant Website';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_tax_id: {
-                        readonly title: 'Merchant Tax Id';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siret: {
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly merchant_siren: {
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly abn_number: {
-                        readonly title: 'Abn Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly gst_number: {
-                        readonly title: 'Gst Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly pan_number: {
-                        readonly title: 'Pan Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly gratuity: {
-                    readonly default: any;
-                    readonly title: 'Gratuity';
-                    readonly type: 'integer';
-                  };
-                  readonly amount_due: {
-                    readonly default: any;
-                    readonly title: 'Amount Due';
-                    readonly type: 'integer';
-                  };
-                  readonly previous_unpaid_balance: {
-                    readonly default: any;
-                    readonly title: 'Previous Unpaid Balance';
-                    readonly type: 'integer';
-                  };
-                  readonly discount: {
-                    readonly default: any;
-                    readonly title: 'Discount';
-                    readonly type: 'integer';
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'rate'];
-                      readonly title: 'TaxesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly service_charge: {
-                    readonly default: any;
-                    readonly title: 'Service Charge';
-                    readonly type: 'integer';
-                  };
-                  readonly payment_term: {
-                    readonly default: any;
-                    readonly title: 'Payment Term';
-                    readonly type: 'string';
-                  };
-                  readonly purchase_order: {
-                    readonly default: any;
-                    readonly title: 'Purchase Order';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_date: {
-                    readonly default: any;
-                    readonly title: 'Service Date';
-                    readonly type: 'string';
-                  };
-                  readonly service_due_date: {
-                    readonly default: any;
-                    readonly title: 'Service Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly po_number: {
-                    readonly default: any;
-                    readonly title: 'Po Number';
-                    readonly type: 'string';
-                  };
-                  readonly locale: {
-                    readonly required: readonly ['currency', 'language'];
-                    readonly title: 'LocaleInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly language: {
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly bank_informations: {
-                    readonly required: readonly [
-                      'account_number',
-                      'iban',
-                      'bsb',
-                      'sort_code',
-                      'vat_number',
-                      'rooting_number',
-                      'swift'
-                    ];
-                    readonly title: 'BankInvoice';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly account_number: {
-                        readonly title: 'Account Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly iban: {
-                        readonly title: 'Iban';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly bsb: {
-                        readonly title: 'Bsb';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly sort_code: {
-                        readonly title: 'Sort Code';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly vat_number: {
-                        readonly title: 'Vat Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly rooting_number: {
-                        readonly title: 'Rooting Number';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                      readonly swift: {
-                        readonly title: 'Swift';
-                        readonly type: 'string';
-                        readonly default: any;
-                      };
-                    };
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLinesInvoice';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                        readonly discount: {
-                          readonly default: any;
-                          readonly title: 'Discount';
-                          readonly type: 'integer';
-                        };
-                        readonly product_code: {
-                          readonly default: any;
-                          readonly title: 'Product Code';
-                          readonly type: 'string';
-                        };
-                        readonly date_item: {
-                          readonly default: any;
-                          readonly title: 'Date Item';
-                          readonly type: 'string';
-                        };
-                        readonly tax_item: {
-                          readonly default: any;
-                          readonly title: 'Tax Item';
-                          readonly type: 'integer';
-                        };
-                        readonly tax_rate: {
-                          readonly default: any;
-                          readonly title: 'Tax Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly dataleon: {
           readonly required: readonly ['status'];
           readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
           readonly type: 'object';
@@ -19531,7 +18687,851 @@ declare const OcrInvoiceParserCreate: {
             };
           };
         };
+        readonly microsoft: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosInvoiceParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly customer_information: {
+                    readonly required: readonly [
+                      'customer_name',
+                      'customer_address',
+                      'customer_email',
+                      'customer_id',
+                      'customer_tax_id',
+                      'customer_mailing_address',
+                      'customer_billing_address',
+                      'customer_shipping_address',
+                      'customer_service_address',
+                      'customer_remittance_address',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'CustomerInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_address: {
+                        readonly title: 'Customer Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_email: {
+                        readonly title: 'Customer Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_id: {
+                        readonly title: 'Customer Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_tax_id: {
+                        readonly title: 'Customer Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_mailing_address: {
+                        readonly title: 'Customer Mailing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_billing_address: {
+                        readonly title: 'Customer Billing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_shipping_address: {
+                        readonly title: 'Customer Shipping Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_service_address: {
+                        readonly title: 'Customer Service Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_remittance_address: {
+                        readonly title: 'Customer Remittance Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly required: readonly [
+                      'merchant_name',
+                      'merchant_address',
+                      'merchant_phone',
+                      'merchant_email',
+                      'merchant_fax',
+                      'merchant_website',
+                      'merchant_tax_id',
+                      'merchant_siret',
+                      'merchant_siren',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'MerchantInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_address: {
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_phone: {
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_email: {
+                        readonly title: 'Merchant Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_fax: {
+                        readonly title: 'Merchant Fax';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_website: {
+                        readonly title: 'Merchant Website';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_tax_id: {
+                        readonly title: 'Merchant Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siret: {
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siren: {
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly gratuity: {
+                    readonly default: any;
+                    readonly title: 'Gratuity';
+                    readonly type: 'integer';
+                  };
+                  readonly amount_due: {
+                    readonly default: any;
+                    readonly title: 'Amount Due';
+                    readonly type: 'integer';
+                  };
+                  readonly previous_unpaid_balance: {
+                    readonly default: any;
+                    readonly title: 'Previous Unpaid Balance';
+                    readonly type: 'integer';
+                  };
+                  readonly discount: {
+                    readonly default: any;
+                    readonly title: 'Discount';
+                    readonly type: 'integer';
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'rate'];
+                      readonly title: 'TaxesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly service_charge: {
+                    readonly default: any;
+                    readonly title: 'Service Charge';
+                    readonly type: 'integer';
+                  };
+                  readonly payment_term: {
+                    readonly default: any;
+                    readonly title: 'Payment Term';
+                    readonly type: 'string';
+                  };
+                  readonly purchase_order: {
+                    readonly default: any;
+                    readonly title: 'Purchase Order';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_date: {
+                    readonly default: any;
+                    readonly title: 'Service Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_due_date: {
+                    readonly default: any;
+                    readonly title: 'Service Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly po_number: {
+                    readonly default: any;
+                    readonly title: 'Po Number';
+                    readonly type: 'string';
+                  };
+                  readonly locale: {
+                    readonly required: readonly ['currency', 'language'];
+                    readonly title: 'LocaleInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly language: {
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly bank_informations: {
+                    readonly required: readonly [
+                      'account_number',
+                      'iban',
+                      'bsb',
+                      'sort_code',
+                      'vat_number',
+                      'rooting_number',
+                      'swift'
+                    ];
+                    readonly title: 'BankInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly account_number: {
+                        readonly title: 'Account Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly iban: {
+                        readonly title: 'Iban';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly bsb: {
+                        readonly title: 'Bsb';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly sort_code: {
+                        readonly title: 'Sort Code';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly rooting_number: {
+                        readonly title: 'Rooting Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly swift: {
+                        readonly title: 'Swift';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLinesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                        readonly discount: {
+                          readonly default: any;
+                          readonly title: 'Discount';
+                          readonly type: 'integer';
+                        };
+                        readonly product_code: {
+                          readonly default: any;
+                          readonly title: 'Product Code';
+                          readonly type: 'string';
+                        };
+                        readonly date_item: {
+                          readonly default: any;
+                          readonly title: 'Date Item';
+                          readonly type: 'string';
+                        };
+                        readonly tax_item: {
+                          readonly default: any;
+                          readonly title: 'Tax Item';
+                          readonly type: 'integer';
+                        };
+                        readonly tax_rate: {
+                          readonly default: any;
+                          readonly title: 'Tax Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly klippa: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosInvoiceParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly customer_information: {
+                    readonly required: readonly [
+                      'customer_name',
+                      'customer_address',
+                      'customer_email',
+                      'customer_id',
+                      'customer_tax_id',
+                      'customer_mailing_address',
+                      'customer_billing_address',
+                      'customer_shipping_address',
+                      'customer_service_address',
+                      'customer_remittance_address',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'CustomerInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_address: {
+                        readonly title: 'Customer Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_email: {
+                        readonly title: 'Customer Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_id: {
+                        readonly title: 'Customer Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_tax_id: {
+                        readonly title: 'Customer Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_mailing_address: {
+                        readonly title: 'Customer Mailing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_billing_address: {
+                        readonly title: 'Customer Billing Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_shipping_address: {
+                        readonly title: 'Customer Shipping Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_service_address: {
+                        readonly title: 'Customer Service Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly customer_remittance_address: {
+                        readonly title: 'Customer Remittance Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly required: readonly [
+                      'merchant_name',
+                      'merchant_address',
+                      'merchant_phone',
+                      'merchant_email',
+                      'merchant_fax',
+                      'merchant_website',
+                      'merchant_tax_id',
+                      'merchant_siret',
+                      'merchant_siren',
+                      'abn_number',
+                      'gst_number',
+                      'pan_number',
+                      'vat_number'
+                    ];
+                    readonly title: 'MerchantInformationInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_address: {
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_phone: {
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_email: {
+                        readonly title: 'Merchant Email';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_fax: {
+                        readonly title: 'Merchant Fax';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_website: {
+                        readonly title: 'Merchant Website';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_tax_id: {
+                        readonly title: 'Merchant Tax Id';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siret: {
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly merchant_siren: {
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly abn_number: {
+                        readonly title: 'Abn Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly gst_number: {
+                        readonly title: 'Gst Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly pan_number: {
+                        readonly title: 'Pan Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly gratuity: {
+                    readonly default: any;
+                    readonly title: 'Gratuity';
+                    readonly type: 'integer';
+                  };
+                  readonly amount_due: {
+                    readonly default: any;
+                    readonly title: 'Amount Due';
+                    readonly type: 'integer';
+                  };
+                  readonly previous_unpaid_balance: {
+                    readonly default: any;
+                    readonly title: 'Previous Unpaid Balance';
+                    readonly type: 'integer';
+                  };
+                  readonly discount: {
+                    readonly default: any;
+                    readonly title: 'Discount';
+                    readonly type: 'integer';
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'rate'];
+                      readonly title: 'TaxesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly service_charge: {
+                    readonly default: any;
+                    readonly title: 'Service Charge';
+                    readonly type: 'integer';
+                  };
+                  readonly payment_term: {
+                    readonly default: any;
+                    readonly title: 'Payment Term';
+                    readonly type: 'string';
+                  };
+                  readonly purchase_order: {
+                    readonly default: any;
+                    readonly title: 'Purchase Order';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_date: {
+                    readonly default: any;
+                    readonly title: 'Service Date';
+                    readonly type: 'string';
+                  };
+                  readonly service_due_date: {
+                    readonly default: any;
+                    readonly title: 'Service Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly po_number: {
+                    readonly default: any;
+                    readonly title: 'Po Number';
+                    readonly type: 'string';
+                  };
+                  readonly locale: {
+                    readonly required: readonly ['currency', 'language'];
+                    readonly title: 'LocaleInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly language: {
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly bank_informations: {
+                    readonly required: readonly [
+                      'account_number',
+                      'iban',
+                      'bsb',
+                      'sort_code',
+                      'vat_number',
+                      'rooting_number',
+                      'swift'
+                    ];
+                    readonly title: 'BankInvoice';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly account_number: {
+                        readonly title: 'Account Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly iban: {
+                        readonly title: 'Iban';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly bsb: {
+                        readonly title: 'Bsb';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly sort_code: {
+                        readonly title: 'Sort Code';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly vat_number: {
+                        readonly title: 'Vat Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly rooting_number: {
+                        readonly title: 'Rooting Number';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                      readonly swift: {
+                        readonly title: 'Swift';
+                        readonly type: 'string';
+                        readonly default: any;
+                      };
+                    };
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLinesInvoice';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                        readonly discount: {
+                          readonly default: any;
+                          readonly title: 'Discount';
+                          readonly type: 'integer';
+                        };
+                        readonly product_code: {
+                          readonly default: any;
+                          readonly title: 'Product Code';
+                          readonly type: 'string';
+                        };
+                        readonly date_item: {
+                          readonly default: any;
+                          readonly title: 'Date Item';
+                          readonly type: 'string';
+                        };
+                        readonly tax_item: {
+                          readonly default: any;
+                          readonly title: 'Tax Item';
+                          readonly type: 'integer';
+                        };
+                        readonly tax_rate: {
+                          readonly default: any;
+                          readonly title: 'Tax Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly base64: {
           readonly required: readonly ['status'];
           readonly title: 'ocrinvoice_parserInvoiceParserDataClass';
           readonly type: 'object';
@@ -21025,7 +21025,7 @@ declare const OcrOcrAsyncRetrieve2: {
       readonly properties: {
         readonly results: {
           readonly properties: {
-            readonly oneai: {
+            readonly google: {
               readonly required: readonly ['raw_text', 'number_of_pages', 'id', 'final_status'];
               readonly title: 'ocrocr_asyncOcrAsyncDataClass';
               readonly type: 'object';
@@ -21175,7 +21175,7 @@ declare const OcrOcrAsyncRetrieve2: {
                 };
               };
             };
-            readonly google: {
+            readonly oneai: {
               readonly required: readonly ['raw_text', 'number_of_pages', 'id', 'final_status'];
               readonly title: 'ocrocr_asyncOcrAsyncDataClass';
               readonly type: 'object';
@@ -21629,166 +21629,113 @@ declare const OcrOcrCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly clarifai: {
-          readonly required: readonly ['text', 'status'];
-          readonly title: 'ocrocrOcrDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly text: {
-              readonly title: 'Text';
-              readonly type: 'string';
-            };
-            readonly bounding_boxes: {
-              readonly title: 'Bounding Boxes';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['text', 'left', 'top', 'width', 'height'];
-                readonly title: 'Bounding_box';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly text: {
-                    readonly title: 'Text';
-                    readonly type: 'string';
-                  };
-                  readonly left: {
-                    readonly title: 'Left';
-                    readonly type: 'integer';
-                  };
-                  readonly top: {
-                    readonly title: 'Top';
-                    readonly type: 'integer';
-                  };
-                  readonly width: {
-                    readonly title: 'Width';
-                    readonly type: 'integer';
-                  };
-                  readonly height: {
-                    readonly title: 'Height';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly base64: {
-          readonly required: readonly ['text', 'status'];
-          readonly title: 'ocrocrOcrDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly text: {
-              readonly title: 'Text';
-              readonly type: 'string';
-            };
-            readonly bounding_boxes: {
-              readonly title: 'Bounding Boxes';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['text', 'left', 'top', 'width', 'height'];
-                readonly title: 'Bounding_box';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly text: {
-                    readonly title: 'Text';
-                    readonly type: 'string';
-                  };
-                  readonly left: {
-                    readonly title: 'Left';
-                    readonly type: 'integer';
-                  };
-                  readonly top: {
-                    readonly title: 'Top';
-                    readonly type: 'integer';
-                  };
-                  readonly width: {
-                    readonly title: 'Width';
-                    readonly type: 'integer';
-                  };
-                  readonly height: {
-                    readonly title: 'Height';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
-          readonly required: readonly ['text', 'status'];
-          readonly title: 'ocrocrOcrDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly text: {
-              readonly title: 'Text';
-              readonly type: 'string';
-            };
-            readonly bounding_boxes: {
-              readonly title: 'Bounding Boxes';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['text', 'left', 'top', 'width', 'height'];
-                readonly title: 'Bounding_box';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly text: {
-                    readonly title: 'Text';
-                    readonly type: 'string';
-                  };
-                  readonly left: {
-                    readonly title: 'Left';
-                    readonly type: 'integer';
-                  };
-                  readonly top: {
-                    readonly title: 'Top';
-                    readonly type: 'integer';
-                  };
-                  readonly width: {
-                    readonly title: 'Width';
-                    readonly type: 'integer';
-                  };
-                  readonly height: {
-                    readonly title: 'Height';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly api4ai: {
+          readonly required: readonly ['text', 'status'];
+          readonly title: 'ocrocrOcrDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly text: {
+              readonly title: 'Text';
+              readonly type: 'string';
+            };
+            readonly bounding_boxes: {
+              readonly title: 'Bounding Boxes';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['text', 'left', 'top', 'width', 'height'];
+                readonly title: 'Bounding_box';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly text: {
+                    readonly title: 'Text';
+                    readonly type: 'string';
+                  };
+                  readonly left: {
+                    readonly title: 'Left';
+                    readonly type: 'integer';
+                  };
+                  readonly top: {
+                    readonly title: 'Top';
+                    readonly type: 'integer';
+                  };
+                  readonly width: {
+                    readonly title: 'Width';
+                    readonly type: 'integer';
+                  };
+                  readonly height: {
+                    readonly title: 'Height';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly sentisight: {
+          readonly required: readonly ['text', 'status'];
+          readonly title: 'ocrocrOcrDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly text: {
+              readonly title: 'Text';
+              readonly type: 'string';
+            };
+            readonly bounding_boxes: {
+              readonly title: 'Bounding Boxes';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['text', 'left', 'top', 'width', 'height'];
+                readonly title: 'Bounding_box';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly text: {
+                    readonly title: 'Text';
+                    readonly type: 'string';
+                  };
+                  readonly left: {
+                    readonly title: 'Left';
+                    readonly type: 'integer';
+                  };
+                  readonly top: {
+                    readonly title: 'Top';
+                    readonly type: 'integer';
+                  };
+                  readonly width: {
+                    readonly title: 'Width';
+                    readonly type: 'integer';
+                  };
+                  readonly height: {
+                    readonly title: 'Height';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly clarifai: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'ocrocrOcrDataClass';
           readonly type: 'object';
@@ -21894,7 +21841,60 @@ declare const OcrOcrCreate: {
             };
           };
         };
-        readonly sentisight: {
+        readonly microsoft: {
+          readonly required: readonly ['text', 'status'];
+          readonly title: 'ocrocrOcrDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly text: {
+              readonly title: 'Text';
+              readonly type: 'string';
+            };
+            readonly bounding_boxes: {
+              readonly title: 'Bounding Boxes';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['text', 'left', 'top', 'width', 'height'];
+                readonly title: 'Bounding_box';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly text: {
+                    readonly title: 'Text';
+                    readonly type: 'string';
+                  };
+                  readonly left: {
+                    readonly title: 'Left';
+                    readonly type: 'integer';
+                  };
+                  readonly top: {
+                    readonly title: 'Top';
+                    readonly type: 'integer';
+                  };
+                  readonly width: {
+                    readonly title: 'Width';
+                    readonly type: 'integer';
+                  };
+                  readonly height: {
+                    readonly title: 'Height';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly base64: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'ocrocrOcrDataClass';
           readonly type: 'object';
@@ -22821,730 +22821,7 @@ declare const OcrReceiptParserCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly veryfi: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrreceipt_parserReceiptParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosReceiptParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly barcodes: {
-                    readonly title: 'Barcodes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'type'];
-                      readonly title: 'BarCode';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'string';
-                        };
-                        readonly type: {
-                          readonly title: 'Type';
-                          readonly type: 'string';
-                        };
-                      };
-                    };
-                  };
-                  readonly category: {
-                    readonly default: any;
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly time: {
-                    readonly default: any;
-                    readonly title: 'Time';
-                    readonly type: 'string';
-                  };
-                  readonly customer_information: {
-                    readonly title: 'CustomerInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly default: any;
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly title: 'MerchantInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly default: any;
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_address: {
-                        readonly default: any;
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_phone: {
-                        readonly default: any;
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_url: {
-                        readonly default: any;
-                        readonly title: 'Merchant Url';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_siret: {
-                        readonly default: any;
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_siren: {
-                        readonly default: any;
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly payment_information: {
-                    readonly title: 'PaymentInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly card_type: {
-                        readonly default: any;
-                        readonly title: 'Card Type';
-                        readonly type: 'string';
-                      };
-                      readonly card_number: {
-                        readonly default: any;
-                        readonly title: 'Card Number';
-                        readonly type: 'string';
-                      };
-                      readonly cash: {
-                        readonly default: any;
-                        readonly title: 'Cash';
-                        readonly type: 'string';
-                      };
-                      readonly tip: {
-                        readonly default: any;
-                        readonly title: 'Tip';
-                        readonly type: 'string';
-                      };
-                      readonly discount: {
-                        readonly default: any;
-                        readonly title: 'Discount';
-                        readonly type: 'string';
-                      };
-                      readonly change: {
-                        readonly default: any;
-                        readonly title: 'Change';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly locale: {
-                    readonly title: 'Locale';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly default: any;
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                      };
-                      readonly language: {
-                        readonly default: any;
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                      };
-                      readonly country: {
-                        readonly default: any;
-                        readonly title: 'Country';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'Taxes';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly taxes: {
-                          readonly default: any;
-                          readonly title: 'Taxes';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly default: any;
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly receipt_infos: {
-                    readonly title: 'Receipt Infos';
-                    readonly type: 'object';
-                    readonly additionalProperties: true;
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLines';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly base64: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrreceipt_parserReceiptParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosReceiptParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly barcodes: {
-                    readonly title: 'Barcodes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'type'];
-                      readonly title: 'BarCode';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'string';
-                        };
-                        readonly type: {
-                          readonly title: 'Type';
-                          readonly type: 'string';
-                        };
-                      };
-                    };
-                  };
-                  readonly category: {
-                    readonly default: any;
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly time: {
-                    readonly default: any;
-                    readonly title: 'Time';
-                    readonly type: 'string';
-                  };
-                  readonly customer_information: {
-                    readonly title: 'CustomerInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly default: any;
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly title: 'MerchantInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly default: any;
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_address: {
-                        readonly default: any;
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_phone: {
-                        readonly default: any;
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_url: {
-                        readonly default: any;
-                        readonly title: 'Merchant Url';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_siret: {
-                        readonly default: any;
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_siren: {
-                        readonly default: any;
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly payment_information: {
-                    readonly title: 'PaymentInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly card_type: {
-                        readonly default: any;
-                        readonly title: 'Card Type';
-                        readonly type: 'string';
-                      };
-                      readonly card_number: {
-                        readonly default: any;
-                        readonly title: 'Card Number';
-                        readonly type: 'string';
-                      };
-                      readonly cash: {
-                        readonly default: any;
-                        readonly title: 'Cash';
-                        readonly type: 'string';
-                      };
-                      readonly tip: {
-                        readonly default: any;
-                        readonly title: 'Tip';
-                        readonly type: 'string';
-                      };
-                      readonly discount: {
-                        readonly default: any;
-                        readonly title: 'Discount';
-                        readonly type: 'string';
-                      };
-                      readonly change: {
-                        readonly default: any;
-                        readonly title: 'Change';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly locale: {
-                    readonly title: 'Locale';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly default: any;
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                      };
-                      readonly language: {
-                        readonly default: any;
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                      };
-                      readonly country: {
-                        readonly default: any;
-                        readonly title: 'Country';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'Taxes';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly taxes: {
-                          readonly default: any;
-                          readonly title: 'Taxes';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly default: any;
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly receipt_infos: {
-                    readonly title: 'Receipt Infos';
-                    readonly type: 'object';
-                    readonly additionalProperties: true;
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLines';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly mindee: {
-          readonly required: readonly ['status'];
-          readonly title: 'ocrreceipt_parserReceiptParserDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly extracted_data: {
-              readonly title: 'Extracted Data';
-              readonly type: 'array';
-              readonly items: {
-                readonly title: 'InfosReceiptParserDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly invoice_number: {
-                    readonly default: any;
-                    readonly title: 'Invoice Number';
-                    readonly type: 'string';
-                  };
-                  readonly invoice_total: {
-                    readonly default: any;
-                    readonly title: 'Invoice Total';
-                    readonly type: 'integer';
-                  };
-                  readonly invoice_subtotal: {
-                    readonly default: any;
-                    readonly title: 'Invoice Subtotal';
-                    readonly type: 'integer';
-                  };
-                  readonly barcodes: {
-                    readonly title: 'Barcodes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly required: readonly ['value', 'type'];
-                      readonly title: 'BarCode';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly value: {
-                          readonly title: 'Value';
-                          readonly type: 'string';
-                        };
-                        readonly type: {
-                          readonly title: 'Type';
-                          readonly type: 'string';
-                        };
-                      };
-                    };
-                  };
-                  readonly category: {
-                    readonly default: any;
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly date: {
-                    readonly default: any;
-                    readonly title: 'Date';
-                    readonly type: 'string';
-                  };
-                  readonly due_date: {
-                    readonly default: any;
-                    readonly title: 'Due Date';
-                    readonly type: 'string';
-                  };
-                  readonly time: {
-                    readonly default: any;
-                    readonly title: 'Time';
-                    readonly type: 'string';
-                  };
-                  readonly customer_information: {
-                    readonly title: 'CustomerInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly customer_name: {
-                        readonly default: any;
-                        readonly title: 'Customer Name';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly merchant_information: {
-                    readonly title: 'MerchantInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly merchant_name: {
-                        readonly default: any;
-                        readonly title: 'Merchant Name';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_address: {
-                        readonly default: any;
-                        readonly title: 'Merchant Address';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_phone: {
-                        readonly default: any;
-                        readonly title: 'Merchant Phone';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_url: {
-                        readonly default: any;
-                        readonly title: 'Merchant Url';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_siret: {
-                        readonly default: any;
-                        readonly title: 'Merchant Siret';
-                        readonly type: 'string';
-                      };
-                      readonly merchant_siren: {
-                        readonly default: any;
-                        readonly title: 'Merchant Siren';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly payment_information: {
-                    readonly title: 'PaymentInformation';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly card_type: {
-                        readonly default: any;
-                        readonly title: 'Card Type';
-                        readonly type: 'string';
-                      };
-                      readonly card_number: {
-                        readonly default: any;
-                        readonly title: 'Card Number';
-                        readonly type: 'string';
-                      };
-                      readonly cash: {
-                        readonly default: any;
-                        readonly title: 'Cash';
-                        readonly type: 'string';
-                      };
-                      readonly tip: {
-                        readonly default: any;
-                        readonly title: 'Tip';
-                        readonly type: 'string';
-                      };
-                      readonly discount: {
-                        readonly default: any;
-                        readonly title: 'Discount';
-                        readonly type: 'string';
-                      };
-                      readonly change: {
-                        readonly default: any;
-                        readonly title: 'Change';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly locale: {
-                    readonly title: 'Locale';
-                    readonly type: 'object';
-                    readonly properties: {
-                      readonly currency: {
-                        readonly default: any;
-                        readonly title: 'Currency';
-                        readonly type: 'string';
-                      };
-                      readonly language: {
-                        readonly default: any;
-                        readonly title: 'Language';
-                        readonly type: 'string';
-                      };
-                      readonly country: {
-                        readonly default: any;
-                        readonly title: 'Country';
-                        readonly type: 'string';
-                      };
-                    };
-                  };
-                  readonly taxes: {
-                    readonly title: 'Taxes';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'Taxes';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly taxes: {
-                          readonly default: any;
-                          readonly title: 'Taxes';
-                          readonly type: 'integer';
-                        };
-                        readonly rate: {
-                          readonly default: any;
-                          readonly title: 'Rate';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                  readonly receipt_infos: {
-                    readonly title: 'Receipt Infos';
-                    readonly type: 'object';
-                    readonly additionalProperties: true;
-                  };
-                  readonly item_lines: {
-                    readonly title: 'Item Lines';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly title: 'ItemLines';
-                      readonly type: 'object';
-                      readonly properties: {
-                        readonly description: {
-                          readonly default: any;
-                          readonly title: 'Description';
-                          readonly type: 'string';
-                        };
-                        readonly quantity: {
-                          readonly default: any;
-                          readonly title: 'Quantity';
-                          readonly type: 'integer';
-                        };
-                        readonly amount: {
-                          readonly default: any;
-                          readonly title: 'Amount';
-                          readonly type: 'integer';
-                        };
-                        readonly unit_price: {
-                          readonly default: any;
-                          readonly title: 'Unit Price';
-                          readonly type: 'integer';
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
+        readonly dataleon: {
           readonly required: readonly ['status'];
           readonly title: 'ocrreceipt_parserReceiptParserDataClass';
           readonly type: 'object';
@@ -24026,7 +23303,248 @@ declare const OcrReceiptParserCreate: {
             };
           };
         };
-        readonly dataleon: {
+        readonly veryfi: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrreceipt_parserReceiptParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosReceiptParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly barcodes: {
+                    readonly title: 'Barcodes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'type'];
+                      readonly title: 'BarCode';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'string';
+                        };
+                        readonly type: {
+                          readonly title: 'Type';
+                          readonly type: 'string';
+                        };
+                      };
+                    };
+                  };
+                  readonly category: {
+                    readonly default: any;
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly time: {
+                    readonly default: any;
+                    readonly title: 'Time';
+                    readonly type: 'string';
+                  };
+                  readonly customer_information: {
+                    readonly title: 'CustomerInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly default: any;
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly title: 'MerchantInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly default: any;
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_address: {
+                        readonly default: any;
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_phone: {
+                        readonly default: any;
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_url: {
+                        readonly default: any;
+                        readonly title: 'Merchant Url';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_siret: {
+                        readonly default: any;
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_siren: {
+                        readonly default: any;
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly payment_information: {
+                    readonly title: 'PaymentInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly card_type: {
+                        readonly default: any;
+                        readonly title: 'Card Type';
+                        readonly type: 'string';
+                      };
+                      readonly card_number: {
+                        readonly default: any;
+                        readonly title: 'Card Number';
+                        readonly type: 'string';
+                      };
+                      readonly cash: {
+                        readonly default: any;
+                        readonly title: 'Cash';
+                        readonly type: 'string';
+                      };
+                      readonly tip: {
+                        readonly default: any;
+                        readonly title: 'Tip';
+                        readonly type: 'string';
+                      };
+                      readonly discount: {
+                        readonly default: any;
+                        readonly title: 'Discount';
+                        readonly type: 'string';
+                      };
+                      readonly change: {
+                        readonly default: any;
+                        readonly title: 'Change';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly locale: {
+                    readonly title: 'Locale';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly default: any;
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                      };
+                      readonly language: {
+                        readonly default: any;
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                      };
+                      readonly country: {
+                        readonly default: any;
+                        readonly title: 'Country';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'Taxes';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly taxes: {
+                          readonly default: any;
+                          readonly title: 'Taxes';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly default: any;
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly receipt_infos: {
+                    readonly title: 'Receipt Infos';
+                    readonly type: 'object';
+                    readonly additionalProperties: true;
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLines';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly mindee: {
           readonly required: readonly ['status'];
           readonly title: 'ocrreceipt_parserReceiptParserDataClass';
           readonly type: 'object';
@@ -24508,7 +24026,489 @@ declare const OcrReceiptParserCreate: {
             };
           };
         };
+        readonly microsoft: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrreceipt_parserReceiptParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosReceiptParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly barcodes: {
+                    readonly title: 'Barcodes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'type'];
+                      readonly title: 'BarCode';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'string';
+                        };
+                        readonly type: {
+                          readonly title: 'Type';
+                          readonly type: 'string';
+                        };
+                      };
+                    };
+                  };
+                  readonly category: {
+                    readonly default: any;
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly time: {
+                    readonly default: any;
+                    readonly title: 'Time';
+                    readonly type: 'string';
+                  };
+                  readonly customer_information: {
+                    readonly title: 'CustomerInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly default: any;
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly title: 'MerchantInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly default: any;
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_address: {
+                        readonly default: any;
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_phone: {
+                        readonly default: any;
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_url: {
+                        readonly default: any;
+                        readonly title: 'Merchant Url';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_siret: {
+                        readonly default: any;
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_siren: {
+                        readonly default: any;
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly payment_information: {
+                    readonly title: 'PaymentInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly card_type: {
+                        readonly default: any;
+                        readonly title: 'Card Type';
+                        readonly type: 'string';
+                      };
+                      readonly card_number: {
+                        readonly default: any;
+                        readonly title: 'Card Number';
+                        readonly type: 'string';
+                      };
+                      readonly cash: {
+                        readonly default: any;
+                        readonly title: 'Cash';
+                        readonly type: 'string';
+                      };
+                      readonly tip: {
+                        readonly default: any;
+                        readonly title: 'Tip';
+                        readonly type: 'string';
+                      };
+                      readonly discount: {
+                        readonly default: any;
+                        readonly title: 'Discount';
+                        readonly type: 'string';
+                      };
+                      readonly change: {
+                        readonly default: any;
+                        readonly title: 'Change';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly locale: {
+                    readonly title: 'Locale';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly default: any;
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                      };
+                      readonly language: {
+                        readonly default: any;
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                      };
+                      readonly country: {
+                        readonly default: any;
+                        readonly title: 'Country';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'Taxes';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly taxes: {
+                          readonly default: any;
+                          readonly title: 'Taxes';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly default: any;
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly receipt_infos: {
+                    readonly title: 'Receipt Infos';
+                    readonly type: 'object';
+                    readonly additionalProperties: true;
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLines';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly klippa: {
+          readonly required: readonly ['status'];
+          readonly title: 'ocrreceipt_parserReceiptParserDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly extracted_data: {
+              readonly title: 'Extracted Data';
+              readonly type: 'array';
+              readonly items: {
+                readonly title: 'InfosReceiptParserDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly invoice_number: {
+                    readonly default: any;
+                    readonly title: 'Invoice Number';
+                    readonly type: 'string';
+                  };
+                  readonly invoice_total: {
+                    readonly default: any;
+                    readonly title: 'Invoice Total';
+                    readonly type: 'integer';
+                  };
+                  readonly invoice_subtotal: {
+                    readonly default: any;
+                    readonly title: 'Invoice Subtotal';
+                    readonly type: 'integer';
+                  };
+                  readonly barcodes: {
+                    readonly title: 'Barcodes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly required: readonly ['value', 'type'];
+                      readonly title: 'BarCode';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly value: {
+                          readonly title: 'Value';
+                          readonly type: 'string';
+                        };
+                        readonly type: {
+                          readonly title: 'Type';
+                          readonly type: 'string';
+                        };
+                      };
+                    };
+                  };
+                  readonly category: {
+                    readonly default: any;
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly date: {
+                    readonly default: any;
+                    readonly title: 'Date';
+                    readonly type: 'string';
+                  };
+                  readonly due_date: {
+                    readonly default: any;
+                    readonly title: 'Due Date';
+                    readonly type: 'string';
+                  };
+                  readonly time: {
+                    readonly default: any;
+                    readonly title: 'Time';
+                    readonly type: 'string';
+                  };
+                  readonly customer_information: {
+                    readonly title: 'CustomerInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly customer_name: {
+                        readonly default: any;
+                        readonly title: 'Customer Name';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly merchant_information: {
+                    readonly title: 'MerchantInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly merchant_name: {
+                        readonly default: any;
+                        readonly title: 'Merchant Name';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_address: {
+                        readonly default: any;
+                        readonly title: 'Merchant Address';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_phone: {
+                        readonly default: any;
+                        readonly title: 'Merchant Phone';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_url: {
+                        readonly default: any;
+                        readonly title: 'Merchant Url';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_siret: {
+                        readonly default: any;
+                        readonly title: 'Merchant Siret';
+                        readonly type: 'string';
+                      };
+                      readonly merchant_siren: {
+                        readonly default: any;
+                        readonly title: 'Merchant Siren';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly payment_information: {
+                    readonly title: 'PaymentInformation';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly card_type: {
+                        readonly default: any;
+                        readonly title: 'Card Type';
+                        readonly type: 'string';
+                      };
+                      readonly card_number: {
+                        readonly default: any;
+                        readonly title: 'Card Number';
+                        readonly type: 'string';
+                      };
+                      readonly cash: {
+                        readonly default: any;
+                        readonly title: 'Cash';
+                        readonly type: 'string';
+                      };
+                      readonly tip: {
+                        readonly default: any;
+                        readonly title: 'Tip';
+                        readonly type: 'string';
+                      };
+                      readonly discount: {
+                        readonly default: any;
+                        readonly title: 'Discount';
+                        readonly type: 'string';
+                      };
+                      readonly change: {
+                        readonly default: any;
+                        readonly title: 'Change';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly locale: {
+                    readonly title: 'Locale';
+                    readonly type: 'object';
+                    readonly properties: {
+                      readonly currency: {
+                        readonly default: any;
+                        readonly title: 'Currency';
+                        readonly type: 'string';
+                      };
+                      readonly language: {
+                        readonly default: any;
+                        readonly title: 'Language';
+                        readonly type: 'string';
+                      };
+                      readonly country: {
+                        readonly default: any;
+                        readonly title: 'Country';
+                        readonly type: 'string';
+                      };
+                    };
+                  };
+                  readonly taxes: {
+                    readonly title: 'Taxes';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'Taxes';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly taxes: {
+                          readonly default: any;
+                          readonly title: 'Taxes';
+                          readonly type: 'integer';
+                        };
+                        readonly rate: {
+                          readonly default: any;
+                          readonly title: 'Rate';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                  readonly receipt_infos: {
+                    readonly title: 'Receipt Infos';
+                    readonly type: 'object';
+                    readonly additionalProperties: true;
+                  };
+                  readonly item_lines: {
+                    readonly title: 'Item Lines';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly title: 'ItemLines';
+                      readonly type: 'object';
+                      readonly properties: {
+                        readonly description: {
+                          readonly default: any;
+                          readonly title: 'Description';
+                          readonly type: 'string';
+                        };
+                        readonly quantity: {
+                          readonly default: any;
+                          readonly title: 'Quantity';
+                          readonly type: 'integer';
+                        };
+                        readonly amount: {
+                          readonly default: any;
+                          readonly title: 'Amount';
+                          readonly type: 'integer';
+                        };
+                        readonly unit_price: {
+                          readonly default: any;
+                          readonly title: 'Unit Price';
+                          readonly type: 'integer';
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly base64: {
           readonly required: readonly ['status'];
           readonly title: 'ocrreceipt_parserReceiptParserDataClass';
           readonly type: 'object';
@@ -27197,7 +27197,7 @@ declare const TextAiDetectionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly sapling: {
+        readonly originalityai: {
           readonly required: readonly ['ai_score', 'status'];
           readonly title: 'textai_detectionAiDetectionDataClass';
           readonly type: 'object';
@@ -27242,7 +27242,7 @@ declare const TextAiDetectionCreate: {
             };
           };
         };
-        readonly originalityai: {
+        readonly sapling: {
           readonly required: readonly ['ai_score', 'status'];
           readonly title: 'textai_detectionAiDetectionDataClass';
           readonly type: 'object';
@@ -27420,6 +27420,166 @@ declare const TextAnonymizationCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly oneai: {
+          readonly required: readonly ['result', 'status'];
+          readonly title: 'textanonymizationAnonymizationDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly result: {
+              readonly title: 'Result';
+              readonly type: 'string';
+            };
+            readonly entities: {
+              readonly title: 'Entities';
+              readonly type: 'array';
+              readonly items: {
+                readonly description: 'This model represents an entity extracted from the text.\n\n    Attributes:\n        offset (int): The offset of the entity in the text.\n        length (int): The lenght of the entity in the text.\n        category (CategoryType): The category of the entity.\n        subcategory (SubCategoryType): The subcategory of the entity.\n        original_label (str): The original label of the entity.\n        content (str): The content of the entity.\n    ';
+                readonly required: readonly [
+                  'offset',
+                  'length',
+                  'category',
+                  'subcategory',
+                  'original_label',
+                  'content',
+                  'confidence_score'
+                ];
+                readonly title: 'AnonymizationEntity';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly offset: {
+                    readonly minimum: 0;
+                    readonly title: 'Offset';
+                    readonly type: 'integer';
+                  };
+                  readonly length: {
+                    readonly exclusiveMinimum: true;
+                    readonly title: 'Length';
+                    readonly type: 'integer';
+                  };
+                  readonly category: {
+                    readonly description: 'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`';
+                    readonly enum: readonly [
+                      'PersonalInformation',
+                      'FinancialInformation',
+                      'IdentificationNumbers',
+                      'Miscellaneous',
+                      'OrganizationInformation',
+                      'DateAndTime',
+                      'LocationInformation',
+                      'Other'
+                    ];
+                    readonly title: 'CategoryType';
+                    readonly type: 'string';
+                  };
+                  readonly subcategory: {
+                    readonly anyOf: readonly [
+                      {
+                        readonly enum: readonly [
+                          'CreditCard',
+                          'CardExpiry',
+                          'BankAccountNumber',
+                          'BankRoutingNumber',
+                          'SwiftCode',
+                          'TaxIdentificationNumber'
+                        ];
+                        readonly title: 'FinancialInformationSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`CreditCard` `CardExpiry` `BankAccountNumber` `BankRoutingNumber` `SwiftCode` `TaxIdentificationNumber`';
+                      },
+                      {
+                        readonly enum: readonly ['Name', 'Age', 'Email', 'Phone', 'PersonType'];
+                        readonly title: 'PersonalInformationSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`Name` `Age` `Email` `Phone` `PersonType`';
+                      },
+                      {
+                        readonly enum: readonly [
+                          'SocialSecurityNumber',
+                          'NationalIdentificationNumber',
+                          'NationalHealthService',
+                          'ResidentRegistrationNumber',
+                          'DriverLicenseNumber',
+                          'PassportNumber'
+                        ];
+                        readonly title: 'IdentificationNumbersSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`SocialSecurityNumber` `NationalIdentificationNumber` `NationalHealthService` `ResidentRegistrationNumber` `DriverLicenseNumber` `PassportNumber`';
+                      },
+                      {
+                        readonly enum: readonly [
+                          'URL',
+                          'IP',
+                          'MAC',
+                          'VehicleIdentificationNumber',
+                          'LicensePlate',
+                          'VoterNumber',
+                          'AWSKeys',
+                          'AzureKeys',
+                          'Password'
+                        ];
+                        readonly title: 'MiscellaneousSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`';
+                      },
+                      {
+                        readonly enum: readonly ['CompanyName', 'CompanyNumber', 'BuisnessNumber'];
+                        readonly title: 'OrganizationSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`CompanyName` `CompanyNumber` `BuisnessNumber`';
+                      },
+                      {
+                        readonly enum: readonly ['Date', 'Time', 'DateTime', 'Duration'];
+                        readonly title: 'DateAndTimeSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`Date` `Time` `DateTime` `Duration`';
+                      },
+                      {
+                        readonly enum: readonly ['Address', 'Location'];
+                        readonly title: 'LocationInformationSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`Address` `Location`';
+                      },
+                      {
+                        readonly enum: readonly ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'];
+                        readonly title: 'OtherSubCategoryType';
+                        readonly type: 'string';
+                        readonly description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`';
+                      }
+                    ];
+                    readonly title: 'Subcategory';
+                  };
+                  readonly original_label: {
+                    readonly minLength: 1;
+                    readonly title: 'Original Label';
+                    readonly type: 'string';
+                  };
+                  readonly content: {
+                    readonly minLength: 1;
+                    readonly title: 'Content';
+                    readonly type: 'string';
+                  };
+                  readonly confidence_score: {
+                    readonly maximum: 1;
+                    readonly minimum: 0;
+                    readonly title: 'Confidence Score';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly emvista: {
           readonly required: readonly ['result', 'status'];
           readonly title: 'textanonymizationAnonymizationDataClass';
@@ -27581,166 +27741,6 @@ declare const TextAnonymizationCreate: {
           };
         };
         readonly microsoft: {
-          readonly required: readonly ['result', 'status'];
-          readonly title: 'textanonymizationAnonymizationDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly result: {
-              readonly title: 'Result';
-              readonly type: 'string';
-            };
-            readonly entities: {
-              readonly title: 'Entities';
-              readonly type: 'array';
-              readonly items: {
-                readonly description: 'This model represents an entity extracted from the text.\n\n    Attributes:\n        offset (int): The offset of the entity in the text.\n        length (int): The lenght of the entity in the text.\n        category (CategoryType): The category of the entity.\n        subcategory (SubCategoryType): The subcategory of the entity.\n        original_label (str): The original label of the entity.\n        content (str): The content of the entity.\n    ';
-                readonly required: readonly [
-                  'offset',
-                  'length',
-                  'category',
-                  'subcategory',
-                  'original_label',
-                  'content',
-                  'confidence_score'
-                ];
-                readonly title: 'AnonymizationEntity';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly offset: {
-                    readonly minimum: 0;
-                    readonly title: 'Offset';
-                    readonly type: 'integer';
-                  };
-                  readonly length: {
-                    readonly exclusiveMinimum: true;
-                    readonly title: 'Length';
-                    readonly type: 'integer';
-                  };
-                  readonly category: {
-                    readonly description: 'This enum are used to categorize the entities extracted from the text.\n\n`PersonalInformation` `FinancialInformation` `IdentificationNumbers` `Miscellaneous` `OrganizationInformation` `DateAndTime` `LocationInformation` `Other`';
-                    readonly enum: readonly [
-                      'PersonalInformation',
-                      'FinancialInformation',
-                      'IdentificationNumbers',
-                      'Miscellaneous',
-                      'OrganizationInformation',
-                      'DateAndTime',
-                      'LocationInformation',
-                      'Other'
-                    ];
-                    readonly title: 'CategoryType';
-                    readonly type: 'string';
-                  };
-                  readonly subcategory: {
-                    readonly anyOf: readonly [
-                      {
-                        readonly enum: readonly [
-                          'CreditCard',
-                          'CardExpiry',
-                          'BankAccountNumber',
-                          'BankRoutingNumber',
-                          'SwiftCode',
-                          'TaxIdentificationNumber'
-                        ];
-                        readonly title: 'FinancialInformationSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`CreditCard` `CardExpiry` `BankAccountNumber` `BankRoutingNumber` `SwiftCode` `TaxIdentificationNumber`';
-                      },
-                      {
-                        readonly enum: readonly ['Name', 'Age', 'Email', 'Phone', 'PersonType'];
-                        readonly title: 'PersonalInformationSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`Name` `Age` `Email` `Phone` `PersonType`';
-                      },
-                      {
-                        readonly enum: readonly [
-                          'SocialSecurityNumber',
-                          'NationalIdentificationNumber',
-                          'NationalHealthService',
-                          'ResidentRegistrationNumber',
-                          'DriverLicenseNumber',
-                          'PassportNumber'
-                        ];
-                        readonly title: 'IdentificationNumbersSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`SocialSecurityNumber` `NationalIdentificationNumber` `NationalHealthService` `ResidentRegistrationNumber` `DriverLicenseNumber` `PassportNumber`';
-                      },
-                      {
-                        readonly enum: readonly [
-                          'URL',
-                          'IP',
-                          'MAC',
-                          'VehicleIdentificationNumber',
-                          'LicensePlate',
-                          'VoterNumber',
-                          'AWSKeys',
-                          'AzureKeys',
-                          'Password'
-                        ];
-                        readonly title: 'MiscellaneousSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`URL` `IP` `MAC` `VehicleIdentificationNumber` `LicensePlate` `VoterNumber` `AWSKeys` `AzureKeys` `Password`';
-                      },
-                      {
-                        readonly enum: readonly ['CompanyName', 'CompanyNumber', 'BuisnessNumber'];
-                        readonly title: 'OrganizationSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`CompanyName` `CompanyNumber` `BuisnessNumber`';
-                      },
-                      {
-                        readonly enum: readonly ['Date', 'Time', 'DateTime', 'Duration'];
-                        readonly title: 'DateAndTimeSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`Date` `Time` `DateTime` `Duration`';
-                      },
-                      {
-                        readonly enum: readonly ['Address', 'Location'];
-                        readonly title: 'LocationInformationSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`Address` `Location`';
-                      },
-                      {
-                        readonly enum: readonly ['Other', 'Anonymized', 'Nerd', 'Wsd', 'Unknown'];
-                        readonly title: 'OtherSubCategoryType';
-                        readonly type: 'string';
-                        readonly description: '`Other` `Anonymized` `Nerd` `Wsd` `Unknown`';
-                      }
-                    ];
-                    readonly title: 'Subcategory';
-                  };
-                  readonly original_label: {
-                    readonly minLength: 1;
-                    readonly title: 'Original Label';
-                    readonly type: 'string';
-                  };
-                  readonly content: {
-                    readonly minLength: 1;
-                    readonly title: 'Content';
-                    readonly type: 'string';
-                  };
-                  readonly confidence_score: {
-                    readonly maximum: 1;
-                    readonly minimum: 0;
-                    readonly title: 'Confidence Score';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly oneai: {
           readonly required: readonly ['result', 'status'];
           readonly title: 'textanonymizationAnonymizationDataClass';
           readonly type: 'object';
@@ -28389,7 +28389,7 @@ declare const TextChatCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
+        readonly google: {
           readonly required: readonly ['generated_text', 'status'];
           readonly title: 'textchatChatDataClass';
           readonly type: 'object';
@@ -28430,7 +28430,7 @@ declare const TextChatCreate: {
             };
           };
         };
-        readonly google: {
+        readonly openai: {
           readonly required: readonly ['generated_text', 'status'];
           readonly title: 'textchatChatDataClass';
           readonly type: 'object';
@@ -28618,7 +28618,7 @@ declare const TextCodeGenerationCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
+        readonly google: {
           readonly required: readonly ['generated_text', 'status'];
           readonly title: 'textcode_generationCodeGenerationDataClass';
           readonly type: 'object';
@@ -28640,7 +28640,7 @@ declare const TextCodeGenerationCreate: {
             };
           };
         };
-        readonly google: {
+        readonly openai: {
           readonly required: readonly ['generated_text', 'status'];
           readonly title: 'textcode_generationCodeGenerationDataClass';
           readonly type: 'object';
@@ -28814,7 +28814,7 @@ declare const TextCustomClassificationCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
+        readonly cohere: {
           readonly required: readonly ['status'];
           readonly title: 'textcustom_classificationCustomClassificationDataClass';
           readonly type: 'object';
@@ -28855,7 +28855,7 @@ declare const TextCustomClassificationCreate: {
             };
           };
         };
-        readonly cohere: {
+        readonly openai: {
           readonly required: readonly ['status'];
           readonly title: 'textcustom_classificationCustomClassificationDataClass';
           readonly type: 'object';
@@ -29042,7 +29042,7 @@ declare const TextCustomNamedEntityRecognitionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
+        readonly cohere: {
           readonly required: readonly ['status'];
           readonly title: 'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass';
           readonly type: 'object';
@@ -29079,7 +29079,7 @@ declare const TextCustomNamedEntityRecognitionCreate: {
             };
           };
         };
-        readonly cohere: {
+        readonly openai: {
           readonly required: readonly ['status'];
           readonly title: 'textcustom_named_entity_recognitionCustomNamedEntityRecognitionDataClass';
           readonly type: 'object';
@@ -29282,42 +29282,6 @@ declare const TextEmbeddingsCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
-          readonly required: readonly ['status'];
-          readonly title: 'textembeddingsEmbeddingsDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['embedding'];
-                readonly title: 'EmbeddingDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly embedding: {
-                    readonly title: 'Embedding';
-                    readonly type: 'array';
-                    readonly items: {
-                      readonly type: 'integer';
-                    };
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'textembeddingsEmbeddingsDataClass';
@@ -29355,6 +29319,42 @@ declare const TextEmbeddingsCreate: {
           };
         };
         readonly cohere: {
+          readonly required: readonly ['status'];
+          readonly title: 'textembeddingsEmbeddingsDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['embedding'];
+                readonly title: 'EmbeddingDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly embedding: {
+                    readonly title: 'Embedding';
+                    readonly type: 'array';
+                    readonly items: {
+                      readonly type: 'integer';
+                    };
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly openai: {
           readonly required: readonly ['status'];
           readonly title: 'textembeddingsEmbeddingsDataClass';
           readonly type: 'object';
@@ -29787,28 +29787,6 @@ declare const TextGenerationCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
-          readonly required: readonly ['generated_text', 'status'];
-          readonly title: 'textgenerationGenerationDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly generated_text: {
-              readonly title: 'Generated Text';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly google: {
           readonly required: readonly ['generated_text', 'status'];
           readonly title: 'textgenerationGenerationDataClass';
@@ -29832,6 +29810,28 @@ declare const TextGenerationCreate: {
           };
         };
         readonly cohere: {
+          readonly required: readonly ['generated_text', 'status'];
+          readonly title: 'textgenerationGenerationDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly generated_text: {
+              readonly title: 'Generated Text';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly openai: {
           readonly required: readonly ['generated_text', 'status'];
           readonly title: 'textgenerationGenerationDataClass';
           readonly type: 'object';
@@ -29986,6 +29986,43 @@ declare const TextKeywordExtractionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly oneai: {
+          readonly required: readonly ['status'];
+          readonly title: 'textkeyword_extractionKeywordExtractionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['keyword', 'importance'];
+                readonly title: 'InfosKeywordExtractionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly keyword: {
+                    readonly title: 'Keyword';
+                    readonly type: 'string';
+                  };
+                  readonly importance: {
+                    readonly title: 'Importance';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly emvista: {
           readonly required: readonly ['status'];
           readonly title: 'textkeyword_extractionKeywordExtractionDataClass';
@@ -30060,43 +30097,6 @@ declare const TextKeywordExtractionCreate: {
             };
           };
         };
-        readonly microsoft: {
-          readonly required: readonly ['status'];
-          readonly title: 'textkeyword_extractionKeywordExtractionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['keyword', 'importance'];
-                readonly title: 'InfosKeywordExtractionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly keyword: {
-                    readonly title: 'Keyword';
-                    readonly type: 'string';
-                  };
-                  readonly importance: {
-                    readonly title: 'Importance';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly ibm: {
           readonly required: readonly ['status'];
           readonly title: 'textkeyword_extractionKeywordExtractionDataClass';
@@ -30134,7 +30134,7 @@ declare const TextKeywordExtractionCreate: {
             };
           };
         };
-        readonly oneai: {
+        readonly microsoft: {
           readonly required: readonly ['status'];
           readonly title: 'textkeyword_extractionKeywordExtractionDataClass';
           readonly type: 'object';
@@ -30415,7 +30415,48 @@ declare const TextModerationCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly clarifai: {
+        readonly google: {
+          readonly required: readonly ['nsfw_likelihood', 'status'];
+          readonly title: 'textmoderationModerationDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly nsfw_likelihood: {
+              readonly title: 'Nsfw Likelihood';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['label', 'likelihood'];
+                readonly title: 'TextModerationItem';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly label: {
+                    readonly title: 'Label';
+                    readonly type: 'string';
+                  };
+                  readonly likelihood: {
+                    readonly title: 'Likelihood';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly microsoft: {
           readonly required: readonly ['nsfw_likelihood', 'status'];
           readonly title: 'textmoderationModerationDataClass';
           readonly type: 'object';
@@ -30497,48 +30538,7 @@ declare const TextModerationCreate: {
             };
           };
         };
-        readonly google: {
-          readonly required: readonly ['nsfw_likelihood', 'status'];
-          readonly title: 'textmoderationModerationDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly nsfw_likelihood: {
-              readonly title: 'Nsfw Likelihood';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['label', 'likelihood'];
-                readonly title: 'TextModerationItem';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly label: {
-                    readonly title: 'Label';
-                    readonly type: 'string';
-                  };
-                  readonly likelihood: {
-                    readonly title: 'Likelihood';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
+        readonly clarifai: {
           readonly required: readonly ['nsfw_likelihood', 'status'];
           readonly title: 'textmoderationModerationDataClass';
           readonly type: 'object';
@@ -30714,7 +30714,48 @@ declare const TextNamedEntityRecognitionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly lettria: {
+        readonly oneai: {
+          readonly required: readonly ['status'];
+          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['entity', 'category', 'importance'];
+                readonly title: 'InfosNamedEntityRecognitionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly entity: {
+                    readonly title: 'Entity';
+                    readonly type: 'string';
+                  };
+                  readonly category: {
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly importance: {
+                    readonly title: 'Importance';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly neuralspace: {
           readonly required: readonly ['status'];
           readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
           readonly type: 'object';
@@ -30756,6 +30797,129 @@ declare const TextNamedEntityRecognitionCreate: {
           };
         };
         readonly tenstorrent: {
+          readonly required: readonly ['status'];
+          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['entity', 'category', 'importance'];
+                readonly title: 'InfosNamedEntityRecognitionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly entity: {
+                    readonly title: 'Entity';
+                    readonly type: 'string';
+                  };
+                  readonly category: {
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly importance: {
+                    readonly title: 'Importance';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly ibm: {
+          readonly required: readonly ['status'];
+          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['entity', 'category', 'importance'];
+                readonly title: 'InfosNamedEntityRecognitionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly entity: {
+                    readonly title: 'Entity';
+                    readonly type: 'string';
+                  };
+                  readonly category: {
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly importance: {
+                    readonly title: 'Importance';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly lettria: {
+          readonly required: readonly ['status'];
+          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['entity', 'category', 'importance'];
+                readonly title: 'InfosNamedEntityRecognitionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly entity: {
+                    readonly title: 'Entity';
+                    readonly type: 'string';
+                  };
+                  readonly category: {
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly importance: {
+                    readonly title: 'Importance';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
           readonly type: 'object';
@@ -30838,170 +31002,6 @@ declare const TextNamedEntityRecognitionCreate: {
           };
         };
         readonly openai: {
-          readonly required: readonly ['status'];
-          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['entity', 'category', 'importance'];
-                readonly title: 'InfosNamedEntityRecognitionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly entity: {
-                    readonly title: 'Entity';
-                    readonly type: 'string';
-                  };
-                  readonly category: {
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly importance: {
-                    readonly title: 'Importance';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly ibm: {
-          readonly required: readonly ['status'];
-          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['entity', 'category', 'importance'];
-                readonly title: 'InfosNamedEntityRecognitionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly entity: {
-                    readonly title: 'Entity';
-                    readonly type: 'string';
-                  };
-                  readonly category: {
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly importance: {
-                    readonly title: 'Importance';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly oneai: {
-          readonly required: readonly ['status'];
-          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['entity', 'category', 'importance'];
-                readonly title: 'InfosNamedEntityRecognitionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly entity: {
-                    readonly title: 'Entity';
-                    readonly type: 'string';
-                  };
-                  readonly category: {
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly importance: {
-                    readonly title: 'Importance';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
-          readonly required: readonly ['status'];
-          readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['entity', 'category', 'importance'];
-                readonly title: 'InfosNamedEntityRecognitionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly entity: {
-                    readonly title: 'Entity';
-                    readonly type: 'string';
-                  };
-                  readonly category: {
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly importance: {
-                    readonly title: 'Importance';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly neuralspace: {
           readonly required: readonly ['status'];
           readonly title: 'textnamed_entity_recognitionNamedEntityRecognitionDataClass';
           readonly type: 'object';
@@ -31662,31 +31662,6 @@ declare const TextQuestionAnswerCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly tenstorrent: {
-          readonly required: readonly ['status'];
-          readonly title: 'textquestion_answerQuestionAnswerDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly answers: {
-              readonly title: 'Answers';
-              readonly type: 'array';
-              readonly items: {
-                readonly type: 'string';
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly openai: {
           readonly required: readonly ['status'];
           readonly title: 'textquestion_answerQuestionAnswerDataClass';
@@ -31713,6 +31688,31 @@ declare const TextQuestionAnswerCreate: {
           };
         };
         readonly huggingface: {
+          readonly required: readonly ['status'];
+          readonly title: 'textquestion_answerQuestionAnswerDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly answers: {
+              readonly title: 'Answers';
+              readonly type: 'array';
+              readonly items: {
+                readonly type: 'string';
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly tenstorrent: {
           readonly required: readonly ['status'];
           readonly title: 'textquestion_answerQuestionAnswerDataClass';
           readonly type: 'object';
@@ -32076,6 +32076,64 @@ declare const TextSentimentAnalysisCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly oneai: {
+          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
+          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly general_sentiment: {
+              readonly title: 'General Sentiment';
+              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+              readonly type: 'string';
+              readonly description: '`Positive` `Negative` `Neutral`';
+            };
+            readonly general_sentiment_rate: {
+              readonly maximum: 1;
+              readonly minimum: 0;
+              readonly title: 'General Sentiment Rate';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
+                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
+                readonly title: 'SegmentSentimentAnalysisDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly segment: {
+                    readonly title: 'Segment';
+                    readonly type: 'string';
+                  };
+                  readonly sentiment: {
+                    readonly title: 'Sentiment';
+                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+                    readonly type: 'string';
+                    readonly description: '`Positive` `Negative` `Neutral`';
+                  };
+                  readonly sentiment_rate: {
+                    readonly maximum: 1;
+                    readonly minimum: 0;
+                    readonly title: 'Sentiment Rate';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly emvista: {
           readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
           readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
@@ -32134,7 +32192,65 @@ declare const TextSentimentAnalysisCreate: {
             };
           };
         };
-        readonly lettria: {
+        readonly openai: {
+          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
+          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly general_sentiment: {
+              readonly title: 'General Sentiment';
+              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+              readonly type: 'string';
+              readonly description: '`Positive` `Negative` `Neutral`';
+            };
+            readonly general_sentiment_rate: {
+              readonly maximum: 1;
+              readonly minimum: 0;
+              readonly title: 'General Sentiment Rate';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
+                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
+                readonly title: 'SegmentSentimentAnalysisDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly segment: {
+                    readonly title: 'Segment';
+                    readonly type: 'string';
+                  };
+                  readonly sentiment: {
+                    readonly title: 'Sentiment';
+                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+                    readonly type: 'string';
+                    readonly description: '`Positive` `Negative` `Neutral`';
+                  };
+                  readonly sentiment_rate: {
+                    readonly maximum: 1;
+                    readonly minimum: 0;
+                    readonly title: 'Sentiment Rate';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly tenstorrent: {
           readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
           readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
           readonly type: 'object';
@@ -32250,7 +32366,123 @@ declare const TextSentimentAnalysisCreate: {
             };
           };
         };
-        readonly tenstorrent: {
+        readonly ibm: {
+          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
+          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly general_sentiment: {
+              readonly title: 'General Sentiment';
+              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+              readonly type: 'string';
+              readonly description: '`Positive` `Negative` `Neutral`';
+            };
+            readonly general_sentiment_rate: {
+              readonly maximum: 1;
+              readonly minimum: 0;
+              readonly title: 'General Sentiment Rate';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
+                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
+                readonly title: 'SegmentSentimentAnalysisDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly segment: {
+                    readonly title: 'Segment';
+                    readonly type: 'string';
+                  };
+                  readonly sentiment: {
+                    readonly title: 'Sentiment';
+                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+                    readonly type: 'string';
+                    readonly description: '`Positive` `Negative` `Neutral`';
+                  };
+                  readonly sentiment_rate: {
+                    readonly maximum: 1;
+                    readonly minimum: 0;
+                    readonly title: 'Sentiment Rate';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly lettria: {
+          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
+          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly general_sentiment: {
+              readonly title: 'General Sentiment';
+              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+              readonly type: 'string';
+              readonly description: '`Positive` `Negative` `Neutral`';
+            };
+            readonly general_sentiment_rate: {
+              readonly maximum: 1;
+              readonly minimum: 0;
+              readonly title: 'General Sentiment Rate';
+              readonly type: 'integer';
+            };
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
+                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
+                readonly title: 'SegmentSentimentAnalysisDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly segment: {
+                    readonly title: 'Segment';
+                    readonly type: 'string';
+                  };
+                  readonly sentiment: {
+                    readonly title: 'Sentiment';
+                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
+                    readonly type: 'string';
+                    readonly description: '`Positive` `Negative` `Neutral`';
+                  };
+                  readonly sentiment_rate: {
+                    readonly maximum: 1;
+                    readonly minimum: 0;
+                    readonly title: 'Sentiment Rate';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly google: {
           readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
           readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
           readonly type: 'object';
@@ -32367,238 +32599,6 @@ declare const TextSentimentAnalysisCreate: {
           };
         };
         readonly connexun: {
-          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
-          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly general_sentiment: {
-              readonly title: 'General Sentiment';
-              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-              readonly type: 'string';
-              readonly description: '`Positive` `Negative` `Neutral`';
-            };
-            readonly general_sentiment_rate: {
-              readonly maximum: 1;
-              readonly minimum: 0;
-              readonly title: 'General Sentiment Rate';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
-                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
-                readonly title: 'SegmentSentimentAnalysisDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly segment: {
-                    readonly title: 'Segment';
-                    readonly type: 'string';
-                  };
-                  readonly sentiment: {
-                    readonly title: 'Sentiment';
-                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-                    readonly type: 'string';
-                    readonly description: '`Positive` `Negative` `Neutral`';
-                  };
-                  readonly sentiment_rate: {
-                    readonly maximum: 1;
-                    readonly minimum: 0;
-                    readonly title: 'Sentiment Rate';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly openai: {
-          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
-          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly general_sentiment: {
-              readonly title: 'General Sentiment';
-              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-              readonly type: 'string';
-              readonly description: '`Positive` `Negative` `Neutral`';
-            };
-            readonly general_sentiment_rate: {
-              readonly maximum: 1;
-              readonly minimum: 0;
-              readonly title: 'General Sentiment Rate';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
-                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
-                readonly title: 'SegmentSentimentAnalysisDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly segment: {
-                    readonly title: 'Segment';
-                    readonly type: 'string';
-                  };
-                  readonly sentiment: {
-                    readonly title: 'Sentiment';
-                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-                    readonly type: 'string';
-                    readonly description: '`Positive` `Negative` `Neutral`';
-                  };
-                  readonly sentiment_rate: {
-                    readonly maximum: 1;
-                    readonly minimum: 0;
-                    readonly title: 'Sentiment Rate';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly ibm: {
-          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
-          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly general_sentiment: {
-              readonly title: 'General Sentiment';
-              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-              readonly type: 'string';
-              readonly description: '`Positive` `Negative` `Neutral`';
-            };
-            readonly general_sentiment_rate: {
-              readonly maximum: 1;
-              readonly minimum: 0;
-              readonly title: 'General Sentiment Rate';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
-                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
-                readonly title: 'SegmentSentimentAnalysisDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly segment: {
-                    readonly title: 'Segment';
-                    readonly type: 'string';
-                  };
-                  readonly sentiment: {
-                    readonly title: 'Sentiment';
-                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-                    readonly type: 'string';
-                    readonly description: '`Positive` `Negative` `Neutral`';
-                  };
-                  readonly sentiment_rate: {
-                    readonly maximum: 1;
-                    readonly minimum: 0;
-                    readonly title: 'Sentiment Rate';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly oneai: {
-          readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
-          readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly general_sentiment: {
-              readonly title: 'General Sentiment';
-              readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-              readonly type: 'string';
-              readonly description: '`Positive` `Negative` `Neutral`';
-            };
-            readonly general_sentiment_rate: {
-              readonly maximum: 1;
-              readonly minimum: 0;
-              readonly title: 'General Sentiment Rate';
-              readonly type: 'integer';
-            };
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly description: "This class is used in SentimentAnalysisDataClass to describe each segment analyzed.\n\n    Args:\n        - segment (str): The segment analyzed\n        - sentiment (Literal['Positve', 'Negative', 'Neutral']) (Case is ignore): Sentiment of segment\n        - sentiment_rate (float between 0 and 1): Rate of sentiment\n    ";
-                readonly required: readonly ['segment', 'sentiment', 'sentiment_rate'];
-                readonly title: 'SegmentSentimentAnalysisDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly segment: {
-                    readonly title: 'Segment';
-                    readonly type: 'string';
-                  };
-                  readonly sentiment: {
-                    readonly title: 'Sentiment';
-                    readonly enum: readonly ['Positive', 'Negative', 'Neutral'];
-                    readonly type: 'string';
-                    readonly description: '`Positive` `Negative` `Neutral`';
-                  };
-                  readonly sentiment_rate: {
-                    readonly maximum: 1;
-                    readonly minimum: 0;
-                    readonly title: 'Sentiment Rate';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
           readonly required: readonly ['general_sentiment', 'general_sentiment_rate', 'status'];
           readonly title: 'textsentiment_analysisSentimentAnalysisDataClass';
           readonly type: 'object';
@@ -32845,7 +32845,7 @@ declare const TextSpellCheckCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly prowritingaid: {
+        readonly cohere: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'textspell_checkSpellCheckDataClass';
           readonly type: 'object';
@@ -33067,7 +33067,7 @@ declare const TextSpellCheckCreate: {
             };
           };
         };
-        readonly cohere: {
+        readonly prowritingaid: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'textspell_checkSpellCheckDataClass';
           readonly type: 'object';
@@ -33364,6 +33364,28 @@ declare const TextSummarizeCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly oneai: {
+          readonly required: readonly ['result', 'status'];
+          readonly title: 'textsummarizeSummarizeDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly result: {
+              readonly title: 'Result';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly emvista: {
           readonly required: readonly ['result', 'status'];
           readonly title: 'textsummarizeSummarizeDataClass';
@@ -33386,51 +33408,7 @@ declare const TextSummarizeCreate: {
             };
           };
         };
-        readonly writesonic: {
-          readonly required: readonly ['result', 'status'];
-          readonly title: 'textsummarizeSummarizeDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly result: {
-              readonly title: 'Result';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
-          readonly required: readonly ['result', 'status'];
-          readonly title: 'textsummarizeSummarizeDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly result: {
-              readonly title: 'Result';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly connexun: {
+        readonly openai: {
           readonly required: readonly ['result', 'status'];
           readonly title: 'textsummarizeSummarizeDataClass';
           readonly type: 'object';
@@ -33496,29 +33474,7 @@ declare const TextSummarizeCreate: {
             };
           };
         };
-        readonly oneai: {
-          readonly required: readonly ['result', 'status'];
-          readonly title: 'textsummarizeSummarizeDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly result: {
-              readonly title: 'Result';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly openai: {
+        readonly writesonic: {
           readonly required: readonly ['result', 'status'];
           readonly title: 'textsummarizeSummarizeDataClass';
           readonly type: 'object';
@@ -33541,6 +33497,50 @@ declare const TextSummarizeCreate: {
           };
         };
         readonly huggingface: {
+          readonly required: readonly ['result', 'status'];
+          readonly title: 'textsummarizeSummarizeDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly result: {
+              readonly title: 'Result';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly microsoft: {
+          readonly required: readonly ['result', 'status'];
+          readonly title: 'textsummarizeSummarizeDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly result: {
+              readonly title: 'Result';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly connexun: {
           readonly required: readonly ['result', 'status'];
           readonly title: 'textsummarizeSummarizeDataClass';
           readonly type: 'object';
@@ -33745,7 +33745,7 @@ declare const TextSyntaxAnalysisCreate: {
             };
           };
         };
-        readonly lettria: {
+        readonly ibm: {
           readonly required: readonly ['status'];
           readonly title: 'textsyntax_analysisSyntaxAnalysisDataClass';
           readonly type: 'object';
@@ -33795,7 +33795,7 @@ declare const TextSyntaxAnalysisCreate: {
             };
           };
         };
-        readonly ibm: {
+        readonly lettria: {
           readonly required: readonly ['status'];
           readonly title: 'textsyntax_analysisSyntaxAnalysisDataClass';
           readonly type: 'object';
@@ -34128,43 +34128,6 @@ declare const TextTopicExtractionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly openai: {
-          readonly required: readonly ['status'];
-          readonly title: 'texttopic_extractionTopicExtractionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['category', 'importance'];
-                readonly title: 'ExtractedTopic';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly category: {
-                    readonly title: 'Category';
-                    readonly type: 'string';
-                  };
-                  readonly importance: {
-                    readonly title: 'Importance';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
         readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'texttopic_extractionTopicExtractionDataClass';
@@ -34202,7 +34165,7 @@ declare const TextTopicExtractionCreate: {
             };
           };
         };
-        readonly tenstorrent: {
+        readonly ibm: {
           readonly required: readonly ['status'];
           readonly title: 'texttopic_extractionTopicExtractionDataClass';
           readonly type: 'object';
@@ -34239,7 +34202,44 @@ declare const TextTopicExtractionCreate: {
             };
           };
         };
-        readonly ibm: {
+        readonly openai: {
+          readonly required: readonly ['status'];
+          readonly title: 'texttopic_extractionTopicExtractionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['category', 'importance'];
+                readonly title: 'ExtractedTopic';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly category: {
+                    readonly title: 'Category';
+                    readonly type: 'string';
+                  };
+                  readonly importance: {
+                    readonly title: 'Importance';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly tenstorrent: {
           readonly required: readonly ['status'];
           readonly title: 'texttopic_extractionTopicExtractionDataClass';
           readonly type: 'object';
@@ -34454,51 +34454,7 @@ declare const TranslationAutomaticTranslationCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
-        readonly modernmt: {
-          readonly required: readonly ['text', 'status'];
-          readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly text: {
-              readonly title: 'Text';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly deepl: {
-          readonly required: readonly ['text', 'status'];
-          readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly text: {
-              readonly title: 'Text';
-              readonly type: 'string';
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly microsoft: {
+        readonly openai: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
           readonly type: 'object';
@@ -34542,7 +34498,29 @@ declare const TranslationAutomaticTranslationCreate: {
             };
           };
         };
-        readonly openai: {
+        readonly neuralspace: {
+          readonly required: readonly ['text', 'status'];
+          readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly text: {
+              readonly title: 'Text';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly deepl: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
           readonly type: 'object';
@@ -34586,6 +34564,28 @@ declare const TranslationAutomaticTranslationCreate: {
             };
           };
         };
+        readonly modernmt: {
+          readonly required: readonly ['text', 'status'];
+          readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly text: {
+              readonly title: 'Text';
+              readonly type: 'string';
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly google: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
@@ -34608,7 +34608,7 @@ declare const TranslationAutomaticTranslationCreate: {
             };
           };
         };
-        readonly neuralspace: {
+        readonly microsoft: {
           readonly required: readonly ['text', 'status'];
           readonly title: 'translationautomatic_translationAutomaticTranslationDataClass';
           readonly type: 'object';
@@ -34998,7 +34998,171 @@ declare const TranslationLanguageDetectionCreate: {
   readonly response: {
     readonly '200': {
       readonly properties: {
+        readonly oneai: {
+          readonly required: readonly ['status'];
+          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['language', 'display_name', 'confidence'];
+                readonly title: 'InfosLanguageDetectionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly language: {
+                    readonly title: 'Language';
+                    readonly type: 'string';
+                  };
+                  readonly display_name: {
+                    readonly title: 'Display Name';
+                    readonly type: 'string';
+                  };
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly neuralspace: {
+          readonly required: readonly ['status'];
+          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['language', 'display_name', 'confidence'];
+                readonly title: 'InfosLanguageDetectionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly language: {
+                    readonly title: 'Language';
+                    readonly type: 'string';
+                  };
+                  readonly display_name: {
+                    readonly title: 'Display Name';
+                    readonly type: 'string';
+                  };
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly ibm: {
+          readonly required: readonly ['status'];
+          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['language', 'display_name', 'confidence'];
+                readonly title: 'InfosLanguageDetectionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly language: {
+                    readonly title: 'Language';
+                    readonly type: 'string';
+                  };
+                  readonly display_name: {
+                    readonly title: 'Display Name';
+                    readonly type: 'string';
+                  };
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
         readonly modernmt: {
+          readonly required: readonly ['status'];
+          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
+          readonly type: 'object';
+          readonly properties: {
+            readonly items: {
+              readonly title: 'Items';
+              readonly type: 'array';
+              readonly items: {
+                readonly required: readonly ['language', 'display_name', 'confidence'];
+                readonly title: 'InfosLanguageDetectionDataClass';
+                readonly type: 'object';
+                readonly properties: {
+                  readonly language: {
+                    readonly title: 'Language';
+                    readonly type: 'string';
+                  };
+                  readonly display_name: {
+                    readonly title: 'Display Name';
+                    readonly type: 'string';
+                  };
+                  readonly confidence: {
+                    readonly title: 'Confidence';
+                    readonly type: 'integer';
+                  };
+                };
+              };
+            };
+            readonly original_response: {
+              readonly default: any;
+              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
+              readonly title: 'Original Response';
+            };
+            readonly status: {
+              readonly title: 'Status';
+              readonly enum: readonly ['sucess', 'fail'];
+              readonly type: 'string';
+              readonly description: '`sucess` `fail`';
+            };
+          };
+        };
+        readonly google: {
           readonly required: readonly ['status'];
           readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
           readonly type: 'object';
@@ -35081,170 +35245,6 @@ declare const TranslationLanguageDetectionCreate: {
           };
         };
         readonly openai: {
-          readonly required: readonly ['status'];
-          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['language', 'display_name', 'confidence'];
-                readonly title: 'InfosLanguageDetectionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly language: {
-                    readonly title: 'Language';
-                    readonly type: 'string';
-                  };
-                  readonly display_name: {
-                    readonly title: 'Display Name';
-                    readonly type: 'string';
-                  };
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly ibm: {
-          readonly required: readonly ['status'];
-          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['language', 'display_name', 'confidence'];
-                readonly title: 'InfosLanguageDetectionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly language: {
-                    readonly title: 'Language';
-                    readonly type: 'string';
-                  };
-                  readonly display_name: {
-                    readonly title: 'Display Name';
-                    readonly type: 'string';
-                  };
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly oneai: {
-          readonly required: readonly ['status'];
-          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['language', 'display_name', 'confidence'];
-                readonly title: 'InfosLanguageDetectionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly language: {
-                    readonly title: 'Language';
-                    readonly type: 'string';
-                  };
-                  readonly display_name: {
-                    readonly title: 'Display Name';
-                    readonly type: 'string';
-                  };
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly google: {
-          readonly required: readonly ['status'];
-          readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
-          readonly type: 'object';
-          readonly properties: {
-            readonly items: {
-              readonly title: 'Items';
-              readonly type: 'array';
-              readonly items: {
-                readonly required: readonly ['language', 'display_name', 'confidence'];
-                readonly title: 'InfosLanguageDetectionDataClass';
-                readonly type: 'object';
-                readonly properties: {
-                  readonly language: {
-                    readonly title: 'Language';
-                    readonly type: 'string';
-                  };
-                  readonly display_name: {
-                    readonly title: 'Display Name';
-                    readonly type: 'string';
-                  };
-                  readonly confidence: {
-                    readonly title: 'Confidence';
-                    readonly type: 'integer';
-                  };
-                };
-              };
-            };
-            readonly original_response: {
-              readonly default: any;
-              readonly description: 'original response sent by the provider, hidden by default, show it by passing the `show_original_response` field to `true` in your request';
-              readonly title: 'Original Response';
-            };
-            readonly status: {
-              readonly title: 'Status';
-              readonly enum: readonly ['sucess', 'fail'];
-              readonly type: 'string';
-              readonly description: '`sucess` `fail`';
-            };
-          };
-        };
-        readonly neuralspace: {
           readonly required: readonly ['status'];
           readonly title: 'translationlanguage_detectionLanguageDetectionDataClass';
           readonly type: 'object';

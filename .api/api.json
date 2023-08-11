@@ -4,7 +4,7 @@
     {
       "identifier": "edenai",
       "source": "https://api.edenai.run/v2/info/schema",
-      "integrity": "sha512-sekvH9CxbBG0eZhcF7b9Vqx0V3+eJYtsUe5iZisD8jjwczmC0ym0/Xn7hqedPoXfKcZ/s8xhu1iq7+7nOEfrbA==",
+      "integrity": "sha512-gmdeM2aeB1ydGmxzejVgfUdMkIEk2VuSQU6d6C7xyb4Ap5FIhG/edm3BDXXZ8EeVUFVU2NH/L6BUB+0vRL+jxQ==",
       "installerVersion": "6.1.0"
     }
   ]
