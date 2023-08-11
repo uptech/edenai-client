@@ -46,6 +46,7 @@
     "@ungap/url-search-params": "^0.2.2",
     "axios": "^1.4.0",
     "js-base64": "^3.7.5",
+    "neverthrow": "^6.0.0",
     "url-join": "^5.0.0"
   },
   "jest": {
