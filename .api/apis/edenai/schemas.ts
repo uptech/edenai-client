@@ -22596,7 +22596,7 @@ const TextAnonymizationCreate = {
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
                   length: {
-                    exclusiveMinimum: true,
+                    exclusiveMinimum: 0,
                     title: 'Length',
                     type: 'integer',
                   },
@@ -22758,7 +22758,7 @@ const TextAnonymizationCreate = {
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
                   length: {
-                    exclusiveMinimum: true,
+                    exclusiveMinimum: 0,
                     title: 'Length',
                     type: 'integer',
                   },
@@ -22920,7 +22920,7 @@ const TextAnonymizationCreate = {
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
                   length: {
-                    exclusiveMinimum: true,
+                    exclusiveMinimum: 0,
                     title: 'Length',
                     type: 'integer',
                   },
@@ -23082,7 +23082,7 @@ const TextAnonymizationCreate = {
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
                   length: {
-                    exclusiveMinimum: true,
+                    exclusiveMinimum: 0,
                     title: 'Length',
                     type: 'integer',
                   },
@@ -23244,7 +23244,7 @@ const TextAnonymizationCreate = {
                 properties: {
                   offset: { minimum: 0, title: 'Offset', type: 'integer' },
                   length: {
-                    exclusiveMinimum: true,
+                    exclusiveMinimum: 0,
                     title: 'Length',
                     type: 'integer',
                   },
