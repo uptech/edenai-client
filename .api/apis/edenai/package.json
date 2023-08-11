@@ -1,7 +1,7 @@
 {
   "name": "@api/edenai",
   "version": "2.0.0",
-  "main": "./index.js",
+  "main": "./index.ts",
   "types": "./index.d.ts",
   "dependencies": {
     "api": "^6.1.0",
