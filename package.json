@@ -14,6 +14,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "generate": "openapi-generator generate -i https://api.edenai.run/v2/info/schema -g typescript-axios --skip-validate-spec -o src/generated",
     "test:watch": "jest --watch",
     "test:cov": "jest --passWithNoTests --coverage",
     "test:cov:bail": "jest --coverage --passWithNoTests --bail src/ && lcov --remove coverage/lcov.info 'src/models/*' -o coverage/lcov.info",
@@ -25,6 +26,7 @@
     "lint:dry": "eslint \"src/**/*.ts\""
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.2",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
@@ -42,12 +44,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@api/edenai": "file:.api/apis/edenai",
-    "@ungap/url-search-params": "^0.2.2",
-    "axios": "^1.4.0",
-    "js-base64": "^3.7.5",
-    "neverthrow": "^6.0.0",
-    "url-join": "^5.0.0"
+    "axios": "^1.4.0"
   },
   "jest": {
     "clearMocks": true,

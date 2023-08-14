@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "incremental": true,
-
     "target": "ES2022",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

@@ -1,1 +1,1 @@
-export * from './generated/typescript'
+export * from './generated'
